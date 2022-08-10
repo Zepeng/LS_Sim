@@ -1,5 +1,5 @@
 CMakeFiles/example.dir/src/LSCherenkov.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSCherenkov.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/src/LSCherenkov.cc /usr/include/stdc-predef.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ios.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Types.hh \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/complex \
@@ -416,7 +416,7 @@ CMakeFiles/example.dir/src/LSCherenkov.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSubCutProducer.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4MaterialCutsCouple.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ParticleDefinition.hh \
- /tmp/huyuxiang/LS_Sim/include/LSCherenkov.hh \
+ /home/ihep/LS_Sim/include/LSCherenkov.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/templates.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/Randomize.hh \

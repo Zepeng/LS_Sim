@@ -1,6 +1,5 @@
 CMakeFiles/example.dir/src/LSAnalysisManager.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSAnalysisManager.cc \
- /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/src/LSAnalysisManager.cc /usr/include/stdc-predef.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/g4root.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/g4root_defs.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/tools/histo/h1d \
@@ -415,10 +414,10 @@ CMakeFiles/example.dir/src/LSAnalysisManager.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4TRNtupleDescription.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/tools/ntuple_binding \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4TRNtupleManager.icc \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisMessenger.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisMessenger.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcommand.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIparameter.hh \

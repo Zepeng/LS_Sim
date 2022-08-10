@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/tmp/huyuxiang/LS_Sim/build/CMakeFiles/3.22.1/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/ihep/LS_Sim/build/CMakeFiles/3.22.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ 
@@ -23,23 +23,23 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/tmp/huyuxiang/LS_Sim/build/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/ihep/LS_Sim/build/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_040aa/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_040aa.dir/build.make CMakeFiles/cmTC_040aa.dir/build
-gmake[1]: Entering directory `/tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o
-/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc   -v -o CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4f3f1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4f3f1.dir/build.make CMakeFiles/cmTC_4f3f1.dir/build
+gmake[1]: Entering directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc   -v -o CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc
 Target: x86_64-pc-linux-gnu
 Configured with: /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/download/gcc-8.3.0/configure --prefix=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0 --enable-language=c,c++,fortran --disable-multilib
 Thread model: posix
 gcc version 8.3.0 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/cc1 -quiet -v /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o -version -o /tmp/ihep/opticks/ccByzR9W.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/cc1 -quiet -v /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o -version -o /tmp/ihep/opticks/ccRoAC0X.s
 GNU C17 (GCC) version 8.3.0 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 8.3.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
 
@@ -53,10 +53,41 @@ ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalL
 ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-cython/0.29.24/include"
 ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-pip/21.2.4/include"
 ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-setuptools/58.0.4/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-yaml/5.4.1.1/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-cpp/1.1.12/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-c/6.1.9/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libmore/0.8.3/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/talys/1.95/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/nuwro/19.02.2/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include/GENIE"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/HepMC/2.06.09/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/xrootd/5.3.4/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CMT/v1r26/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/tbb/2020.3/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pythia6/6.4.28/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/LHAPDF/6.3.0/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libxml2/2.9.12/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/log4cpp/1.1.3/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/sqlite3/3.35.5/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/fftw3/3.3.8/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/gsl/2.5/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Cmake/3.22.1/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Boost/1.78.0/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-numpy/1.21.4/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-cython/0.29.24/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-pip/21.2.4/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-setuptools/58.0.4/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Python/3.8.12/include"
 #include "..." search starts here:
 #include <...> search starts here:
- /home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include
- /home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include
@@ -94,15 +125,15 @@ GNU C17 (GCC) version 8.3.0 (x86_64-pc-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 56bff176c0215faf4a91f83a86c0ddd5
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o /tmp/ihep/opticks/ccByzR9W.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o /tmp/ihep/opticks/ccRoAC0X.s
 GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7
 COMPILER_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_040aa
-/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_040aa.dir/link.txt --verbose=1
-/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc  -v -rdynamic CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o -o cmTC_040aa 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_4f3f1
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f3f1.dir/link.txt --verbose=1
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc  -v -rdynamic CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o -o cmTC_4f3f1 
 Using built-in specs.
 COLLECT_GCC=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc
 COLLECT_LTO_WRAPPER=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper
@@ -112,18 +143,16 @@ Thread model: posix
 gcc version 8.3.0 (GCC) 
 COMPILER_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_040aa' '-mtune=generic' '-march=x86-64'
- /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2 -plugin /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so -plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ihep/opticks/ccQHXlPc.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_040aa /lib/../lib64/crt1.o /lib/../lib64/crti.o /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../.. CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_040aa' '-mtune=generic' '-march=x86-64'
-gmake[1]: Leaving directory `/tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_4f3f1' '-mtune=generic' '-march=x86-64'
+ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2 -plugin /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so -plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ihep/opticks/ccotuOre.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4f3f1 /lib/../lib64/crt1.o /lib/../lib64/crti.o /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../.. CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_4f3f1' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp'
 
 
 
 Parsed C implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include]
-    add: [/home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include]
     add: [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include]
     add: [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include]
     add: [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include]
@@ -156,8 +185,6 @@ Parsed C implicit include dir info from above output: rv=done
     add: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed]
     add: [/usr/include]
   end of search list found
-  collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include]
-  collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include]
   collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include]
   collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include]
   collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include]
@@ -189,25 +216,25 @@ Parsed C implicit include dir info from above output: rv=done
   collapse include dir [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include] ==> [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include]
   collapse include dir [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed] ==> [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed]
   collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include;/home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-cpp/1.1.12/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-c/6.1.9/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libmore/0.8.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/nuwro/19.02.2/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include/GENIE;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/HepMC/2.06.09/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/xrootd/5.3.4/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/tbb/2020.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pythia6/6.4.28/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/LHAPDF/6.3.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libxml2/2.9.12/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/log4cpp/1.1.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/sqlite3/3.35.5/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/fftw3/3.3.8/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/gsl/2.5/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Boost/1.78.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Python/3.8.12/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include;/usr/local/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed;/usr/include]
+  implicit include dirs: [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-cpp/1.1.12/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-c/6.1.9/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libmore/0.8.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/nuwro/19.02.2/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include/GENIE;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/HepMC/2.06.09/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/xrootd/5.3.4/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/tbb/2020.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pythia6/6.4.28/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/LHAPDF/6.3.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libxml2/2.9.12/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/log4cpp/1.1.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/sqlite3/3.35.5/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/fftw3/3.3.8/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/gsl/2.5/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Boost/1.78.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Python/3.8.12/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include;/usr/local/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed;/usr/include]
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_040aa/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_040aa.dir/build.make CMakeFiles/cmTC_040aa.dir/build]
-  ignore line: [gmake[1]: Entering directory `/tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc   -v -o CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4f3f1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4f3f1.dir/build.make CMakeFiles/cmTC_4f3f1.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc   -v -o CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc]
   ignore line: [Target: x86_64-pc-linux-gnu]
   ignore line: [Configured with: /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/download/gcc-8.3.0/configure --prefix=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0 --enable-language=c c++ fortran --disable-multilib]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 8.3.0 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/cc1 -quiet -v /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o -version -o /tmp/ihep/opticks/ccByzR9W.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/cc1 -quiet -v /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o -version -o /tmp/ihep/opticks/ccRoAC0X.s]
   ignore line: [GNU C17 (GCC) version 8.3.0 (x86_64-pc-linux-gnu)]
   ignore line: [	compiled by GNU C version 8.3.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
   ignore line: []
@@ -221,10 +248,41 @@ Parsed C implicit link information from above output:
   ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-cython/0.29.24/include"]
   ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-pip/21.2.4/include"]
   ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-setuptools/58.0.4/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-yaml/5.4.1.1/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-cpp/1.1.12/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-c/6.1.9/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libmore/0.8.3/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/talys/1.95/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/nuwro/19.02.2/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include/GENIE"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/HepMC/2.06.09/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/xrootd/5.3.4/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CMT/v1r26/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/tbb/2020.3/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pythia6/6.4.28/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/LHAPDF/6.3.0/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libxml2/2.9.12/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/log4cpp/1.1.3/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/sqlite3/3.35.5/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/fftw3/3.3.8/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/gsl/2.5/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Cmake/3.22.1/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Boost/1.78.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-numpy/1.21.4/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-cython/0.29.24/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-pip/21.2.4/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-setuptools/58.0.4/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Python/3.8.12/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include]
-  ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include]
   ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include]
   ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include]
   ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include]
@@ -262,15 +320,15 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 56bff176c0215faf4a91f83a86c0ddd5]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o /tmp/ihep/opticks/ccByzR9W.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o /tmp/ihep/opticks/ccRoAC0X.s]
   ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7]
   ignore line: [COMPILER_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_040aa]
-  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_040aa.dir/link.txt --verbose=1]
-  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc  -v -rdynamic CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o -o cmTC_040aa ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_4f3f1]
+  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f3f1.dir/link.txt --verbose=1]
+  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc  -v -rdynamic CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o -o cmTC_4f3f1 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc]
   ignore line: [COLLECT_LTO_WRAPPER=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper]
@@ -280,13 +338,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 8.3.0 (GCC) ]
   ignore line: [COMPILER_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_040aa' '-mtune=generic' '-march=x86-64']
-  link line: [ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2 -plugin /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so -plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ihep/opticks/ccQHXlPc.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_040aa /lib/../lib64/crt1.o /lib/../lib64/crti.o /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../.. CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_4f3f1' '-mtune=generic' '-march=x86-64']
+  link line: [ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2 -plugin /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so -plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ihep/opticks/ccotuOre.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4f3f1 /lib/../lib64/crt1.o /lib/../lib64/crti.o /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../.. CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/../lib64/crtn.o]
     arg [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ihep/opticks/ccQHXlPc.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ihep/opticks/ccotuOre.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -299,7 +357,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_040aa] ==> ignore
+    arg [cmTC_4f3f1] ==> ignore
     arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
     arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
     arg [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o] ==> obj [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o]
@@ -308,7 +366,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
     arg [-L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../..] ==> dir [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../..]
-    arg [CMakeFiles/cmTC_040aa.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_4f3f1.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -335,20 +393,20 @@ Parsed C implicit link information from above output:
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_da10b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_da10b.dir/build.make CMakeFiles/cmTC_da10b.dir/build
-gmake[1]: Entering directory `/tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o
-/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++   -v -o CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0e0e2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0e0e2.dir/build.make CMakeFiles/cmTC_0e0e2.dir/build
+gmake[1]: Entering directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++   -v -o CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++
 Target: x86_64-pc-linux-gnu
 Configured with: /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/download/gcc-8.3.0/configure --prefix=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0 --enable-language=c,c++,fortran --disable-multilib
 Thread model: posix
 gcc version 8.3.0 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/cc1plus -quiet -v -D_GNU_SOURCE /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ihep/opticks/cclvAror.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/cc1plus -quiet -v -D_GNU_SOURCE /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ihep/opticks/cc5LXtDo.s
 GNU C++14 (GCC) version 8.3.0 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 8.3.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
 
@@ -362,10 +420,41 @@ ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalL
 ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-cython/0.29.24/include"
 ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-pip/21.2.4/include"
 ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-setuptools/58.0.4/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-yaml/5.4.1.1/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-cpp/1.1.12/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-c/6.1.9/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libmore/0.8.3/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/talys/1.95/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/nuwro/19.02.2/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include/GENIE"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/HepMC/2.06.09/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/xrootd/5.3.4/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CMT/v1r26/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/tbb/2020.3/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pythia6/6.4.28/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/LHAPDF/6.3.0/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libxml2/2.9.12/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/log4cpp/1.1.3/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/sqlite3/3.35.5/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/fftw3/3.3.8/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/gsl/2.5/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Cmake/3.22.1/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Boost/1.78.0/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-numpy/1.21.4/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-cython/0.29.24/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-pip/21.2.4/include"
+ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-setuptools/58.0.4/include"
+ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Python/3.8.12/include"
 #include "..." search starts here:
 #include <...> search starts here:
- /home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include
- /home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include
@@ -406,15 +495,15 @@ GNU C++14 (GCC) version 8.3.0 (x86_64-pc-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: e1c99ea4a043ba35cbfacdc8fa746973
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o /tmp/ihep/opticks/cclvAror.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ihep/opticks/cc5LXtDo.s
 GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7
 COMPILER_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_da10b
-/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da10b.dir/link.txt --verbose=1
-/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++  -v -rdynamic CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_da10b 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_0e0e2
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e0e2.dir/link.txt --verbose=1
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++  -v -rdynamic CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0e0e2 
 Using built-in specs.
 COLLECT_GCC=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++
 COLLECT_LTO_WRAPPER=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper
@@ -424,18 +513,16 @@ Thread model: posix
 gcc version 8.3.0 (GCC) 
 COMPILER_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_da10b' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2 -plugin /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so -plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ihep/opticks/cc6aLbqB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_da10b /lib/../lib64/crt1.o /lib/../lib64/crti.o /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../.. CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_da10b' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-gmake[1]: Leaving directory `/tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0e0e2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2 -plugin /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so -plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ihep/opticks/ccbp6RGw.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0e0e2 /lib/../lib64/crt1.o /lib/../lib64/crti.o /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../.. CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0e0e2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp'
 
 
 
 Parsed CXX implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include]
-    add: [/home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include]
     add: [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include]
     add: [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include]
     add: [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include]
@@ -471,8 +558,6 @@ Parsed CXX implicit include dir info from above output: rv=done
     add: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed]
     add: [/usr/include]
   end of search list found
-  collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include]
-  collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include]
   collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include]
   collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include]
   collapse include dir [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include] ==> [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include]
@@ -507,25 +592,25 @@ Parsed CXX implicit include dir info from above output: rv=done
   collapse include dir [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include] ==> [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include]
   collapse include dir [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed] ==> [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed]
   collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include;/home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-cpp/1.1.12/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-c/6.1.9/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libmore/0.8.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/nuwro/19.02.2/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include/GENIE;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/HepMC/2.06.09/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/xrootd/5.3.4/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/tbb/2020.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pythia6/6.4.28/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/LHAPDF/6.3.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libxml2/2.9.12/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/log4cpp/1.1.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/sqlite3/3.35.5/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/fftw3/3.3.8/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/gsl/2.5/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Boost/1.78.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Python/3.8.12/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/x86_64-pc-linux-gnu;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/backward;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include;/usr/local/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed;/usr/include]
+  implicit include dirs: [/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-cpp/1.1.12/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-c/6.1.9/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libmore/0.8.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/nuwro/19.02.2/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include/GENIE;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/HepMC/2.06.09/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/xrootd/5.3.4/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/tbb/2020.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pythia6/6.4.28/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/LHAPDF/6.3.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libxml2/2.9.12/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/log4cpp/1.1.3/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/sqlite3/3.35.5/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/fftw3/3.3.8/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/gsl/2.5/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Boost/1.78.0/include;/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Python/3.8.12/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/x86_64-pc-linux-gnu;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/backward;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include;/usr/local/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed;/usr/include]
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_da10b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_da10b.dir/build.make CMakeFiles/cmTC_da10b.dir/build]
-  ignore line: [gmake[1]: Entering directory `/tmp/huyuxiang/LS_Sim/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++   -v -o CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0e0e2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0e0e2.dir/build.make CMakeFiles/cmTC_0e0e2.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++   -v -o CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++]
   ignore line: [Target: x86_64-pc-linux-gnu]
   ignore line: [Configured with: /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/download/gcc-8.3.0/configure --prefix=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0 --enable-language=c c++ fortran --disable-multilib]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 8.3.0 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/cc1plus -quiet -v -D_GNU_SOURCE /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ihep/opticks/cclvAror.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/cc1plus -quiet -v -D_GNU_SOURCE /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ihep/opticks/cc5LXtDo.s]
   ignore line: [GNU C++14 (GCC) version 8.3.0 (x86_64-pc-linux-gnu)]
   ignore line: [	compiled by GNU C version 8.3.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
   ignore line: []
@@ -539,10 +624,41 @@ Parsed CXX implicit link information from above output:
   ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-cython/0.29.24/include"]
   ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-pip/21.2.4/include"]
   ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-setuptools/58.0.4/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-yaml/5.4.1.1/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-cpp/1.1.12/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/mysql-connector-c/6.1.9/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libmore/0.8.3/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/talys/1.95/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/nuwro/19.02.2/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include/GENIE"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/genie/3.00.06/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/HepMC/2.06.09/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/xrootd/5.3.4/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CMT/v1r26/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/tbb/2020.3/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pythia6/6.4.28/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/LHAPDF/6.3.0/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libxml2/2.9.12/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/log4cpp/1.1.3/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/sqlite3/3.35.5/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/fftw3/3.3.8/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/gsl/2.5/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Cmake/3.22.1/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Boost/1.78.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-numpy/1.21.4/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-cython/0.29.24/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-pip/21.2.4/include"]
+  ignore line: [ignoring nonexistent directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/python-setuptools/58.0.4/include"]
+  ignore line: [ignoring duplicate directory "/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Python/3.8.12/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/mt.sniper/InstallArea/include]
-  ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/sniper/InstallArea/include]
   ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/frontier/2.9.1/include]
   ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/pacparser/1.3.7/include]
   ignore line: [ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/libyaml/0.2.4/include]
@@ -583,15 +699,15 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: e1c99ea4a043ba35cbfacdc8fa746973]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o /tmp/ihep/opticks/cclvAror.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ihep/opticks/cc5LXtDo.s]
   ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7]
   ignore line: [COMPILER_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_da10b]
-  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da10b.dir/link.txt --verbose=1]
-  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++  -v -rdynamic CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_da10b ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_0e0e2]
+  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e0e2.dir/link.txt --verbose=1]
+  ignore line: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++  -v -rdynamic CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0e0e2 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++]
   ignore line: [COLLECT_LTO_WRAPPER=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper]
@@ -601,13 +717,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 8.3.0 (GCC) ]
   ignore line: [COMPILER_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_da10b' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2 -plugin /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so -plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ihep/opticks/cc6aLbqB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_da10b /lib/../lib64/crt1.o /lib/../lib64/crti.o /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../.. CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0e0e2' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2 -plugin /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so -plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ihep/opticks/ccbp6RGw.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0e0e2 /lib/../lib64/crt1.o /lib/../lib64/crti.o /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../.. CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/../lib64/crtn.o]
     arg [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/libexec/gcc/x86_64-pc-linux-gnu/8.3.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ihep/opticks/cc6aLbqB.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ihep/opticks/ccbp6RGw.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -620,7 +736,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_da10b] ==> ignore
+    arg [cmTC_0e0e2] ==> ignore
     arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
     arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
     arg [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o] ==> obj [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o]
@@ -629,7 +745,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
     arg [-L/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../..] ==> dir [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../..]
-    arg [CMakeFiles/cmTC_da10b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_0e0e2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -651,5 +767,33 @@ Parsed CXX implicit link information from above output:
   implicit objs: [/lib64/crt1.o;/lib64/crti.o;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o;/lib64/crtn.o]
   implicit dirs: [/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib64;/lib64;/usr/lib64;/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/lib]
   implicit fwks: []
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0173b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0173b.dir/build.make CMakeFiles/cmTC_0173b.dir/build
+gmake[1]: Entering directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0173b.dir/CheckIncludeFile.c.o
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc    -o CMakeFiles/cmTC_0173b.dir/CheckIncludeFile.c.o -c /home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_0173b
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0173b.dir/link.txt --verbose=1
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc -rdynamic CMakeFiles/cmTC_0173b.dir/CheckIncludeFile.c.o -o cmTC_0173b 
+gmake[1]: Leaving directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8d52a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8d52a.dir/build.make CMakeFiles/cmTC_8d52a.dir/build
+gmake[1]: Entering directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d52a.dir/CheckFunctionExists.c.o
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_8d52a.dir/CheckFunctionExists.c.o -c /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8d52a
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Cmake/3.22.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d52a.dir/link.txt --verbose=1
+/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_8d52a.dir/CheckFunctionExists.c.o -o cmTC_8d52a  -lpthread 
+gmake[1]: Leaving directory `/home/ihep/LS_Sim/build/CMakeFiles/CMakeTmp'
+
 
 

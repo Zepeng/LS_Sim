@@ -47,16 +47,22 @@
 
 #include "Randomize.hh"
 
+#include "OPTICKS_LOG.hh"
+#include "G4CXOpticks.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 int main(int argc,char** argv)
 {
   // Detect interactive mode (if no arguments) and define UI session
   //
+  OPTICKS_LOG(argc, argv);
+
   G4UIExecutive* ui = 0;
   if ( argc == 1 ) {
     ui = new G4UIExecutive(argc, argv);
   }
+  
+  LOG(info) << " LOG(info) == > G4UIExecutive ";
 
   // Choose the Random engine
   G4Random::setTheEngine(new CLHEP::RanecuEngine);

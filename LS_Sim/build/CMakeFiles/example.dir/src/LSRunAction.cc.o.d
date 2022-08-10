@@ -1,6 +1,6 @@
 CMakeFiles/example.dir/src/LSRunAction.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSRunAction.cc /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSRunAction.hh \
+ /home/ihep/LS_Sim/src/LSRunAction.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/LSRunAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserRunAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Types.hh \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/complex \
@@ -168,9 +168,9 @@ CMakeFiles/example.dir/src/LSRunAction.cc.o: \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ExceptionSeverity.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisManager.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisMessenger.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisMessenger.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcommand.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIparameter.hh \
@@ -189,7 +189,7 @@ CMakeFiles/example.dir/src/LSRunAction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcmdWithAString.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UImessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
- /tmp/huyuxiang/LS_Sim/include/MyAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/MyAnalysisManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManagerKernel.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4EventManager.hh \
@@ -482,7 +482,7 @@ CMakeFiles/example.dir/src/LSRunAction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Event.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Track.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Step.hh \
- /tmp/huyuxiang/LS_Sim/include/MyAnalysisMessenger.hh \
- /tmp/huyuxiang/LS_Sim/include/ContinuousSpectrumManager.hh \
- /tmp/huyuxiang/LS_Sim/include/ContinuousSpectrumMessenger.hh \
+ /home/ihep/LS_Sim/include/MyAnalysisMessenger.hh \
+ /home/ihep/LS_Sim/include/ContinuousSpectrumManager.hh \
+ /home/ihep/LS_Sim/include/ContinuousSpectrumMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/Randomize.hh

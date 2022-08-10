@@ -1,5 +1,5 @@
 CMakeFiles/example.dir/src/LSPhysicsList.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSPhysicsList.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/src/LSPhysicsList.cc /usr/include/stdc-predef.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ProcessManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ios.hh \
@@ -378,7 +378,7 @@ CMakeFiles/example.dir/src/LSPhysicsList.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ProcessVector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ProcessVector.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ProcessManager.icc \
- /tmp/huyuxiang/LS_Sim/include/LSPhysicsList.hh \
+ /home/ihep/LS_Sim/include/LSPhysicsList.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VModularPhysicsList.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/rundefs.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VUserPhysicsList.hh \
@@ -394,7 +394,7 @@ CMakeFiles/example.dir/src/LSPhysicsList.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4PhysicsListHelper.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4PhysicsListOrderingParameter.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
- /tmp/huyuxiang/LS_Sim/include/LSPhysicsListMessenger.hh \
+ /home/ihep/LS_Sim/include/LSPhysicsListMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UImessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcommand.hh \
@@ -486,7 +486,7 @@ CMakeFiles/example.dir/src/LSPhysicsList.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Navigator.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4SafetyHelper.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4TransportationManager.icc \
- /tmp/huyuxiang/LS_Sim/include/LSCherenkov.hh \
+ /home/ihep/LS_Sim/include/LSCherenkov.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/templates.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/Randomize.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ThreeVector.hh \
@@ -499,6 +499,6 @@ CMakeFiles/example.dir/src/LSPhysicsList.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4MaterialPropertyVector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4MaterialPropertiesTable.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4PhysicsOrderedFreeVector.hh \
- /tmp/huyuxiang/LS_Sim/include/DsG4Scintillation.hh \
+ /home/ihep/LS_Sim/include/DsG4Scintillation.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Poisson.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VRestDiscreteProcess.hh

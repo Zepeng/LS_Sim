@@ -2,7 +2,19 @@
 # Setup the project
 cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
 project(LS_Sim)
+#include(OpticksBuildOptions NO_POLICY_SCOPE)
 
+
+#================ Find Optix ===========================#
+if(DEFINED ENV{OPTICKS_PREFIX})
+   set(Opticks_VERBOSE YES)
+   set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "$ENV{JUNOTOP}/opticks/cmake/Modules")
+   find_package(Opticks MODULE)
+   message(STATUS "${CMAKE_CURRENT_LIST_FILE} : Opticks_FOUND:${Opticks_FOUND}" )
+endif()
+#=======================================================#
+
+include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 
 #----------------------------------------------------------------------------
 # Find Geant4 package, activating all available Vis drivers by default
@@ -54,6 +66,11 @@ endif()
 
 include(${ROOT_USE_FILE})
 
+#--------------- OptiX -----------------#
+#find_package(U4  REQUIRED CONFIG)
+#find_package(SysRap REQUIRED CONFIG)
+#find_package(G4CX REQUIRED QUIET)
+
 #----------------------------------------------------------------------------
 # Find QT (required package)   
 #
@@ -64,6 +81,7 @@ include(${ROOT_USE_FILE})
 #
 include_directories(${Geant4_INCLUDE_DIR})
 include_directories(${ROOT_INCLUDE_DIR})
+#include_directories(${OPTICKS_INCLUDE_DIR})
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
@@ -77,7 +95,16 @@ file(GLOB_RECURSE headers "${PROJECT_SOURCE_DIR}/include/*.hh")
 # Add the executable, and link it to the Geant4 libraries
 #
 add_executable(example example.cc ${sources} ${headers})
-target_link_libraries(example ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
+target_link_libraries(example 
+						PUBLIC
+						${Geant4_LIBRARIES}
+						PUBLIC 
+						${ROOT_LIBRARIES}
+						PUBLIC
+						$<$<BOOL:${Opticks_FOUND}>:${Opticks_TARGET}>
+                     )
+
+
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we

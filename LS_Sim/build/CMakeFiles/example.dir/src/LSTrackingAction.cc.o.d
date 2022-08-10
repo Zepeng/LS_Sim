@@ -1,6 +1,6 @@
 CMakeFiles/example.dir/src/LSTrackingAction.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSTrackingAction.cc /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/MyAnalysisManager.hh \
+ /home/ihep/LS_Sim/src/LSTrackingAction.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/MyAnalysisManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManagerKernel.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
@@ -473,10 +473,10 @@ CMakeFiles/example.dir/src/LSTrackingAction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Event.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Track.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Step.hh \
- /tmp/huyuxiang/LS_Sim/include/LSTrackingAction.hh \
+ /home/ihep/LS_Sim/include/LSTrackingAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserTrackingAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
- /tmp/huyuxiang/LS_Sim/include/NormalTrackInfo.hh \
+ /home/ihep/LS_Sim/include/NormalTrackInfo.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VUserTrackInformation.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Allocator.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ThreeVector.hh \

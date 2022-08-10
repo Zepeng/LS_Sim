@@ -1,7 +1,6 @@
 CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/MyRootBasedAnalysis.cc \
- /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/MyRootBasedAnalysis.hh \
+ /home/ihep/LS_Sim/src/MyRootBasedAnalysis.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/MyRootBasedAnalysis.hh \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/iomanip \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/x86_64-pc-linux-gnu/bits/c++config.h \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/x86_64-pc-linux-gnu/bits/os_defines.h \

@@ -1,6 +1,6 @@
 CMakeFiles/example.dir/src/LSSteppingAction.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSSteppingAction.cc /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSSteppingAction.hh \
+ /home/ihep/LS_Sim/src/LSSteppingAction.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/LSSteppingAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserSteppingAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ios.hh \
@@ -168,11 +168,11 @@ CMakeFiles/example.dir/src/LSSteppingAction.cc.o: \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ExceptionSeverity.hh \
- /tmp/huyuxiang/LS_Sim/include/LSTrackingAction.hh \
+ /home/ihep/LS_Sim/include/LSTrackingAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserTrackingAction.hh \
- /tmp/huyuxiang/LS_Sim/include/LSEventAction.hh \
+ /home/ihep/LS_Sim/include/LSEventAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserEventAction.hh \
- /tmp/huyuxiang/LS_Sim/include/MyAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/MyAnalysisManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManagerKernel.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \

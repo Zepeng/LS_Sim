@@ -1,6 +1,6 @@
 CMakeFiles/example.dir/src/NormalTrackInfo.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/NormalTrackInfo.cc /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/NormalTrackInfo.hh \
+ /home/ihep/LS_Sim/src/NormalTrackInfo.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/NormalTrackInfo.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ios.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Types.hh \

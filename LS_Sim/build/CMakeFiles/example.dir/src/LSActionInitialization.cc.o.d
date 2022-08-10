@@ -1,9 +1,9 @@
 CMakeFiles/example.dir/src/LSActionInitialization.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSActionInitialization.cc \
+ /home/ihep/LS_Sim/src/LSActionInitialization.cc \
  /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSActionInitialization.hh \
+ /home/ihep/LS_Sim/include/LSActionInitialization.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VUserActionInitialization.hh \
- /tmp/huyuxiang/LS_Sim/include/LSPrimaryGeneratorAction.hh \
+ /home/ihep/LS_Sim/include/LSPrimaryGeneratorAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ParticleGun.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
@@ -202,23 +202,23 @@ CMakeFiles/example.dir/src/LSActionInitialization.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4PrimaryParticle.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ParticleMomentum.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
- /tmp/huyuxiang/LS_Sim/include/LSParticleSource.hh \
+ /home/ihep/LS_Sim/include/LSParticleSource.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ParticleDefinition.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VPrimaryGenerator.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ThreeVector.hh \
- /tmp/huyuxiang/LS_Sim/include/LSParticleSourceMessenger.hh \
+ /home/ihep/LS_Sim/include/LSParticleSourceMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UImessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcommand.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIparameter.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UItokenNum.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ApplicationState.hh \
- /tmp/huyuxiang/LS_Sim/include/LSRunAction.hh \
+ /home/ihep/LS_Sim/include/LSRunAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserRunAction.hh \
- /tmp/huyuxiang/LS_Sim/include/LSEventAction.hh \
+ /home/ihep/LS_Sim/include/LSEventAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserEventAction.hh \
- /tmp/huyuxiang/LS_Sim/include/LSTrackingAction.hh \
+ /home/ihep/LS_Sim/include/LSTrackingAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserTrackingAction.hh \
- /tmp/huyuxiang/LS_Sim/include/LSSteppingAction.hh \
+ /home/ihep/LS_Sim/include/LSSteppingAction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UserSteppingAction.hh \
- /tmp/huyuxiang/LS_Sim/include/LSTrackingAction.hh
+ /home/ihep/LS_Sim/include/LSTrackingAction.hh

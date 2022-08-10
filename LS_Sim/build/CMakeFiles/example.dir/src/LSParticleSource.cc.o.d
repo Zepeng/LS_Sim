@@ -1,6 +1,6 @@
 CMakeFiles/example.dir/src/LSParticleSource.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSParticleSource.cc /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSParticleSource.hh \
+ /home/ihep/LS_Sim/src/LSParticleSource.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/LSParticleSource.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ParticleDefinition.hh \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/vector \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/bits/stl_algobase.h \
@@ -191,7 +191,7 @@ CMakeFiles/example.dir/src/LSParticleSource.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/defs.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/ThreeVector.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ThreeVector.hh \
- /tmp/huyuxiang/LS_Sim/include/LSParticleSourceMessenger.hh \
+ /home/ihep/LS_Sim/include/LSParticleSourceMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UImessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcommand.hh \
@@ -199,7 +199,7 @@ CMakeFiles/example.dir/src/LSParticleSource.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UItokenNum.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ApplicationState.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
- /tmp/huyuxiang/LS_Sim/include/ContinuousSpectrumManager.hh \
+ /home/ihep/LS_Sim/include/ContinuousSpectrumManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManagerKernel.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4EventManager.hh \

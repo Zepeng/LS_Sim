@@ -1,6 +1,6 @@
 CMakeFiles/example.dir/src/LSDetectorSD.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSDetectorSD.cc /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorSD.hh \
+ /home/ihep/LS_Sim/src/LSDetectorSD.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/LSDetectorSD.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSensitiveDetector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VHit.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
@@ -318,13 +318,13 @@ CMakeFiles/example.dir/src/LSDetectorSD.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4TouchableHistory.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4CollectionNameVector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSDFilter.hh \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorHit.hh \
+ /home/ihep/LS_Sim/include/LSDetectorHit.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VHit.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4THitsCollection.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Allocator.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisMessenger.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcommand.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIparameter.hh \
@@ -333,8 +333,8 @@ CMakeFiles/example.dir/src/LSDetectorSD.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcmdWithAString.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UImessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorSDMessenger.hh \
- /tmp/huyuxiang/LS_Sim/include/NormalTrackInfo.hh \
+ /home/ihep/LS_Sim/include/LSDetectorSDMessenger.hh \
+ /home/ihep/LS_Sim/include/NormalTrackInfo.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VUserTrackInformation.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Track.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ThreeVector.hh \

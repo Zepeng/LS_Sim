@@ -1,7 +1,6 @@
 CMakeFiles/example.dir/src/LSAnalysisMessenger.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSAnalysisMessenger.cc \
- /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisMessenger.hh \
+ /home/ihep/LS_Sim/src/LSAnalysisMessenger.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/LSAnalysisMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ios.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Types.hh \
@@ -168,8 +167,8 @@ CMakeFiles/example.dir/src/LSAnalysisMessenger.cc.o: \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ExceptionSeverity.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisManager.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisMessenger.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcommand.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIparameter.hh \

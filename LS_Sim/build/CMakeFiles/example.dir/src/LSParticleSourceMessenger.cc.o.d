@@ -1,7 +1,7 @@
 CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSParticleSourceMessenger.cc \
+ /home/ihep/LS_Sim/src/LSParticleSourceMessenger.cc \
  /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSParticleSourceMessenger.hh \
+ /home/ihep/LS_Sim/include/LSParticleSourceMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UImessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ios.hh \
@@ -184,7 +184,7 @@ CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/defs.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/ThreeVector.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
- /tmp/huyuxiang/LS_Sim/include/LSParticleSource.hh \
+ /home/ihep/LS_Sim/include/LSParticleSource.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ParticleDefinition.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Units/PhysicalConstants.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Units/defs.h \
@@ -200,7 +200,7 @@ CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ParticleDefinition.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VPrimaryGenerator.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ThreeVector.hh \
- /tmp/huyuxiang/LS_Sim/include/LSParticleSourceMessenger.hh \
+ /home/ihep/LS_Sim/include/LSParticleSourceMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4PhysicalConstants.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4SystemOfUnits.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4OpticalPhoton.hh \

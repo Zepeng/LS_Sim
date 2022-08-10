@@ -53,10 +53,10 @@ RM = /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLib
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /tmp/huyuxiang/LS_Sim
+CMAKE_SOURCE_DIR = /home/ihep/LS_Sim
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /tmp/huyuxiang/LS_Sim/build
+CMAKE_BINARY_DIR = /home/ihep/LS_Sim/build
 
 # Utility rule file for LS_Sim.
 
@@ -81,6 +81,6 @@ CMakeFiles/LS_Sim.dir/clean:
 .PHONY : CMakeFiles/LS_Sim.dir/clean
 
 CMakeFiles/LS_Sim.dir/depend:
-	cd /tmp/huyuxiang/LS_Sim/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /tmp/huyuxiang/LS_Sim /tmp/huyuxiang/LS_Sim /tmp/huyuxiang/LS_Sim/build /tmp/huyuxiang/LS_Sim/build /tmp/huyuxiang/LS_Sim/build/CMakeFiles/LS_Sim.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ihep/LS_Sim/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ihep/LS_Sim /home/ihep/LS_Sim /home/ihep/LS_Sim/build /home/ihep/LS_Sim/build /home/ihep/LS_Sim/build/CMakeFiles/LS_Sim.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/LS_Sim.dir/depend
 

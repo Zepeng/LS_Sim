@@ -1,7 +1,7 @@
 CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSDetectorConstruction.cc \
+ /home/ihep/LS_Sim/src/LSDetectorConstruction.cc \
  /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorConstruction.hh \
+ /home/ihep/LS_Sim/include/LSDetectorConstruction.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VUserDetectorConstruction.hh \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/vector \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/bits/stl_algobase.h \
@@ -179,7 +179,7 @@ CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/ThreeVector.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/defs.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/ThreeVector.icc \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorSD.hh \
+ /home/ihep/LS_Sim/include/LSDetectorSD.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSensitiveDetector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VHit.hh \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/map \
@@ -323,12 +323,12 @@ CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4TouchableHistory.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4CollectionNameVector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSDFilter.hh \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorHit.hh \
+ /home/ihep/LS_Sim/include/LSDetectorHit.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VHit.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4THitsCollection.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Allocator.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisManager.hh \
- /tmp/huyuxiang/LS_Sim/include/LSAnalysisMessenger.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisManager.hh \
+ /home/ihep/LS_Sim/include/LSAnalysisMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcommand.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIparameter.hh \
@@ -337,7 +337,7 @@ CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcmdWithAString.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UImessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorSDMessenger.hh \
+ /home/ihep/LS_Sim/include/LSDetectorSDMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4PhysicalConstants.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManagerKernel.hh \
@@ -559,7 +559,7 @@ CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VPrimitiveScorer.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4THitsMap.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4THitsCollection.hh \
- /tmp/huyuxiang/LS_Sim/src/OpticalProperty.icc \
+ /home/ihep/LS_Sim/src/OpticalProperty.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VisAttributes.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Colour.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Color.hh \

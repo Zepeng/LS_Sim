@@ -1,7 +1,7 @@
 CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSPhysicsListMessenger.cc \
+ /home/ihep/LS_Sim/src/LSPhysicsListMessenger.cc \
  /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSPhysicsListMessenger.hh \
+ /home/ihep/LS_Sim/include/LSPhysicsListMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UImessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ios.hh \
@@ -184,7 +184,7 @@ CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/defs.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/ThreeVector.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
- /tmp/huyuxiang/LS_Sim/include/LSPhysicsList.hh \
+ /home/ihep/LS_Sim/include/LSPhysicsList.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VModularPhysicsList.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/rundefs.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VUserPhysicsList.hh \
@@ -228,7 +228,7 @@ CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VPhysicsConstructor.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4PhysicsListHelper.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4PhysicsListOrderingParameter.hh \
- /tmp/huyuxiang/LS_Sim/include/LSPhysicsListMessenger.hh \
+ /home/ihep/LS_Sim/include/LSPhysicsListMessenger.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIdirectory.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcmdWithABool.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4UIcmdWithADouble.hh

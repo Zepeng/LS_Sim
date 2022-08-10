@@ -1,7 +1,6 @@
 CMakeFiles/example.dir/src/MyAnalysisManager.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/MyAnalysisManager.cc \
- /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/MyAnalysisManager.hh \
+ /home/ihep/LS_Sim/src/MyAnalysisManager.cc /usr/include/stdc-predef.h \
+ /home/ihep/LS_Sim/include/MyAnalysisManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManagerKernel.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
@@ -474,7 +473,7 @@ CMakeFiles/example.dir/src/MyAnalysisManager.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Event.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Track.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Step.hh \
- /tmp/huyuxiang/LS_Sim/include/MyRootBasedAnalysis.hh \
+ /home/ihep/LS_Sim/include/MyRootBasedAnalysis.hh \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/ROOT/6.24.06/include/TFile.h \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/atomic \
  /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/ROOT/6.24.06/include/Compression.h \

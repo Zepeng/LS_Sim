@@ -1,8 +1,8 @@
-/tmp/huyuxiang/LS_Sim/build/CMakeFiles/example.dir
-/tmp/huyuxiang/LS_Sim/build/CMakeFiles/LS_Sim.dir
-/tmp/huyuxiang/LS_Sim/build/CMakeFiles/edit_cache.dir
-/tmp/huyuxiang/LS_Sim/build/CMakeFiles/rebuild_cache.dir
-/tmp/huyuxiang/LS_Sim/build/CMakeFiles/list_install_components.dir
-/tmp/huyuxiang/LS_Sim/build/CMakeFiles/install.dir
-/tmp/huyuxiang/LS_Sim/build/CMakeFiles/install/local.dir
-/tmp/huyuxiang/LS_Sim/build/CMakeFiles/install/strip.dir
+/home/ihep/LS_Sim/build/CMakeFiles/example.dir
+/home/ihep/LS_Sim/build/CMakeFiles/LS_Sim.dir
+/home/ihep/LS_Sim/build/CMakeFiles/edit_cache.dir
+/home/ihep/LS_Sim/build/CMakeFiles/rebuild_cache.dir
+/home/ihep/LS_Sim/build/CMakeFiles/list_install_components.dir
+/home/ihep/LS_Sim/build/CMakeFiles/install.dir
+/home/ihep/LS_Sim/build/CMakeFiles/install/local.dir
+/home/ihep/LS_Sim/build/CMakeFiles/install/strip.dir

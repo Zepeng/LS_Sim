@@ -1,7 +1,7 @@
 CMakeFiles/example.dir/src/ContinuousSpectrumManager.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/ContinuousSpectrumManager.cc \
+ /home/ihep/LS_Sim/src/ContinuousSpectrumManager.cc \
  /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/ContinuousSpectrumManager.hh \
+ /home/ihep/LS_Sim/include/ContinuousSpectrumManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManager.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4RunManagerKernel.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \

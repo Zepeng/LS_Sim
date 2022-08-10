@@ -1,6 +1,5 @@
-CMakeFiles/example.dir/src/LSPmtSD.cc.o: \
- /tmp/huyuxiang/LS_Sim/src/LSPmtSD.cc /usr/include/stdc-predef.h \
- /tmp/huyuxiang/LS_Sim/include/LSPmtSD.hh \
+CMakeFiles/example.dir/src/LSPmtSD.cc.o: /home/ihep/LS_Sim/src/LSPmtSD.cc \
+ /usr/include/stdc-predef.h /home/ihep/LS_Sim/include/LSPmtSD.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4DataVector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/globals.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4ios.hh \
@@ -319,8 +318,8 @@ CMakeFiles/example.dir/src/LSPmtSD.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4TouchableHistory.icc \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4CollectionNameVector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSDFilter.hh \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorHit.hh \
+ /home/ihep/LS_Sim/include/LSDetectorHit.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VHit.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4THitsCollection.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Allocator.hh \
- /tmp/huyuxiang/LS_Sim/include/LSDetectorHit.hh
+ /home/ihep/LS_Sim/include/LSDetectorHit.hh

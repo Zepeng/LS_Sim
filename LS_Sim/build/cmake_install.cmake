@@ -1,4 +1,4 @@
-# Install script for directory: /tmp/huyuxiang/LS_Sim
+# Install script for directory: /home/ihep/LS_Sim
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,12 +49,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/example"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/tmp/huyuxiang/LS_Sim/build/example")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/ihep/LS_Sim/build/example")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/example" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/example")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/example"
-         OLD_RPATH "./:/Users/chad/Work/src/programs/geant/geant4.10.03.p03-install/lib/:/anaconda3/lib:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/ROOT/6.24.06/lib:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/lib64:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/lib:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/lib:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/lib:"
+         OLD_RPATH "./:/Users/chad/Work/src/programs/geant/geant4.10.03.p03-install/lib/:/anaconda3/lib:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/ROOT/6.24.06/lib:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/lib64:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/ROOT/6.24.06/lib:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/lib64:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Xercesc/3.2.2/lib:/home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/lib:/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/Pre-Release/J22.1.x/ExternalLibs/Boost/1.78.0/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/example")
@@ -70,5 +70,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/tmp/huyuxiang/LS_Sim/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ihep/LS_Sim/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
