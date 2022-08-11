@@ -7,6 +7,13 @@
 #include "Randomize.hh"
 #include <ctime>
 
+#ifdef WITH_G4CXOPTICKS
+#include "OPTICKS_LOG.hh"
+#include "SEventConfig.hh"
+#include "G4CXOpticks.hh"
+#endif
+
+
 LSRunAction::LSRunAction()
 : G4UserRunAction(), fSaveRndm(0), fAutoSeed(true)
 {
@@ -21,6 +28,12 @@ LSRunAction::~LSRunAction()
 void LSRunAction::BeginOfRunAction(const G4Run*)
 {
     G4cout << "Begin of One Run" << G4endl;
+
+
+
+    //G4CXOpticks gx ;
+    //gx.setGeometry();
+
     LSAnalysisManager* analysis = LSAnalysisManager::getInstance();
     analysis->book();
 

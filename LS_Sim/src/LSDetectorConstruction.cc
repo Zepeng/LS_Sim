@@ -3,6 +3,7 @@
 /// \brief Implementation of the LSDetectorConstruction class
 
 #include "LSDetectorConstruction.hh"
+#include "LSDetectorConstruction_Opticks.hh"
 #include "LSDetectorSD.hh"
 
 #include "G4PhysicalConstants.hh"
@@ -36,9 +37,18 @@
 
 
 LSDetectorConstruction::LSDetectorConstruction()
-    : G4VUserDetectorConstruction(),
-    fCheckOverlaps(true), air(NULL), water(NULL), LS(NULL), Steel(NULL),
-    coeff_abslen(2.862), coeff_rayleigh(0.643), coeff_efficiency(0.5)
+    : 
+	G4VUserDetectorConstruction(),
+    fCheckOverlaps(true), 
+	air(NULL), 
+	water(NULL), 
+	LS(NULL), 
+	Steel(NULL),
+    coeff_abslen(2.862), 
+	coeff_rayleigh(0.643), 
+	coeff_efficiency(0.5),
+	m_g4cxopticks(nullptr),
+	m_opticksMode(1)
 { 
 ;
 }
@@ -161,11 +171,11 @@ void LSDetectorConstruction::DefineMaterials()
     LSMPT->AddProperty("SCINTILLATIONYIELD", component, GdLSLY,2);
     LSMPT->AddProperty("RESOLUTIONSCALE", component, GdLSResolutionScale,2);
 
-    LSMPT->AddConstProperty("SCINTILLATIONYIELD", GdLSLY[0]);
-    LSMPT->AddConstProperty("RESOLUTIONSCALE",GdLSResolutionScale[0]);
-    LSMPT->AddConstProperty("FASTTIMECONSTANT",GdLSFastTimeConstant[0]);
-    LSMPT->AddConstProperty("SLOWTIMECONSTANT",GdLSSlowTimeConstant[0]);
-    LSMPT->AddConstProperty("YIELDRATIO",GdLSYieldRatio[0]);
+    //LSMPT->AddConstProperty("SCINTILLATIONYIELD", GdLSLY[0]);
+    //LSMPT->AddConstProperty("RESOLUTIONSCALE",GdLSResolutionScale[0]);
+    LSMPT->AddProperty("FASTTIMECONSTANT",component,GdLSFastTimeConstant,2);
+    LSMPT->AddProperty("SLOWTIMECONSTANT",component,GdLSSlowTimeConstant,2);
+    LSMPT->AddProperty("YIELDRATIO",component,GdLSYieldRatio,2);
 
     LSMPT->AddProperty("GammaFASTTIMECONSTANT", component, GdLSFastTimeConstant,2);
     LSMPT->AddProperty("GammaSLOWTIMECONSTANT", component, GdLSSlowTimeConstant,2);
@@ -397,6 +407,7 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
     //                        logicDet,
     //                        Photocathode_opsurf);
 
+	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
 
     return worldPV;
 }

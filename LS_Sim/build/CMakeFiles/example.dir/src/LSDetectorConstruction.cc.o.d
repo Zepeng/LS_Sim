@@ -179,6 +179,10 @@ CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/ThreeVector.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/defs.h \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/CLHEP/2.4.1.0/include/CLHEP/Vector/ThreeVector.icc \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/G4CX/G4CXOpticks.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Severity.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/G4CX/G4CX_API_EXPORT.hh \
+ /home/ihep/LS_Sim/include/LSDetectorConstruction_Opticks.hh \
  /home/ihep/LS_Sim/include/LSDetectorSD.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSensitiveDetector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VHit.hh \

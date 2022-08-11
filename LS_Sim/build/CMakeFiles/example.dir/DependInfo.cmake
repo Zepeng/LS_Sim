@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ihep/LS_Sim/src/LSAnalysisMessenger.cc" "CMakeFiles/example.dir/src/LSAnalysisMessenger.cc.o" "gcc" "CMakeFiles/example.dir/src/LSAnalysisMessenger.cc.o.d"
   "/home/ihep/LS_Sim/src/LSCherenkov.cc" "CMakeFiles/example.dir/src/LSCherenkov.cc.o" "gcc" "CMakeFiles/example.dir/src/LSCherenkov.cc.o.d"
   "/home/ihep/LS_Sim/src/LSDetectorConstruction.cc" "CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o" "gcc" "CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o.d"
+  "/home/ihep/LS_Sim/src/LSDetectorConstruction_Opticks.cc" "CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o" "gcc" "CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o.d"
   "/home/ihep/LS_Sim/src/LSDetectorHit.cc" "CMakeFiles/example.dir/src/LSDetectorHit.cc.o" "gcc" "CMakeFiles/example.dir/src/LSDetectorHit.cc.o.d"
   "/home/ihep/LS_Sim/src/LSDetectorSD.cc" "CMakeFiles/example.dir/src/LSDetectorSD.cc.o" "gcc" "CMakeFiles/example.dir/src/LSDetectorSD.cc.o.d"
   "/home/ihep/LS_Sim/src/LSDetectorSDMessenger.cc" "CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o" "gcc" "CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o.d"

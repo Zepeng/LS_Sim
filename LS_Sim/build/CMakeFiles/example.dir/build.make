@@ -195,10 +195,24 @@ CMakeFiles/example.dir/src/LSDetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/example.dir/src/LSDetectorConstruction.cc.s"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihep/LS_Sim/src/LSDetectorConstruction.cc -o CMakeFiles/example.dir/src/LSDetectorConstruction.cc.s
 
+CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o: CMakeFiles/example.dir/flags.make
+CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o: ../src/LSDetectorConstruction_Opticks.cc
+CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o: CMakeFiles/example.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o"
+	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o -MF CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o.d -o CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o -c /home/ihep/LS_Sim/src/LSDetectorConstruction_Opticks.cc
+
+CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.i"
+	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ihep/LS_Sim/src/LSDetectorConstruction_Opticks.cc > CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.i
+
+CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.s"
+	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihep/LS_Sim/src/LSDetectorConstruction_Opticks.cc -o CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.s
+
 CMakeFiles/example.dir/src/LSDetectorHit.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSDetectorHit.cc.o: ../src/LSDetectorHit.cc
 CMakeFiles/example.dir/src/LSDetectorHit.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/example.dir/src/LSDetectorHit.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/example.dir/src/LSDetectorHit.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSDetectorHit.cc.o -MF CMakeFiles/example.dir/src/LSDetectorHit.cc.o.d -o CMakeFiles/example.dir/src/LSDetectorHit.cc.o -c /home/ihep/LS_Sim/src/LSDetectorHit.cc
 
 CMakeFiles/example.dir/src/LSDetectorHit.cc.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/example.dir/src/LSDetectorHit.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSDetectorSD.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSDetectorSD.cc.o: ../src/LSDetectorSD.cc
 CMakeFiles/example.dir/src/LSDetectorSD.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/example.dir/src/LSDetectorSD.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/example.dir/src/LSDetectorSD.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSDetectorSD.cc.o -MF CMakeFiles/example.dir/src/LSDetectorSD.cc.o.d -o CMakeFiles/example.dir/src/LSDetectorSD.cc.o -c /home/ihep/LS_Sim/src/LSDetectorSD.cc
 
 CMakeFiles/example.dir/src/LSDetectorSD.cc.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/example.dir/src/LSDetectorSD.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o: ../src/LSDetectorSDMessenger.cc
 CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o -MF CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o.d -o CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o -c /home/ihep/LS_Sim/src/LSDetectorSDMessenger.cc
 
 CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSEventAction.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSEventAction.cc.o: ../src/LSEventAction.cc
 CMakeFiles/example.dir/src/LSEventAction.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/example.dir/src/LSEventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/example.dir/src/LSEventAction.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSEventAction.cc.o -MF CMakeFiles/example.dir/src/LSEventAction.cc.o.d -o CMakeFiles/example.dir/src/LSEventAction.cc.o -c /home/ihep/LS_Sim/src/LSEventAction.cc
 
 CMakeFiles/example.dir/src/LSEventAction.cc.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/example.dir/src/LSEventAction.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSParticleSource.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSParticleSource.cc.o: ../src/LSParticleSource.cc
 CMakeFiles/example.dir/src/LSParticleSource.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/example.dir/src/LSParticleSource.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/example.dir/src/LSParticleSource.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSParticleSource.cc.o -MF CMakeFiles/example.dir/src/LSParticleSource.cc.o.d -o CMakeFiles/example.dir/src/LSParticleSource.cc.o -c /home/ihep/LS_Sim/src/LSParticleSource.cc
 
 CMakeFiles/example.dir/src/LSParticleSource.cc.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/example.dir/src/LSParticleSource.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o: ../src/LSParticleSourceMessenger.cc
 CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o -MF CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o.d -o CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.o -c /home/ihep/LS_Sim/src/LSParticleSourceMessenger.cc
 
 CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/example.dir/src/LSParticleSourceMessenger.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSPhysicsList.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSPhysicsList.cc.o: ../src/LSPhysicsList.cc
 CMakeFiles/example.dir/src/LSPhysicsList.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/example.dir/src/LSPhysicsList.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/example.dir/src/LSPhysicsList.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSPhysicsList.cc.o -MF CMakeFiles/example.dir/src/LSPhysicsList.cc.o.d -o CMakeFiles/example.dir/src/LSPhysicsList.cc.o -c /home/ihep/LS_Sim/src/LSPhysicsList.cc
 
 CMakeFiles/example.dir/src/LSPhysicsList.cc.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/example.dir/src/LSPhysicsList.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o: ../src/LSPhysicsListMessenger.cc
 CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o -MF CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o.d -o CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.o -c /home/ihep/LS_Sim/src/LSPhysicsListMessenger.cc
 
 CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/example.dir/src/LSPhysicsListMessenger.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSPmtSD.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSPmtSD.cc.o: ../src/LSPmtSD.cc
 CMakeFiles/example.dir/src/LSPmtSD.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/example.dir/src/LSPmtSD.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/example.dir/src/LSPmtSD.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSPmtSD.cc.o -MF CMakeFiles/example.dir/src/LSPmtSD.cc.o.d -o CMakeFiles/example.dir/src/LSPmtSD.cc.o -c /home/ihep/LS_Sim/src/LSPmtSD.cc
 
 CMakeFiles/example.dir/src/LSPmtSD.cc.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/example.dir/src/LSPmtSD.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.o: ../src/LSPrimaryGeneratorAction.cc
 CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.o -MF CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.o.d -o CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.o -c /home/ihep/LS_Sim/src/LSPrimaryGeneratorAction.cc
 
 CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/example.dir/src/LSPrimaryGeneratorAction.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSRunAction.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSRunAction.cc.o: ../src/LSRunAction.cc
 CMakeFiles/example.dir/src/LSRunAction.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/example.dir/src/LSRunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/example.dir/src/LSRunAction.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSRunAction.cc.o -MF CMakeFiles/example.dir/src/LSRunAction.cc.o.d -o CMakeFiles/example.dir/src/LSRunAction.cc.o -c /home/ihep/LS_Sim/src/LSRunAction.cc
 
 CMakeFiles/example.dir/src/LSRunAction.cc.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/example.dir/src/LSRunAction.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSSteppingAction.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSSteppingAction.cc.o: ../src/LSSteppingAction.cc
 CMakeFiles/example.dir/src/LSSteppingAction.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/example.dir/src/LSSteppingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/example.dir/src/LSSteppingAction.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSSteppingAction.cc.o -MF CMakeFiles/example.dir/src/LSSteppingAction.cc.o.d -o CMakeFiles/example.dir/src/LSSteppingAction.cc.o -c /home/ihep/LS_Sim/src/LSSteppingAction.cc
 
 CMakeFiles/example.dir/src/LSSteppingAction.cc.i: cmake_force
@@ -366,7 +380,7 @@ CMakeFiles/example.dir/src/LSSteppingAction.cc.s: cmake_force
 CMakeFiles/example.dir/src/LSTrackingAction.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/LSTrackingAction.cc.o: ../src/LSTrackingAction.cc
 CMakeFiles/example.dir/src/LSTrackingAction.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/example.dir/src/LSTrackingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/example.dir/src/LSTrackingAction.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/LSTrackingAction.cc.o -MF CMakeFiles/example.dir/src/LSTrackingAction.cc.o.d -o CMakeFiles/example.dir/src/LSTrackingAction.cc.o -c /home/ihep/LS_Sim/src/LSTrackingAction.cc
 
 CMakeFiles/example.dir/src/LSTrackingAction.cc.i: cmake_force
@@ -380,7 +394,7 @@ CMakeFiles/example.dir/src/LSTrackingAction.cc.s: cmake_force
 CMakeFiles/example.dir/src/MyAnalysisManager.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/MyAnalysisManager.cc.o: ../src/MyAnalysisManager.cc
 CMakeFiles/example.dir/src/MyAnalysisManager.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/example.dir/src/MyAnalysisManager.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/example.dir/src/MyAnalysisManager.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/MyAnalysisManager.cc.o -MF CMakeFiles/example.dir/src/MyAnalysisManager.cc.o.d -o CMakeFiles/example.dir/src/MyAnalysisManager.cc.o -c /home/ihep/LS_Sim/src/MyAnalysisManager.cc
 
 CMakeFiles/example.dir/src/MyAnalysisManager.cc.i: cmake_force
@@ -394,7 +408,7 @@ CMakeFiles/example.dir/src/MyAnalysisManager.cc.s: cmake_force
 CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.o: ../src/MyAnalysisMessenger.cc
 CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.o -MF CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.o.d -o CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.o -c /home/ihep/LS_Sim/src/MyAnalysisMessenger.cc
 
 CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.i: cmake_force
@@ -408,7 +422,7 @@ CMakeFiles/example.dir/src/MyAnalysisMessenger.cc.s: cmake_force
 CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o: ../src/MyRootBasedAnalysis.cc
 CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o -MF CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o.d -o CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.o -c /home/ihep/LS_Sim/src/MyRootBasedAnalysis.cc
 
 CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.i: cmake_force
@@ -422,7 +436,7 @@ CMakeFiles/example.dir/src/MyRootBasedAnalysis.cc.s: cmake_force
 CMakeFiles/example.dir/src/NormalTrackInfo.cc.o: CMakeFiles/example.dir/flags.make
 CMakeFiles/example.dir/src/NormalTrackInfo.cc.o: ../src/NormalTrackInfo.cc
 CMakeFiles/example.dir/src/NormalTrackInfo.cc.o: CMakeFiles/example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/example.dir/src/NormalTrackInfo.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/example.dir/src/NormalTrackInfo.cc.o"
 	/cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/example.dir/src/NormalTrackInfo.cc.o -MF CMakeFiles/example.dir/src/NormalTrackInfo.cc.o.d -o CMakeFiles/example.dir/src/NormalTrackInfo.cc.o -c /home/ihep/LS_Sim/src/NormalTrackInfo.cc
 
 CMakeFiles/example.dir/src/NormalTrackInfo.cc.i: cmake_force
@@ -444,6 +458,7 @@ example_OBJECTS = \
 "CMakeFiles/example.dir/src/LSAnalysisMessenger.cc.o" \
 "CMakeFiles/example.dir/src/LSCherenkov.cc.o" \
 "CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o" \
+"CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o" \
 "CMakeFiles/example.dir/src/LSDetectorHit.cc.o" \
 "CMakeFiles/example.dir/src/LSDetectorSD.cc.o" \
 "CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o" \
@@ -474,6 +489,7 @@ example: CMakeFiles/example.dir/src/LSAnalysisManager.cc.o
 example: CMakeFiles/example.dir/src/LSAnalysisMessenger.cc.o
 example: CMakeFiles/example.dir/src/LSCherenkov.cc.o
 example: CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o
+example: CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o
 example: CMakeFiles/example.dir/src/LSDetectorHit.cc.o
 example: CMakeFiles/example.dir/src/LSDetectorSD.cc.o
 example: CMakeFiles/example.dir/src/LSDetectorSDMessenger.cc.o
@@ -608,7 +624,7 @@ example: /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/lib64/
 example: /home/ihep/cuda-10.1/install_cuda_10.1/lib64/libcudart_static.a
 example: /usr/lib64/librt.so
 example: CMakeFiles/example.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ihep/LS_Sim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable example"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/example.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

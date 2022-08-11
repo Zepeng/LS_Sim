@@ -47,16 +47,21 @@
 
 #include "Randomize.hh"
 
+#ifdef WITH_G4CXOPTICKS
 #include "OPTICKS_LOG.hh"
 #include "G4CXOpticks.hh"
+#include "SEventConfig.hh"
+#endif
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 int main(int argc,char** argv)
 {
   // Detect interactive mode (if no arguments) and define UI session
-  //
+#ifdef WITH_G4CXOPTICKS
   OPTICKS_LOG(argc, argv);
-
+  SEventConfig::SetRGModeSimulate();
+  SEventConfig::SetStandardFullDebug(); // controls which and dimensions of SEvt arrays 
+#endif
   G4UIExecutive* ui = 0;
   if ( argc == 1 ) {
     ui = new G4UIExecutive(argc, argv);
@@ -115,6 +120,8 @@ int main(int argc,char** argv)
     ui->SessionStart();
     delete ui;
   }
+	
+  //LOG(info) << " end of  ";
 
   // Job termination
   // Free the store: user actions, physics_list and detector_description are

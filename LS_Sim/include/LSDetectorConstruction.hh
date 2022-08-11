@@ -10,11 +10,14 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "globals.hh"
 #include "G4ThreeVector.hh"
+#include "G4CXOpticks.hh"
 
 class G4VPhysicalVolume;
 class G4LogicalVolume;
 class G4Material;
 class G4OpticalSurface;
+
+class G4CXOpticks;
 
 /// Detector construction class to define materials and geometry.
 
@@ -49,6 +52,8 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         
         G4OpticalSurface* m_mirror_opsurf;
         G4OpticalSurface* Photocathode_opsurf;
+		G4CXOpticks* m_g4cxopticks;
+		int m_opticksMode;
 
         G4double coeff_abslen;
         G4double coeff_rayleigh;

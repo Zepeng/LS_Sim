@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rm -rf build
-mkdir build
+#rm -rf build
+#mkdir build
 pushd build 
 cmake ..
 make

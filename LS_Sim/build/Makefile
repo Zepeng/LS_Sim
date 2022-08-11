@@ -403,6 +403,30 @@ src/LSDetectorConstruction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/src/LSDetectorConstruction.cc.s
 .PHONY : src/LSDetectorConstruction.cc.s
 
+src/LSDetectorConstruction_Opticks.o: src/LSDetectorConstruction_Opticks.cc.o
+.PHONY : src/LSDetectorConstruction_Opticks.o
+
+# target to build an object file
+src/LSDetectorConstruction_Opticks.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o
+.PHONY : src/LSDetectorConstruction_Opticks.cc.o
+
+src/LSDetectorConstruction_Opticks.i: src/LSDetectorConstruction_Opticks.cc.i
+.PHONY : src/LSDetectorConstruction_Opticks.i
+
+# target to preprocess a source file
+src/LSDetectorConstruction_Opticks.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.i
+.PHONY : src/LSDetectorConstruction_Opticks.cc.i
+
+src/LSDetectorConstruction_Opticks.s: src/LSDetectorConstruction_Opticks.cc.s
+.PHONY : src/LSDetectorConstruction_Opticks.s
+
+# target to generate assembly for a file
+src/LSDetectorConstruction_Opticks.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.s
+.PHONY : src/LSDetectorConstruction_Opticks.cc.s
+
 src/LSDetectorHit.o: src/LSDetectorHit.cc.o
 .PHONY : src/LSDetectorHit.o
 
@@ -852,6 +876,9 @@ help:
 	@echo "... src/LSDetectorConstruction.o"
 	@echo "... src/LSDetectorConstruction.i"
 	@echo "... src/LSDetectorConstruction.s"
+	@echo "... src/LSDetectorConstruction_Opticks.o"
+	@echo "... src/LSDetectorConstruction_Opticks.i"
+	@echo "... src/LSDetectorConstruction_Opticks.s"
 	@echo "... src/LSDetectorHit.o"
 	@echo "... src/LSDetectorHit.i"
 	@echo "... src/LSDetectorHit.s"

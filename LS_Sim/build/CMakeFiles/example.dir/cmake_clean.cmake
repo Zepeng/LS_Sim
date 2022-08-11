@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/example.dir/src/LSCherenkov.cc.o.d"
   "CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o"
   "CMakeFiles/example.dir/src/LSDetectorConstruction.cc.o.d"
+  "CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o"
+  "CMakeFiles/example.dir/src/LSDetectorConstruction_Opticks.cc.o.d"
   "CMakeFiles/example.dir/src/LSDetectorHit.cc.o"
   "CMakeFiles/example.dir/src/LSDetectorHit.cc.o.d"
   "CMakeFiles/example.dir/src/LSDetectorSD.cc.o"
