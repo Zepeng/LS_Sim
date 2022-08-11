@@ -408,6 +408,8 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
     //                        Photocathode_opsurf);
 
 	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
+	assert(m_g4cxopticks);
+	std::cout<<"m_g4cxopticks->desc = "<<m_g4cxopticks->desc();
 
     return worldPV;
 }

@@ -490,4 +490,50 @@ CMakeFiles/example.dir/src/LSEventAction.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4SensitiveVolumeList.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4CollectionNameVector.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSDFilter.hh \
- /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4HCtable.hh
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4HCtable.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/SysRap/PLOG.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Log.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Logger.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Appenders/IAppender.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Record.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Severity.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Util.h \
+ /cvmfs/juno.ihep.ac.cn/centos7_amd64_gcc830/contrib/gcc/8.3.0/include/c++/8.3.0/cassert \
+ /usr/include/fcntl.h /usr/include/bits/fcntl.h \
+ /usr/include/bits/fcntl-linux.h /usr/include/bits/uio.h \
+ /usr/include/linux/falloc.h /usr/include/bits/stat.h \
+ /usr/include/sys/stat.h /usr/include/sys/syscall.h \
+ /usr/include/asm/unistd.h /usr/include/asm/unistd_64.h \
+ /usr/include/bits/syscall.h /usr/include/sys/time.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Init.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Formatters/CsvFormatter.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Formatters/TxtFormatter.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Appenders/RollingFileAppender.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Converters/UTF8Converter.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/SysRap/SYSRAP_API_EXPORT.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/SysRap/SAr.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/SysRap/PLOG_INIT.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Appenders/ColorConsoleAppender.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Appenders/ConsoleAppender.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/WinApi.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Formatters/FuncMessageFormatter.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Formatters/MessageOnlyFormatter.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/SysRap/PlainFormatter.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/G4CX/G4CXOpticks.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/G4CX/G4CX_API_EXPORT.hh \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/cuda_runtime.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/crt/host_config.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/builtin_types.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/device_types.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/crt/host_defines.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/driver_types.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/vector_types.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/surface_types.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/texture_types.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/library_types.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/channel_descriptor.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/cuda_runtime_api.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/cuda_device_runtime_api.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/driver_functions.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/vector_functions.h \
+ /home/ihep/cuda-10.1/install_cuda_10.1/include/vector_functions.hpp

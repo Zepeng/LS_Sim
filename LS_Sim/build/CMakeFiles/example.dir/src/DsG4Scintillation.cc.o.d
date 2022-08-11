@@ -429,4 +429,8 @@ CMakeFiles/example.dir/src/DsG4Scintillation.cc.o: \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4VSubCutProducer.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4MaterialCutsCouple.hh \
  /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Gamma.hh \
- /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Electron.hh
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Electron.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/U4/U4.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/externals/plog/include/plog/Severity.h \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/Geant4/10.04.p02.juno/include/Geant4/G4Types.hh \
+ /home/ihep/juno-cmake-version/JUNOSOFT/ExternalLibs/opticks/head/include/U4/U4_API_EXPORT.hh

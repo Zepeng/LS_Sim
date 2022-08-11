@@ -1,6 +1,8 @@
 #include "LSPmtSD.hh"
 #include "LSDetectorHit.hh"
 
+
+
 LSPmtSD::LSPmtSD(G4String name)
     : G4VSensitiveDetector(name),
     fPMTHitCollection(nullptr),
@@ -42,7 +44,8 @@ G4bool LSPmtSD::ProcessHits(G4Step*, G4TouchableHistory* ) {
 
 
 
-void LSPmtSD::EndOfEvent(G4HCofThisEvent*) {}
+void LSPmtSD::EndOfEvent(G4HCofThisEvent*) {
+}
 
 void LSPmtSD::clear() {}
 

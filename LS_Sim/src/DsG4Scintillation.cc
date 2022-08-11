@@ -9,6 +9,9 @@
 #include "G4Electron.hh"
 #include "globals.hh"
 
+#ifdef WITH_G4CXOPTICKS
+#include "U4.hh"
+#endif
 
 ///////////////////////////////////////////////////////////////////
 
@@ -42,6 +45,7 @@ DsG4Scintillation::DsG4Scintillation(const G4String& processName,
     , flagDecayTimeFast(true), flagDecayTimeSlow(true)
     , fPhotonWeight(1.0)
     , m_noop(false)
+	, m_opticksMode(1)
 {
     SetProcessSubType(fScintillation);
     fTrackSecondariesFirst = false;
@@ -416,6 +420,23 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
             ScintillationIntegral =
                 (G4PhysicsOrderedFreeVector*)((*theSlowIntegralTable)(materialIndex));
         }
+
+#ifdef WITH_G4CXOPTICKS
+		if(scnt == 1)
+		{
+			G4int NumPhoton = Num;
+        	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
+        	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
+        	if(is_opticks_genstep && (m_opticksMode & 1))
+        	{
+        	    //NumPhoton = std::min( NumPhoton, 3 );  // for debugging purposes it helps to have less photons
+        	    U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, NumPhoton, 0u , ScintillationTime);//scnt is 1-based
+        	}
+			break;		
+		}
+#endif
+
+
 
         if (!ScintillationIntegral) continue;
         

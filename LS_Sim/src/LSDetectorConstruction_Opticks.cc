@@ -89,9 +89,9 @@ G4CXOpticks* LSDetectorConstruction_Opticks::Setup(const G4VPhysicalVolume* worl
 
     // 1. pass geometry to Opticks, translate it to GPU and return sensor placements  
 
-    G4CXOpticks* g4cx = new G4CXOpticks ; 
+    G4CXOpticks* g4cx = G4CXOpticks::Get() ; 
 	//const char * gdml_path = 
-    g4cx->setGeometry(); 
+    g4cx->setGeometry(world); 
 		
 	LOG(info) << "] WITH_G4OPTICKS " ; 
     return g4cx ; 

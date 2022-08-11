@@ -201,6 +201,7 @@ protected:
         //mean number of true photons per secondary track in GLG4Scint
         G4double fPhotonWeight;
         bool m_noop;
+		int m_opticksMode;
 
 
 

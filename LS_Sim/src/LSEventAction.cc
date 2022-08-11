@@ -5,6 +5,12 @@
 #include "G4RunManager.hh"
 #include "G4SDManager.hh"
 
+#ifdef WITH_G4CXOPTICKS
+#include "PLOG.hh"
+#include "G4CXOpticks.hh"
+#include <cuda_runtime.h>
+#endif
+
 LSEventAction::LSEventAction()
 : G4UserEventAction()
 {;}
@@ -27,6 +33,16 @@ void LSEventAction::BeginOfEventAction(const G4Event* evt)
 
 void LSEventAction::EndOfEventAction(const G4Event* event)
 {
+
+#ifdef WITH_G4CXOPTICKS
+    G4CXOpticks* gx = G4CXOpticks::Get();
+    LOG(info)<<"gx->simulate()";
+    LOG(info)<< gx->desc();
+    gx->simulate();
+    cudaDeviceSynchronize();
+    //gx->save();
+#endif
+    //
     LSAnalysisManager* analysis = LSAnalysisManager::getInstance();
     G4int evtId = event->GetEventID();
     analysis -> analyseEventID(evtId);

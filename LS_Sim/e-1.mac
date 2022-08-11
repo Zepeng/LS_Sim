@@ -15,4 +15,4 @@
 /LS/gun/momtype1 iso
 /LS/gun/position1 0 0 0
 /LS/sd/efficiency 0.18
-/run/beamOn 3
+/run/beamOn 1

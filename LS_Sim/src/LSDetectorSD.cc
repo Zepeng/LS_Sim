@@ -12,6 +12,12 @@
 #include "G4UnitsTable.hh"
 #include "G4VProcess.hh"
 
+#ifdef WITH_G4CXOPTICKS
+#include <cuda_runtime.h>
+#include "OPTICKS_LOG.hh"
+#include "G4CXOpticks.hh"
+#include "PLOG.hh"
+#endif
 LSDetectorSD::LSDetectorSD( const G4String& name, 
                   const G4String& hitsCollectionName)
     : G4VSensitiveDetector(name),
@@ -128,6 +134,16 @@ void LSDetectorSD::EndOfEvent(G4HCofThisEvent*)
     //       << nofSctHits << " Scintillation hits, the original photons are "  
     //       << nofOP << " ======= !"
     //       << G4endl;
+
+
+#ifdef WITH_G4CXOPTICKS
+	G4CXOpticks* gx = G4CXOpticks::Get();
+	LOG(info)<<"gx->simulate()";
+	LOG(info)<< gx->desc();
+	//gx->simulate();
+	//cudaDeviceSynchronize();
+	//gx->save();
+#endif
 
     analysis -> analyseTotNPE(nofHits);
     analysis -> analyseCerNPE(nofCerHits);
