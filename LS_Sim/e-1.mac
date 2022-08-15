@@ -14,5 +14,5 @@
 /LS/gun/energy1 1.00 MeV
 /LS/gun/momtype1 iso
 /LS/gun/position1 0 0 0
-/LS/sd/efficiency 0.18
+/LS/sd/efficiency 1.0
 /run/beamOn 1

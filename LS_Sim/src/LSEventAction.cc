@@ -40,7 +40,7 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
     LOG(info)<< gx->desc();
     gx->simulate();
     cudaDeviceSynchronize();
-    //gx->save();
+    gx->save();
 #endif
     //
     LSAnalysisManager* analysis = LSAnalysisManager::getInstance();

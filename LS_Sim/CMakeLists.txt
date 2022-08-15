@@ -21,7 +21,9 @@ include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 # You can set WITH_GEANT4_VIS to OFF via the command line or ccmake/cmake-gui
 # to build a batch mode only executable
 #
-option(WITH_GEANT4_VIS "Build example with Geant4 Vis drivers" ON)
+
+option(WITH_GEANT4_VIS "Build example with Geant4 Vis drivers" OFF)
+message("WITH_GEANT4_VIS: ${WITH_GEANT4_VIS}")
 if(WITH_GEANT4_VIS)
   find_package(Geant4 REQUIRED ui_all vis_all)
 else()
@@ -45,7 +47,7 @@ set(CMAKE_BUILD_RPATH
 #----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 #
-include(${Geant4_USE_FILE})
+#include(${Geant4_USE_FILE})
 
 #----------------------------------------------------------------------------
 # Setup ROOT include directories and compile definitions
@@ -79,7 +81,7 @@ include(${ROOT_USE_FILE})
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
 #
-include_directories(${Geant4_INCLUDE_DIR})
+#include_directories(${Geant4_INCLUDE_DIR})
 include_directories(${ROOT_INCLUDE_DIR})
 #include_directories(${OPTICKS_INCLUDE_DIR})
 
@@ -94,10 +96,13 @@ file(GLOB_RECURSE headers "${PROJECT_SOURCE_DIR}/include/*.hh")
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
+
+message("Geant4 Libraries: ${Geant4_LIBRARIES}")
+
 add_executable(example example.cc ${sources} ${headers})
 target_link_libraries(example 
-						PUBLIC
-						${Geant4_LIBRARIES}
+						#PUBLIC
+						#${Geant4_LIBRARIES}
 						PUBLIC 
 						${ROOT_LIBRARIES}
 						PUBLIC
