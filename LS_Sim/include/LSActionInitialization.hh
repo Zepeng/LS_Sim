@@ -3,6 +3,7 @@
 
 #include "G4VUserActionInitialization.hh"
 
+class LSActionInitializationMessenger;
 class LSActionInitialization : public G4VUserActionInitialization
 {
     public:
@@ -10,6 +11,10 @@ class LSActionInitialization : public G4VUserActionInitialization
         virtual ~LSActionInitialization();
 
         virtual void Build() const;
+		void SetOpticksMode(int mode);
+	private:
+		LSActionInitializationMessenger* theMessenger;
+		int m_opticksMode;
 };
 
 

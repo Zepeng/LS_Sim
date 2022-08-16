@@ -76,7 +76,8 @@ void LSPhysicsList::ConstructProcess()
 #include "G4OpRayleigh.hh"
 #include "G4OpBoundaryProcess.hh"
 //#include "G4Cerenkov.hh"
-#include "LSCherenkov.hh"
+//#include "LSCherenkov.hh"
+#include "G4Cerenkov_modified.hh"
 #include "DsG4Scintillation.hh"
 
 void LSPhysicsList::ConstructOpticalProcess()
@@ -84,7 +85,8 @@ void LSPhysicsList::ConstructOpticalProcess()
 
     // Cerenkov Process :
     //G4Cerenkov* theCerProcess             = new G4Cerenkov();
-    LSCherenkov* theCerProcess   = new LSCherenkov();
+    //LSCherenkov* theCerProcess   = new LSCherenkov();
+    G4Cerenkov_modified * theCerProcess = new G4Cerenkov_modified();
     theCerProcess->SetMaxNumPhotonsPerStep(300);
     theCerProcess->SetTrackSecondariesFirst(true);
     theCerProcess->SetScaleFactor(1.0);

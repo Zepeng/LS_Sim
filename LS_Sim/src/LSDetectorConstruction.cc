@@ -1,9 +1,8 @@
 
 /// \file LSDetectorConstruction.cc
 /// \brief Implementation of the LSDetectorConstruction class
-
+#include "LSDetectorMessenger.hh"
 #include "LSDetectorConstruction.hh"
-#include "LSDetectorConstruction_Opticks.hh"
 #include "LSDetectorSD.hh"
 
 #include "G4PhysicalConstants.hh"
@@ -32,6 +31,12 @@
 #include "G4VisAttributes.hh"
 #include "G4Colour.hh"
 
+#ifdef WITH_G4CXOPTICKS
+#include "G4CXOpticks.hh"
+#include "PLOG.hh"
+#include "LSDetectorConstruction_Opticks.hh"
+#endif
+
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -48,19 +53,24 @@ LSDetectorConstruction::LSDetectorConstruction()
 	coeff_rayleigh(0.643), 
 	coeff_efficiency(0.5),
 	m_g4cxopticks(nullptr),
-	m_opticksMode(1)
-{ 
-;
+	m_opticksMode(0)
+{
+	theMessenger  = new LSDetectorMessenger(this); 
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 LSDetectorConstruction::~LSDetectorConstruction()
-{ }
+{
+	delete theMessenger; 
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
+void LSDetectorConstruction::SetOpticksMode(int mode){
+		m_opticksMode = mode;
+}
 
 G4VPhysicalVolume* LSDetectorConstruction::Construct()
 {   
@@ -407,10 +417,11 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
     //                        logicDet,
     //                        Photocathode_opsurf);
 
+#ifdef WITH_G4CXOPTICKS
 	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
 	assert(m_g4cxopticks);
 	std::cout<<"m_g4cxopticks->desc = "<<m_g4cxopticks->desc();
-
+#endif
     return worldPV;
 }
 

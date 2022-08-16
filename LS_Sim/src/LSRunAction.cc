@@ -15,7 +15,7 @@
 
 
 LSRunAction::LSRunAction()
-: G4UserRunAction(), fSaveRndm(0), fAutoSeed(true)
+: G4UserRunAction(), fSaveRndm(0), fAutoSeed(false)
 {
     fRunMessenger = new MyAnalysisMessenger();
     fConSpecMessenger = new ContinuousSpectrumMessenger();

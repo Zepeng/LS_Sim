@@ -12,7 +12,9 @@
 #endif
 
 LSEventAction::LSEventAction()
-: G4UserEventAction()
+:
+ G4UserEventAction(),
+ m_opticksMode(0)
 {;}
 
 LSEventAction::~LSEventAction()
@@ -22,6 +24,10 @@ LSEventAction::~LSEventAction()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
+
+void LSEventAction::SetOpticksMode(int mode){
+	m_opticksMode = mode;
+}
 
 void LSEventAction::BeginOfEventAction(const G4Event* evt)
 {
@@ -35,12 +41,15 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
 {
 
 #ifdef WITH_G4CXOPTICKS
-    G4CXOpticks* gx = G4CXOpticks::Get();
-    LOG(info)<<"gx->simulate()";
-    LOG(info)<< gx->desc();
-    gx->simulate();
-    cudaDeviceSynchronize();
-    gx->save();
+	if( m_opticksMode & 1 ){
+
+   		 G4CXOpticks* gx = G4CXOpticks::Get();
+   		 LOG(info)<<"gx->simulate()";
+   		 LOG(info)<< gx->desc();
+   		 gx->simulate();
+   		 cudaDeviceSynchronize();
+   		 gx->save();
+	}
 #endif
     //
     LSAnalysisManager* analysis = LSAnalysisManager::getInstance();

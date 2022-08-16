@@ -72,6 +72,10 @@
 
 #include "LSCherenkov.hh"
 
+#ifdef WITH_G4CXOPTICKS
+#include "U4.hh"
+#endif
+
 LSCherenkov::LSCherenkov(const G4String& processName, G4ProcessType type)
            : G4VProcess(processName, type),
              fTrackSecondariesFirst(false),
@@ -239,6 +243,28 @@ LSCherenkov::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
                      GetAverageNumberOfPhotons(charge,beta1,aMaterial,Rindex);
   G4double MeanNumberOfPhotons2 =
                      GetAverageNumberOfPhotons(charge,beta2,aMaterial,Rindex);
+
+
+
+#ifdef WITH_G4CXOPTICKS
+
+  U4::CollectGenstep_G4Cerenkov_modified(  
+      &aTrack,  
+      &aStep,  
+      fNumPhotons, 
+      BetaInverse, 
+      Pmin, 
+      Pmax, 
+      maxCos, 
+      maxSin2, 
+      MeanNumberOfPhotons1, 
+      MeanNumberOfPhotons2 
+  );
+      
+#endif
+
+
+
 
   for (G4int i = 0; i < fNumPhotons; i++) {
 
