@@ -137,9 +137,9 @@ void LSDetectorSD::EndOfEvent(G4HCofThisEvent*)
 
 
 #ifdef WITH_G4CXOPTICKS
-	G4CXOpticks* gx = G4CXOpticks::Get();
-	LOG(info)<<"gx->simulate()";
-	LOG(info)<< gx->desc();
+	//G4CXOpticks* gx = G4CXOpticks::Get();
+	//LOG(info)<<"gx->simulate()";
+	//LOG(info)<< gx->desc();
 	//gx->simulate();
 	//cudaDeviceSynchronize();
 	//gx->save();

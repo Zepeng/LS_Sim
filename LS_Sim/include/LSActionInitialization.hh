@@ -2,7 +2,7 @@
 #define LSActionInitialization_h 1
 
 #include "G4VUserActionInitialization.hh"
-
+class LSEventAction;
 class LSActionInitializationMessenger;
 class LSActionInitialization : public G4VUserActionInitialization
 {
@@ -15,6 +15,7 @@ class LSActionInitialization : public G4VUserActionInitialization
 	private:
 		LSActionInitializationMessenger* theMessenger;
 		int m_opticksMode;
+		LSEventAction* eventAction;
 };
 
 

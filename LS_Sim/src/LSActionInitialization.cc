@@ -12,6 +12,7 @@ LSActionInitialization::LSActionInitialization()
  : G4VUserActionInitialization()
 {
    m_opticksMode = 0;
+   eventAction = new LSEventAction();  
    theMessenger  = new LSActionInitializationMessenger(this);
 
 }
@@ -21,12 +22,15 @@ LSActionInitialization::LSActionInitialization()
 LSActionInitialization::~LSActionInitialization()
 {
   delete theMessenger;
+  //delete eventAction; //don't need delete
 }
 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 void LSActionInitialization::SetOpticksMode(int mode){
-	m_opticksMode = mode;	
+
+	G4cout<<"LSActionInitialization::SetOpticksMode"<< mode;	
+	eventAction->SetOpticksMode(mode);	
 }
 
 void LSActionInitialization::Build() const
@@ -36,8 +40,9 @@ void LSActionInitialization::Build() const
   LSRunAction* runAction = new LSRunAction();
   SetUserAction(runAction);
   
-  LSEventAction* eventAction = new LSEventAction();
-  eventAction->SetOpticksMode(m_opticksMode);
+  //eventAction = new LSEventAction();
+  //G4cout<<"LSActionInitialization::Build() : "<< m_opticksMode ;
+  //eventAction->SetOpticksMode(m_opticksMode);
   SetUserAction(eventAction);
 
   SetUserAction(new LSTrackingAction);

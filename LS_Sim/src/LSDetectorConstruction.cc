@@ -419,8 +419,11 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 
 #ifdef WITH_G4CXOPTICKS
 	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
-	assert(m_g4cxopticks);
-	std::cout<<"m_g4cxopticks->desc = "<<m_g4cxopticks->desc();
+	if(m_opticksMode & 1){
+		assert(m_g4cxopticks);
+		assert(m_g4cxopticks);
+	}
+	//assert(m_g4cxopticks);
 #endif
     return worldPV;
 }

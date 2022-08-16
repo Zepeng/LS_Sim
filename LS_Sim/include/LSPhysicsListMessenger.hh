@@ -8,6 +8,7 @@ class LSPhysicsList;
 class G4UIcommand;
 class G4UIcmdWithABool;
 class G4UIcmdWithADouble;
+class G4UIcmdWithAnInteger;
 
 class LSPhysicsListMessenger : public G4UImessenger {
 
@@ -24,6 +25,7 @@ class LSPhysicsListMessenger : public G4UImessenger {
         G4UIdirectory       *phyDirectory;
         G4UIcmdWithABool    *opticalCmd;
         G4UIcmdWithADouble  *yieldCmd;
+		G4UIcmdWithAnInteger*opticksModeCmd;
 };
 
 #endif

@@ -1,4 +1,11 @@
 /random/setSeeds 144 144
+
+#this is about opticks 0 : only G4  1: only Opticks  3 : G4+Opticks
+/LS/action/opticksMode 3
+/LS/detConstruction/opticksMode 3
+/LS/phys/opticksMode 3
+#----------------------#
+
 /LS/phys/enableoptical true
 /LS/phys/yield 1.0
 /LS/spec/activate false

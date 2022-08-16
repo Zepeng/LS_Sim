@@ -3,6 +3,7 @@
 #include "G4UIdirectory.hh"
 #include "G4UIcmdWithABool.hh"
 #include "G4UIcmdWithADouble.hh"
+#include "G4UIcmdWithAnInteger.hh"
 
 LSPhysicsListMessenger::LSPhysicsListMessenger(LSPhysicsList* phyList)
     : LSPhyList(phyList)
@@ -21,6 +22,11 @@ LSPhysicsListMessenger::LSPhysicsListMessenger(LSPhysicsList* phyList)
     yieldCmd -> SetGuidance("Set scintillation yield ratio.");
     yieldCmd -> SetParameterName("yieldratio", true);
     yieldCmd -> SetDefaultValue(1.0);
+   
+	opticksModeCmd = new G4UIcmdWithAnInteger("/LS/phys/opticksMode",this);
+	opticksModeCmd -> SetGuidance("Opticks Mode Simulation.");
+	opticksModeCmd -> SetParameterName("opticksmode", true);
+	opticksModeCmd -> SetDefaultValue(0u);
 
 }
 
@@ -41,6 +47,8 @@ void LSPhysicsListMessenger::SetNewValue
         LSPhyList -> DoOpticalSim(opticalCmd->GetNewBoolValue(newValues));
     else if (cmd == yieldCmd) 
         LSPhyList -> SetYieldRatio(yieldCmd->GetNewDoubleValue(newValues));
+	else if (cmd == opticksModeCmd)
+		LSPhyList -> SetOpticksMode(opticksModeCmd->GetNewIntValue(newValues));
 
     else
         G4cout << "Error: Unknow Command !!! " << G4endl;

@@ -46,7 +46,7 @@ DsG4Scintillation::DsG4Scintillation(const G4String& processName,
     , flagDecayTimeFast(true), flagDecayTimeSlow(true)
     , fPhotonWeight(1.0)
     , m_noop(false)
-	, m_opticksMode(1)
+	, m_opticksMode(0)
 {
     SetProcessSubType(fScintillation);
     fTrackSecondariesFirst = false;
@@ -90,9 +90,9 @@ DsG4Scintillation::~DsG4Scintillation()
 // Methods
 ////////////
 
+
 // AtRestDoIt
 // ----------
-//
 G4VParticleChange*
 DsG4Scintillation::AtRestDoIt(const G4Track& aTrack, const G4Step& aStep)
 
@@ -460,15 +460,17 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
         for (G4int i = 0; i < Num; i++) { //Num is # of 2ndary tracks now
             // Determine photon energy
 
-        if(scnt == 2) {
-            ScintillationTime = slowTimeConstant;
-            if(flagDecayTimeSlow && G4UniformRand() < slowerRatio && (!flagReemission)) {
-				ScintillationTime = slowerTimeConstant;
+        	if(scnt == 2) {
+        	    ScintillationTime = slowTimeConstant;
+        	    if(flagDecayTimeSlow && G4UniformRand() < slowerRatio && (!flagReemission)) {
+					ScintillationTime = slowerTimeConstant;
 #ifdef WITH_G4CXOPTICKS
-				slower_photons ++;
-#endif
-			}
-        }
+					slower_photons ++;
+#endif  	
+				}
+        	}
+
+			if( m_opticksMode == 1 ) continue;
 
             G4double sampledEnergy;
             if ( !flagReemission ) {

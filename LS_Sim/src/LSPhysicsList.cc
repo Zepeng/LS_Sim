@@ -18,6 +18,7 @@ LSPhysicsList::LSPhysicsList() : G4VModularPhysicsList()
 
     m_enableoptical = true;
     m_yield = 1.0;
+	m_opticksMode = 0;
 
     emPhysicsList = new G4EmLivermorePhysics();
     decayPhysicsList = new G4DecayPhysics();
@@ -33,6 +34,9 @@ LSPhysicsList::~LSPhysicsList() {
     delete theMessenger;
 }
 
+void LSPhysicsList::SetOpticksMode(int mode){
+	m_opticksMode = mode;
+}
 void LSPhysicsList::SetCuts() {
     //SetCutsWithDefault();
     defaultCutValue = 1.0*mm;
@@ -93,6 +97,7 @@ void LSPhysicsList::ConstructOpticalProcess()
 
     // Scintillation Process :
     DsG4Scintillation* scint = new DsG4Scintillation();
+	scint->SetOpticksMode(m_opticksMode);
     scint->SetDoQuenching(true);
     scint->SetBirksConstant1(6.5e-3*g/cm2/MeV);
     scint->SetBirksConstant2(1.5e-6*(g/cm2/MeV)*(g/cm2/MeV));

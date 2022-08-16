@@ -41,6 +41,7 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
 {
 
 #ifdef WITH_G4CXOPTICKS
+	LOG(info)<< "LSEventAction::EndOfEventAction mode = "<<m_opticksMode;
 	if( m_opticksMode & 1 ){
 
    		 G4CXOpticks* gx = G4CXOpticks::Get();

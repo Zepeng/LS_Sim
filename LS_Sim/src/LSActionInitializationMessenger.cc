@@ -31,9 +31,12 @@ LSActionInitializationMessenger::~LSActionInitializationMessenger()
 void LSActionInitializationMessenger::SetNewValue
 (G4UIcommand* cmd, G4String newValues) {
     
-    if (cmd == opticksModeCmd) 
-       m_LSAction -> SetOpticksMode(opticksModeCmd->GetNewIntValue(newValues));
-    else
+    if (cmd == opticksModeCmd){ 
+		G4cout<<"opticksModeCmd->GetNewIntValue(newValues) = : " << opticksModeCmd->GetNewIntValue(newValues); 
+		m_LSAction -> SetOpticksMode(opticksModeCmd->GetNewIntValue(newValues));
+	}
+    else{
         G4cout << "Error: Unknow Command !!! " << G4endl;
+	}
 }
 
