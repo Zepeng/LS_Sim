@@ -45,6 +45,7 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4LogicalVolume* CDConstruction();
         G4LogicalVolume* SensDetConstruction();
         G4LogicalVolume* PmtConstruction();
+		G4LogicalVolume* InnerWaterConstruction();
 
     private:
         G4bool fCheckOverlaps;
@@ -65,6 +66,8 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4double coeff_abslen;
         G4double coeff_rayleigh;
         G4double coeff_efficiency;
+
+		
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -599,16 +599,22 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
 #ifdef WITH_G4CXOPTICKS
 		if(scnt == 2)
 		{
+			
 			G4int NumPhoton = Num;
         	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
         	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
         	if(is_opticks_genstep && (m_opticksMode & 1))
         	{
         	    //NumPhoton = std::min( NumPhoton, 3 );  // for debugging purposes it helps to have less photons
-        	    U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, slower_photons, 2u , slowerTimeConstant);//scnt is 1-based
-				U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, slow_photons-slower_photons, 1u , slowTimeConstant);
+        	    if(slower_photons > 0 ){
+        	    	U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, slower_photons, 2u , slowerTimeConstant);
+				}//scnt is 1-based
+				if(slow_photons-slower_photons > 0){			
+					U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, slow_photons-slower_photons, 1u , slowTimeConstant);
+				}
 				LOG(info)<<" end of check_photon = "<< check_photon;
 			}
+
 			//break;
 			//LOG(info)<<" end of check_photon = "<< check_photon;
 		}

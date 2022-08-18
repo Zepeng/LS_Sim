@@ -1,9 +1,9 @@
 /random/setSeeds 144 144
 
 #this is about opticks 0 : only G4  1: only Opticks  3 : G4+Opticks
-/LS/action/opticksMode 3
-/LS/detConstruction/opticksMode 3
-/LS/phys/opticksMode 3
+/LS/action/opticksMode 1
+/LS/detConstruction/opticksMode 1
+/LS/phys/opticksMode 1
 #----------------------#
 
 /LS/phys/enableoptical true
@@ -21,5 +21,5 @@
 /LS/gun/energy1 1.00 MeV
 /LS/gun/momtype1 iso
 /LS/gun/position1 0 0 0
-/LS/sd/efficiency 1.0
-/run/beamOn 1
+/LS/sd/efficiency 1
+/run/beamOn 100

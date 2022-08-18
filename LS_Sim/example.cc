@@ -61,6 +61,10 @@ int main(int argc,char** argv)
   OPTICKS_LOG(argc, argv);
   SEventConfig::SetRGModeSimulate();
   SEventConfig::SetStandardFullDebug(); // controls which and dimensions of SEvt arrays 
+  const char * mask = "genstep,photon,hit,record" ;
+  SEventConfig::SetCompMask(mask);
+  SEventConfig::SetMaxGenstep(3000000);
+  SEventConfig::SetMaxPhoton(70000000);
 #endif
   G4UIExecutive* ui = 0;
   if ( argc == 1 ) {

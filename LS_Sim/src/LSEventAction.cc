@@ -8,6 +8,7 @@
 #ifdef WITH_G4CXOPTICKS
 #include "PLOG.hh"
 #include "G4CXOpticks.hh"
+#include "SEvt.hh"
 #include <cuda_runtime.h>
 #endif
 
@@ -50,6 +51,7 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
    		 gx->simulate();
    		 cudaDeviceSynchronize();
    		 gx->save();
+		 SEvt::Clear();
 	}
 #endif
     //

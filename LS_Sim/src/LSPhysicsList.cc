@@ -90,10 +90,12 @@ void LSPhysicsList::ConstructOpticalProcess()
     // Cerenkov Process :
     //G4Cerenkov* theCerProcess             = new G4Cerenkov();
     //LSCherenkov* theCerProcess   = new LSCherenkov();
-    G4Cerenkov_modified * theCerProcess = new G4Cerenkov_modified();
+    
+	G4Cerenkov_modified * theCerProcess = nullptr;
+	/*G4Cerenkov_modified * theCerProcess = new G4Cerenkov_modified();
     theCerProcess->SetMaxNumPhotonsPerStep(300);
     theCerProcess->SetTrackSecondariesFirst(true);
-    theCerProcess->SetScaleFactor(1.0);
+    theCerProcess->SetScaleFactor(1.0);*/
 
     // Scintillation Process :
     DsG4Scintillation* scint = new DsG4Scintillation();
@@ -140,7 +142,7 @@ void LSPhysicsList::ConstructOpticalProcess()
         }
 
         if (m_enableoptical) {
-            if(theCerProcess->IsApplicable(*particle)) {
+            if(theCerProcess && theCerProcess->IsApplicable(*particle)) {
                 pmanager -> AddProcess(theCerProcess);
                 pmanager -> SetProcessOrdering(theCerProcess, idxPostStep);
             }

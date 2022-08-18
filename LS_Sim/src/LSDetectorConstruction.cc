@@ -266,6 +266,11 @@ void LSDetectorConstruction::DefineMaterials()
     Photocathode_opsurf = new G4OpticalSurface("Photocathode_opsurf");
     Photocathode_opsurf->SetType(dielectric_metal); // ignored if RINDEX defined
     Photocathode_opsurf->SetFinish(polished);
+	Photocathode_opsurf->SetModel(unified);
+    //steel_surface->SetType(dielectric_metal);
+    //steel_surface->SetFinish(ground);
+   	Photocathode_opsurf->SetSigmaAlpha(0.2);
+
     Photocathode_opsurf->SetMaterialPropertiesTable(G4Material::GetMaterial("photocathode")->GetMaterialPropertiesTable() );
 
 
@@ -294,12 +299,27 @@ G4LogicalVolume* LSDetectorConstruction::CDConstruction()
     return logicCell;
 }
 
+G4LogicalVolume* LSDetectorConstruction::InnerWaterConstruction(){
+
+	G4Sphere* solidInnerWater = new G4Sphere("InnerWaterSolid", 0*mm, 18000*mm, 0*deg, 360*deg, 0, 180*deg);
+
+    G4LogicalVolume* logicInnerWater = 
+        new G4LogicalVolume(solidInnerWater, 
+                             water,
+                            "logicInnerWater");
+
+    
+
+
+    return logicInnerWater;
+}
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 G4LogicalVolume* LSDetectorConstruction::SensDetConstruction()
 {
-    G4Sphere* solidDet = 
-        new G4Sphere("detSolid", 18000*mm, 18010*mm, 0*deg, 360*deg, 0, 180*deg);
+    //G4Sphere* solidDet = 
+    //    new G4Sphere("detSolid", 18000*mm, 18010*mm, 0*deg, 360*deg, 0, 180*deg);
         //new G4Sphere("detSolid", 10*cm, 11*cm, 0, 2*pi, 0, pi);
 
     //G4Box* solidHole = 
@@ -307,6 +327,7 @@ G4LogicalVolume* LSDetectorConstruction::SensDetConstruction()
 
     //G4VSolid* solidSub = 
     //    new G4SubtractionSolid("subSolid", solidDet, solidHole, 0, G4ThreeVector(0, 0, 18005*mm));
+	G4Sphere* solidDet = new G4Sphere("detSolid", 0*mm, 18010*mm, 0*deg, 360*deg, 0, 180*deg);
 
     G4LogicalVolume* logicDet = 
         new G4LogicalVolume(solidDet, 
@@ -384,21 +405,6 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
                      fCheckOverlaps); // checking overlaps 
 
 
-    //design of cuvette
-    //
-
-    G4LogicalVolume* logicCell = CDConstruction();
-    G4VPhysicalVolume* physCell = 
-        new G4PVPlacement(0,                       
-                G4ThreeVector(0, 0, 0), 
-                logicCell,                
-                "physCell",              
-                worldLV,              
-                false,                   
-                0,                       
-                fCheckOverlaps);  
-    logicCell   ->  SetVisAttributes(boxVisAtt);  // set visualization
-    
 
     G4LogicalVolume* logicDet = SensDetConstruction();
     G4VPhysicalVolume* physDet =
@@ -411,11 +417,47 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
                           0,
                           fCheckOverlaps);
     logicDet -> SetVisAttributes(detVisAtt);
+	
+    G4LogicalVolume* logicInnerWater = InnerWaterConstruction();
+    G4VPhysicalVolume* physInnerWater =
+        new G4PVPlacement(0,
+                          G4ThreeVector(0,0,0),
+                          logicInnerWater,
+                          "physInnerWater",
+                          logicDet,
+                          false,
+                          0,
+                          fCheckOverlaps);
+    //logicDet -> SetVisAttributes(detVisAtt);
+
+    //design of cuvette
+    //
+
+    G4LogicalVolume* logicCell = CDConstruction();
+    G4VPhysicalVolume* physCell = 
+        new G4PVPlacement(0,                       
+                G4ThreeVector(0, 0, 0), 
+                logicCell,                
+                "physCell",              
+                logicInnerWater,              
+                false,                   
+                0,                       
+                fCheckOverlaps);  
+    logicCell   ->  SetVisAttributes(boxVisAtt);  // set visualization
+    
+
 
     // Optical surface :
     //new G4LogicalSkinSurface("photocathode_logsurf", 
     //                        logicDet,
     //                        Photocathode_opsurf);
+    //
+
+	G4LogicalBorderSurface* pmtSurface = new G4LogicalBorderSurface("pmtSurface", physCell, physInnerWater, Photocathode_opsurf);
+	//G4LogicalBorderSurface* pmtSurface_2 = new G4LogicalBorderSurface("pmtSurface",
+     //                                            physDet, Photocathode_opsurf);
+
+
 
 #ifdef WITH_G4CXOPTICKS
 	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
@@ -427,6 +469,14 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 #endif
     return worldPV;
 }
+
+/*
+ void LSDetectorConstruction::ConstructOpticalSurface(){
+
+	G4LogicalBorderSurface* pmtSurface = new G4LogicalBorderSurface("pmtSurface",
+                                                 physiLowerChimneyAcrylic, physiLowerChimneyTyvek, tyvek_surface);
+}
+*/
 
 
 void LSDetectorConstruction::ConstructSDandField()
