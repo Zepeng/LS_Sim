@@ -1,11 +1,11 @@
-#include "LSDetectorMessenger.hh"
+#include "LSDetectorConstructionMessenger.hh"
 #include "LSDetectorConstruction.hh"
 #include "G4UIdirectory.hh"
 #include "G4UIcmdWithABool.hh"
 #include "G4UIcmdWithADouble.hh"
 #include "G4UIcmdWithAnInteger.hh"
 
-LSDetectorMessenger::LSDetectorMessenger(LSDetectorConstruction* lsDet)
+LSDetectorConstructionMessenger::LSDetectorConstructionMessenger(LSDetectorConstruction* lsDet)
     : 
 	m_LSDetector(lsDet)
 
@@ -22,14 +22,14 @@ LSDetectorMessenger::LSDetectorMessenger(LSDetectorConstruction* lsDet)
 
 
 
-LSDetectorMessenger::~LSDetectorMessenger()
+LSDetectorConstructionMessenger::~LSDetectorConstructionMessenger()
 {
     delete opticksModeCmd;
     delete lsDetDirectory;
 }
 
 
-void LSDetectorMessenger::SetNewValue
+void LSDetectorConstructionMessenger::SetNewValue
 (G4UIcommand* cmd, G4String newValues) {
     
     if (cmd == opticksModeCmd) 

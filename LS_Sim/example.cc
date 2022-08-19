@@ -59,12 +59,15 @@ int main(int argc,char** argv)
   // Detect interactive mode (if no arguments) and define UI session
 #ifdef WITH_G4CXOPTICKS
   OPTICKS_LOG(argc, argv);
-  SEventConfig::SetRGModeSimulate();
-  SEventConfig::SetStandardFullDebug(); // controls which and dimensions of SEvt arrays 
-  const char * mask = "genstep,photon,hit,record" ;
+  //SEventConfig::SetRGModeSimulate();
+  //SEventConfig::SetStandardFullDebug(); // controls which and dimensions of SEvt arrays 
+  const char * mask = "genstep,photon,hit" ;
   SEventConfig::SetCompMask(mask);
-  SEventConfig::SetMaxGenstep(3000000);
-  SEventConfig::SetMaxPhoton(70000000);
+  //SEventConfig::SetMaxGenstep(3000000);
+  //SEventConfig::SetMaxPhoton(70000000);
+	//QRng::DEFAULT_PATH
+  
+
 #endif
   G4UIExecutive* ui = 0;
   if ( argc == 1 ) {

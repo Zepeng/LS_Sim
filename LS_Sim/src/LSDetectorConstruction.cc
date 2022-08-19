@@ -1,7 +1,7 @@
 
 /// \file LSDetectorConstruction.cc
 /// \brief Implementation of the LSDetectorConstruction class
-#include "LSDetectorMessenger.hh"
+#include "LSDetectorConstructionMessenger.hh"
 #include "LSDetectorConstruction.hh"
 #include "LSDetectorSD.hh"
 
@@ -35,6 +35,10 @@
 #include "G4CXOpticks.hh"
 #include "PLOG.hh"
 #include "LSDetectorConstruction_Opticks.hh"
+#include "LSOpticksEventConfigMessenger.hh"
+#include "SPath.hh"
+#include "SEventConfig.hh"
+#include "QRng.hh"
 #endif
 
 
@@ -51,18 +55,29 @@ LSDetectorConstruction::LSDetectorConstruction()
 	Steel(NULL),
     coeff_abslen(2.862), 
 	coeff_rayleigh(0.643), 
-	coeff_efficiency(0.5),
+	coeff_efficiency(0.5)
+#ifdef WITH_G4CXOPTICKS
+	,
 	m_g4cxopticks(nullptr),
-	m_opticksMode(0)
+	m_opticksMode(0),
+	m_maxPhoton(-1),
+	m_maxGenstep(-1)
+#endif
 {
-	theMessenger  = new LSDetectorMessenger(this); 
+	m_lsDetMes  = new LSDetectorConstructionMessenger(this); 
+#ifdef WITH_G4CXOPTICKS
+	m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger(this);
+#endif
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 LSDetectorConstruction::~LSDetectorConstruction()
 {
-	delete theMessenger; 
+	delete m_lsDetMes;
+#ifdef WITH_G4CXOPTICKS
+    delete m_lsOpticksEvtMes; 
+#endif
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -460,10 +475,38 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 
 
 #ifdef WITH_G4CXOPTICKS
+	SEventConfig::SetRGModeSimulate();
+
+	if( m_maxPhoton > 0 ){
+		SEventConfig::SetMaxPhoton(m_maxPhoton);		
+	}
+	if( m_maxGenstep > 0 ){
+		SEventConfig::SetMaxGenstep(m_maxGenstep);
+	}
+	
+	int Million = 1000000;
+	int max_photon = SEventConfig::MaxPhoton();
+	if( max_photon > 400*Million){
+		LOG(error) << " max_photon = "<< max_photon
+				   << " exceed !!! ";
+		assert(0);
+	}else if ( max_photon > 100*Million){
+		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_400000000_0_0.bin", 0) ;
+	}else if( max_photon > 10*Million){
+		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_100000000_0_0.bin", 0) ;
+	}else if( max_photon > 3*Million){
+		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_10000000_0_0.bin", 0) ;
+	}else if( max_photon > 1*Million){
+		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_3000000_0_0.bin", 0) ;
+	}else{
+		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_1000000_0_0.bin", 0) ;
+	}
+	LOG(info)<<" QRng::DEFAULT_PATH " <<  QRng::DEFAULT_PATH ;
+	
 	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
 	if(m_opticksMode & 1){
 		assert(m_g4cxopticks);
-		assert(m_g4cxopticks);
+		//assert(m_g4cxopticks);
 	}
 	//assert(m_g4cxopticks);
 #endif

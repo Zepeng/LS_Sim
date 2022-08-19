@@ -15,9 +15,11 @@ class G4VPhysicalVolume;
 class G4LogicalVolume;
 class G4Material;
 class G4OpticalSurface;
-class LSDetectorMessenger;
+class LSDetectorConstructionMessenger;
+
 
 #ifdef WITH_G4CXOPTICKS
+class LSOpticksEventConfigMessenger;
 class G4CXOpticks;
 #endif
 
@@ -38,7 +40,7 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         void ModifyOpticalProperty();
 		void SetOpticksMode(int mode);
 	private:
-		LSDetectorMessenger* theMessenger; 
+		LSDetectorConstructionMessenger* m_lsDetMes;
 
 
     private:
@@ -61,8 +63,15 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
 #ifdef WITH_G4CXOPTICKS
 		G4CXOpticks* m_g4cxopticks;
 		int m_opticksMode;
+		int m_maxPhoton;
+		int m_maxGenstep;
+		LSOpticksEventConfigMessenger * m_lsOpticksEvtMes; 
+	public:
+		void SetOpticksMaxGenstep(int max_genstep){ m_maxGenstep =  max_genstep;}
+		void SetOpticksMaxPhoton(int max_photon){ m_maxPhoton = max_photon;}
 #endif
 
+	private:
         G4double coeff_abslen;
         G4double coeff_rayleigh;
         G4double coeff_efficiency;

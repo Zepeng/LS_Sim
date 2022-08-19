@@ -375,11 +375,11 @@ G4VParticleChange* G4Cerenkov_modified::PostStepDoIt(const G4Track& aTrack, cons
 
 
 #ifdef WITH_G4CXOPTICKS
-/*
-  if(maxCos > 1.0){
-	LOG(info) << "maxCos = "<< maxCos;
-  }
-  assert(maxCos <= 1.0);
+
+//  if(maxCos > 1.0){
+//	LOG(info) << "maxCos = "<< maxCos;
+//  }
+//  assert(maxCos <= 1.0);
   U4::CollectGenstep_G4Cerenkov_modified( 
       &aTrack, 
       &aStep, 
@@ -392,7 +392,7 @@ G4VParticleChange* G4Cerenkov_modified::PostStepDoIt(const G4Track& aTrack, cons
       MeanNumberOfPhotons1,
       MeanNumberOfPhotons2
   );
-*/     
+     
 #endif
 
 #ifdef STANDALONE
