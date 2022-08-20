@@ -30,12 +30,25 @@ class LSDetectorHit : public G4VHit
         G4double edep;
         G4double wavelength;
 
+		G4double global_pos_x;
+		G4double global_pos_y;
+		G4double global_pos_z;
+
         G4bool isFromCerenkov;
         G4bool isReemission;
         G4bool isOriginalOP;
 
 
     public:
+		inline void SetGlobalPosX(G4double x)		{ global_pos_x = x ;}
+		inline G4double GetGlobalPosX()const		{ return global_pos_x;}		
+		
+		inline void SetGlobalPosY(G4double y)		{ global_pos_y = y ;}
+		inline G4double GetGlobalPosY()const		{ return global_pos_y;}		
+		
+		inline void SetGlobalPosZ(G4double z)		{ global_pos_z = z ;}
+		inline G4double GetGlobalPosZ()const		{ return global_pos_z;}		
+
         inline void SetTrackID(G4int tid)           { trackID = tid; }
         inline G4int GetTrackID()                   { return trackID; }
 

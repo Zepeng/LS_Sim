@@ -80,6 +80,7 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
 
     G4double wavelength = 1240. * 1e6 / edep;
     G4double time = postStepPoint->GetGlobalTime();
+	const G4ThreeVector& global_pos = postStepPoint->GetPosition();
     G4bool is_from_cerenkov = false;
     G4bool is_reemission = false;
     G4bool is_original_op = false;
@@ -107,6 +108,9 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
     hit->SetFromCerenkov(is_from_cerenkov);
     hit->SetReemission(is_reemission);
     hit->SetOriginalOP(is_original_op);
+	hit->SetGlobalPosX(global_pos.x());
+	hit->SetGlobalPosY(global_pos.y());
+	hit->SetGlobalPosZ(global_pos.z());
 
     fHitsCollection->insert(hit);
 

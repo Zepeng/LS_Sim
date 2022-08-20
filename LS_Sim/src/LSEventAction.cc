@@ -33,6 +33,7 @@ void LSEventAction::SetOpticksMode(int mode){
 void LSEventAction::BeginOfEventAction(const G4Event* evt)
 {
     G4cout << "Begin of Event " << evt->GetEventID() << G4endl;
+	MyAnalysisManager::GetInstance()->SetOpticksMode(m_opticksMode);
     MyAnalysisManager::GetInstance()->BeginOfEventAction(evt);
 }
 

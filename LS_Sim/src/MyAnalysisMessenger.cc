@@ -30,6 +30,7 @@ MyAnalysisMessenger::MyAnalysisMessenger()
     activateCmd->SetGuidance("Set activate status of root-based analysis.");
     activateCmd->SetParameterName("activate", true);
     activateCmd->SetDefaultValue(true);
+	
 
 }
 

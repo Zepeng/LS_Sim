@@ -65,6 +65,9 @@ void MyAnalysisManager::SetBirks1(G4double val)
     fMyRootBasedAnalysis->SetBirks1(val);
 }
 
+void MyAnalysisManager::SetOpticksMode(G4int mode){
+	fMyRootBasedAnalysis->SetOpticksMode(mode);
+}
 
 void MyAnalysisManager::SetActivate(G4bool val) {
     if (val)

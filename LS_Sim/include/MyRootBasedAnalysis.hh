@@ -30,7 +30,7 @@ class MyRootBasedAnalysis
         inline void Activated() { active = true; }
         inline void Deactivated() { active = false; }
         inline bool IsActivated() { return active; }
-
+		inline void SetOpticksMode(int mode){	m_opticksMode = mode ;}
 
         double calculateQuenched(const G4Step* aStep);
 
@@ -41,6 +41,7 @@ class MyRootBasedAnalysis
 
         TFile* fRootFp;
         TTree* fTree;
+		TTree* fOpticksTree;
 
         double m_BirksConstant1;
         double m_BirksConstant2;
@@ -55,7 +56,16 @@ class MyRootBasedAnalysis
         Float_t         track_length;
 		// hit level
 		std::vector<double>  m_hitTime;
+		std::vector<double>  m_opticks_hitTime;
 
+		std::vector<double>  m_globalpos_x;
+		std::vector<double>  m_globalpos_y;
+		std::vector<double>  m_globalpos_z;
+
+		std::vector<double>  m_opticks_globalpos_x;
+		std::vector<double>  m_opticks_globalpos_y;
+		std::vector<double>  m_opticks_globalpos_z;
+		int m_opticksMode;
 };
 
 

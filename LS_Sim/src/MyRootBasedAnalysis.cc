@@ -16,10 +16,19 @@
 #include "TFile.h"
 #include "TTree.h"
 
+#ifdef WITH_G4CXOPTICKS
+#include "SEvt.hh"
+#include "U4Hit.h"
+#include "U4HitGet.h"
+#endif
+
 
 MyRootBasedAnalysis::MyRootBasedAnalysis()
 {
-    SetFileName("output.root");
+    SetFileName("detsim.root");
+//	SetOpticksFileName("opticks_detsim.root");
+
+	m_opticksMode = 0;
 
     m_BirksConstant1 = 6.5e-3*g/cm2/MeV;
     m_BirksConstant2 = 1.5e-6*(g/cm2/MeV)*(g/cm2/MeV);
@@ -47,6 +56,29 @@ void MyRootBasedAnalysis::BeginOfRunAction()
     fTree->Branch("Qedep", &qedep, "qedep/F");
     fTree->Branch("trackLength", &track_length, "track_length/F");
 	fTree->Branch("hitTime",&m_hitTime);
+	fTree->Branch("GlobalPosX",&m_globalpos_x);
+	fTree->Branch("GlobalPosY",&m_globalpos_y);
+	fTree->Branch("GlobalPosZ",&m_globalpos_z);
+	
+	/*fOpticksRootFp= new TFile(fOpticksFileName,"recreate");
+	if(!fOpticksRootFp){
+        G4cout << "\n====>MyRootBasedAnalysis::BeginOfRunAction(): "
+               << "cannot open " << fOpticksFileName << G4endl;
+        return;
+	
+	}*/
+	fOpticksTree = new TTree("opticks_sim","Tree of opticks");
+	//fOpticksTree->Branch("edep", &edep, "edep/F");
+    //fOpticksTree->Branch("Qedep", &qedep, "qedep/F");
+    //fOpticksTree->Branch("trackLength", &track_length, "track_length/F");
+    fOpticksTree->Branch("hitTime",&m_opticks_hitTime);
+	fOpticksTree->Branch("GlobalPosX",&m_opticks_globalpos_x);
+	fOpticksTree->Branch("GlobalPosY",&m_opticks_globalpos_y);
+	fOpticksTree->Branch("GlobalPosZ",&m_opticks_globalpos_z);
+	
+#ifdef WITH_G4CXOPTICKS
+
+#endif
 
     return;
 
@@ -101,8 +133,32 @@ void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 	G4int nofHits = col->entries();
 	for ( G4int i=0; i<nofHits; i++ ) {
 			m_hitTime.push_back((*col)[i]->GetTime());
+			m_globalpos_x.push_back((*col)[i]->GetGlobalPosX());
+			m_globalpos_y.push_back((*col)[i]->GetGlobalPosY());
+			m_globalpos_z.push_back((*col)[i]->GetGlobalPosZ());
 	}
 	fTree->Fill();
+
+#ifdef WITH_G4CXOPTICKS
+	
+	SEvt* sev = SEvt::Get();
+	if ( m_opticksMode & 1 ){
+		unsigned num_hit = sev->getNumHit();
+		for(unsigned idx = 0 ; idx < num_hit ; idx++){
+			
+			U4Hit hit;
+			U4HitGet::FromEvt(hit, idx );
+
+			m_opticks_hitTime.push_back(hit.time);
+			m_opticks_globalpos_x.push_back(hit.global_position.x());
+			m_opticks_globalpos_y.push_back(hit.global_position.y());
+			m_opticks_globalpos_z.push_back(hit.global_position.z());
+		}
+		
+		fOpticksTree->Fill();
+	}
+
+#endif
 
     //------- add your codes down here
     //

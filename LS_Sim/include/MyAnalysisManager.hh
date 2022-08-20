@@ -36,6 +36,7 @@ public:
     void SetFileName(G4String val);
     void SetBirks1(G4double val);
     void SetActivate(G4bool val);
+	void SetOpticksMode(int mode);
 
 
     private:
