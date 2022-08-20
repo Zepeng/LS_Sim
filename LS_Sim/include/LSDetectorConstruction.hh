@@ -48,6 +48,8 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4LogicalVolume* SensDetConstruction();
         G4LogicalVolume* PmtConstruction();
 		G4LogicalVolume* InnerWaterConstruction();
+		G4LogicalVolume* VacuumConstruction();
+		G4LogicalVolume* GlassConstruction();
 
     private:
         G4bool fCheckOverlaps;
@@ -57,19 +59,20 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4Material* LS;
         G4Material* Steel;
         G4Material* Photocathode_mat;
-        
+		
+		
         G4OpticalSurface* m_mirror_opsurf;
         G4OpticalSurface* Photocathode_opsurf;
 #ifdef WITH_G4CXOPTICKS
 		G4CXOpticks* m_g4cxopticks;
+		LSOpticksEventConfigMessenger * m_lsOpticksEvtMes; 
+#endif
 		int m_opticksMode;
 		int m_maxPhoton;
 		int m_maxGenstep;
-		LSOpticksEventConfigMessenger * m_lsOpticksEvtMes; 
 	public:
 		void SetOpticksMaxGenstep(int max_genstep){ m_maxGenstep =  max_genstep;}
 		void SetOpticksMaxPhoton(int max_photon){ m_maxPhoton = max_photon;}
-#endif
 
 	private:
         G4double coeff_abslen;

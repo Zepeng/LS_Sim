@@ -1,12 +1,12 @@
 /random/setSeeds 144 144
 
 #this is about opticks 0 : only G4  1: only Opticks  3 : G4+Opticks
-/LS/action/opticksMode 1
-/LS/detConstruction/opticksMode 1
-/LS/phys/opticksMode 1
+/LS/action/opticksMode 3
+/LS/detConstruction/opticksMode 3
+/LS/phys/opticksMode 3
 
-/Opticks/EventConfig/MaxPhoton 20000
-/Opticks/EventConfig/MaxGenstep 2000
+#/Opticks/EventConfig/MaxPhoton 20000
+#/Opticks/EventConfig/MaxGenstep 2000
 #----------------------#
 
 /LS/phys/enableoptical true

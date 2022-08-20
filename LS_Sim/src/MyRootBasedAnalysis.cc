@@ -7,6 +7,11 @@
 #include "G4Gamma.hh"
 #include "G4LossTableManager.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4SDManager.hh"
+#include "G4HCofThisEvent.hh"
+#include "LSDetectorHit.hh"
+
+
 
 #include "TFile.h"
 #include "TTree.h"
@@ -41,6 +46,7 @@ void MyRootBasedAnalysis::BeginOfRunAction()
     fTree->Branch("edep", &edep, "edep/F");
     fTree->Branch("Qedep", &qedep, "qedep/F");
     fTree->Branch("trackLength", &track_length, "track_length/F");
+	fTree->Branch("hitTime",&m_hitTime);
 
     return;
 
@@ -83,13 +89,20 @@ void MyRootBasedAnalysis::BeginOfEventAction(const G4Event* )
 }
 
 
-void MyRootBasedAnalysis::EndOfEventAction(const G4Event* )
+void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 {
     if (!active)
         return;
-
-
-    fTree->Fill();
+	//save hit 
+	G4SDManager * SDman = G4SDManager::GetSDMpointer();
+	G4int CollID = SDman->GetCollectionID("PmtHitsCollection");
+	G4HCofThisEvent * HCE = evt->GetHCofThisEvent();
+	LSDetectorHitsCollection* col = (LSDetectorHitsCollection*)(HCE->GetHC(CollID));
+	G4int nofHits = col->entries();
+	for ( G4int i=0; i<nofHits; i++ ) {
+			m_hitTime.push_back((*col)[i]->GetTime());
+	}
+	fTree->Fill();
 
     //------- add your codes down here
     //

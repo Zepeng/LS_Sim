@@ -51,7 +51,7 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
    		 gx->simulate();
    		 cudaDeviceSynchronize();
    		 gx->saveEvent();
-		 SEvt::Clear();
+		 //SEvt::Clear();
 	}
 #endif
     //

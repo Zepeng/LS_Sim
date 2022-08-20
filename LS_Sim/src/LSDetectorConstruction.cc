@@ -55,14 +55,14 @@ LSDetectorConstruction::LSDetectorConstruction()
 	Steel(NULL),
     coeff_abslen(2.862), 
 	coeff_rayleigh(0.643), 
-	coeff_efficiency(0.5)
+	coeff_efficiency(0.5),
 #ifdef WITH_G4CXOPTICKS
-	,
 	m_g4cxopticks(nullptr),
+#endif
 	m_opticksMode(0),
 	m_maxPhoton(-1),
 	m_maxGenstep(-1)
-#endif
+
 {
 	m_lsDetMes  = new LSDetectorConstructionMessenger(this); 
 #ifdef WITH_G4CXOPTICKS
@@ -270,25 +270,89 @@ void LSDetectorConstruction::DefineMaterials()
     G4double fPhCRINDEX[4] = {2.9, 2.9, 2.9, 2.9};
     G4double fPhCKINDEX[4] = {1.6, 1.6, 1.6, 1.6};
     G4double fPhCREFLECTIVITY[4] = {0.0, 0.0, 0.0, 0.0};
-    
+
+	G4double fake_eff[4] = {0.8,0.8,0.8,0.8};   
+ 
     G4MaterialPropertiesTable* PhotocathodeMPT = new G4MaterialPropertiesTable();
     PhotocathodeMPT->AddProperty("RINDEX", fPhCEnergy, fPhCRINDEX, 4);
     PhotocathodeMPT->AddProperty("KINDEX", fPhCEnergy, fPhCKINDEX, 4);
     PhotocathodeMPT->AddProperty("REFLECTIVITY", fPhCEnergy, fPhCREFLECTIVITY, 4);
     PhotocathodeMPT->AddProperty("EFFICIENCY", fPP_PhCQE_Dynode20inch, fPhCEFFICIENCY_Dynode20inch, 43);
+	//PhotocathodeMPT->AddProperty("EFFICIENCY", fPhCEnergy, fake_eff, 4);   
+
     Photocathode_mat -> SetMaterialPropertiesTable(PhotocathodeMPT);
 
     Photocathode_opsurf = new G4OpticalSurface("Photocathode_opsurf");
     Photocathode_opsurf->SetType(dielectric_metal); // ignored if RINDEX defined
-    Photocathode_opsurf->SetFinish(polished);
-	Photocathode_opsurf->SetModel(unified);
+    //Photocathode_opsurf->SetFinish(polished);
+	//Photocathode_opsurf->SetModel(unified);
     //steel_surface->SetType(dielectric_metal);
     //steel_surface->SetFinish(ground);
-   	Photocathode_opsurf->SetSigmaAlpha(0.2);
+   	//Photocathode_opsurf->SetSigmaAlpha(0.2);
 
     Photocathode_opsurf->SetMaterialPropertiesTable(G4Material::GetMaterial("photocathode")->GetMaterialPropertiesTable() );
+	
+	/*
+	Vacuum = G4Material::GetMaterial("Vacuum", any_warnings);
+    if (Vacuum) {
+        G4cout << "Vacuum is constructed from the GDML file" << G4endl;
+    } else {
+        G4cout << "Vacuum is constructed from the code" << G4endl;
+        density     =  1e-3 * kGasThreshold;         //from PhysicalConstants.h
+        G4double temperature = STP_Temperature;         //from PhysicalConstants.h
+        G4double pressure    = STP_Pressure * density / (1.29e-3*g/cm3);
+        Vacuum = new G4Material("Vacuum", density, 1, kStateGas,temperature,pressure);
+        Vacuum->AddMaterial(Air, 1.);
+    }
 
-
+	G4double fVacEnergy[2]={1.5*eV,1.55*eV};
+	G4double fVacRindex[2]={1.000001,1.000001};
+	G4double fVacAbslength[2]={1000000*m, 1000000*m};
+	G4MaterialPropertiesTable* VacMPT = new G4MaterialPropertiesTable();
+	
+    VacMPT->AddProperty("RINDEX", fVacEnergy, fVacRindex, 2);
+    VacMPT->AddProperty("ABSLENGTH", fVacEnergy, fVacAbslength,2);
+	Vacuum -> SetMaterialPropertiesTable(VacMPT);
+	*/
+	
+	// Pyrex (glass) to implement.
+	/*
+	G4Material* SiO2 = G4Material::GetMaterial("SiO2", any_warnings);
+    if (not SiO2) {
+        density = 2.23*g/cm3;
+        SiO2 = new G4Material("SiO2", density, 2);
+        SiO2->AddElement(Si, 1);
+        SiO2->AddElement(O , 2);
+    }
+    G4Material* B2O2 = G4Material::GetMaterial("B2O2", any_warnings);
+    if (not B2O2) {
+        density = 2.23*g/cm3;
+        B2O2 = new G4Material("B2O2", density, 2);
+        B2O2->AddElement(B,  2);
+        B2O2->AddElement(O,  2);
+    }
+    G4Material* Na2O = G4Material::GetMaterial("Na2O", any_warnings);
+    if (not Na2O) {
+        density = 2.23*g/cm3;
+        Na2O = new G4Material("Na2O", density, 2);
+        Na2O->AddElement(Na, 2);
+        Na2O->AddElement(O,  1);
+    }
+	Pyrex = G4Material::GetMaterial("Pyrex", any_warnings);
+    if (Pyrex) {
+        G4cout << "Pyrex is constructed from the GDML file" << G4endl;
+    } else {
+        G4cout << "Pyrex is constructed from the code" << G4endl;
+        density = 2.23*g/cm3;
+        Pyrex = new G4Material("Pyrex", density, 3);
+        Pyrex->AddMaterial(SiO2, .80);
+        Pyrex->AddMaterial(B2O2, .13);
+        Pyrex->AddMaterial(Na2O, .07);
+	}
+	
+	G4MaterialPropertiesTable* PyrexMPT = new G4MaterialPropertiesTable();
+	G4double fPyrEnergy[]
+	*/
 }
 
 
@@ -318,42 +382,44 @@ G4LogicalVolume* LSDetectorConstruction::InnerWaterConstruction(){
 
 	G4Sphere* solidInnerWater = new G4Sphere("InnerWaterSolid", 0*mm, 18000*mm, 0*deg, 360*deg, 0, 180*deg);
 
-    G4LogicalVolume* logicInnerWater = 
-        new G4LogicalVolume(solidInnerWater, 
-                             water,
-                            "logicInnerWater");
-
-    
-
-
-    return logicInnerWater;
+    G4LogicalVolume* logicInnerWater =  new G4LogicalVolume(solidInnerWater, 
+                            								 water,
+                            								"logicInnerWater");
+	return logicInnerWater;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 G4LogicalVolume* LSDetectorConstruction::SensDetConstruction()
 {
-    //G4Sphere* solidDet = 
-    //    new G4Sphere("detSolid", 18000*mm, 18010*mm, 0*deg, 360*deg, 0, 180*deg);
-        //new G4Sphere("detSolid", 10*cm, 11*cm, 0, 2*pi, 0, pi);
-
-    //G4Box* solidHole = 
-    //    new G4Box("holeSolid", 1*mm, 1*mm, 2*cm);
-
-    //G4VSolid* solidSub = 
-    //    new G4SubtractionSolid("subSolid", solidDet, solidHole, 0, G4ThreeVector(0, 0, 18005*mm));
 	G4Sphere* solidDet = new G4Sphere("detSolid", 0*mm, 18010*mm, 0*deg, 360*deg, 0, 180*deg);
-
-    G4LogicalVolume* logicDet = 
-        new G4LogicalVolume(solidDet, 
-                            Steel,
-                            "logicDet");
-
-    
-
-
+	G4LogicalVolume* logicDet = new G4LogicalVolume(solidDet, 
+                            						Steel,
+                            						"logicDet");
     return logicDet;
 }
+
+G4LogicalVolume* LSDetectorConstruction::VacuumConstruction(){
+
+	G4Sphere* solidVacuum = new G4Sphere("vacuumSolid", 0*mm, 18010*mm, 0*deg, 360*deg, 0, 180*deg);
+	G4LogicalVolume* logicVacuum = new G4LogicalVolume(solidVacuum, 
+                            							air,
+                            							"logicVacuum");
+    return logicVacuum;
+
+}
+
+G4LogicalVolume* LSDetectorConstruction::GlassConstruction(){
+
+    G4Sphere* solidGlass = new G4Sphere("glassSolid", 0*mm, 18005*mm, 0*deg, 360*deg, 0, 180*deg);
+    G4LogicalVolume* logicGlass = new G4LogicalVolume(solidGlass,
+                                                        Steel,
+                                                        "logicGlass");
+    return logicGlass;
+
+}
+
+
 
 G4LogicalVolume* LSDetectorConstruction::PmtConstruction()
 {
@@ -363,16 +429,11 @@ G4LogicalVolume* LSDetectorConstruction::PmtConstruction()
                                    150*mm,
                                    0*deg,
                                    360*deg);
-    G4LogicalVolume* pmttube_logic = 
-        new G4LogicalVolume(pmttube_solid, 
-                            Steel,
-                            "pmttube_logic" );
-
-    return pmttube_logic;
+    G4LogicalVolume* pmttube_logic = new G4LogicalVolume(pmttube_solid, 
+                            								Steel,
+                            								"pmttube_logic" );
+	return pmttube_logic;
 }
-
-
-
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -394,9 +455,8 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 
 
     // Geometry Construction Part
-
-    //World
-    //
+	//World
+    
     G4GeometryManager::GetInstance()->SetWorldMaximumExtent(worldLength);
     G4Box* worldS
         = new G4Box("world",                                    //its name
@@ -420,7 +480,7 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
                      fCheckOverlaps); // checking overlaps 
 
 
-
+	/*
     G4LogicalVolume* logicDet = SensDetConstruction();
     G4VPhysicalVolume* physDet =
         new G4PVPlacement(0,
@@ -432,22 +492,46 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
                           0,
                           fCheckOverlaps);
     logicDet -> SetVisAttributes(detVisAtt);
+	*/
+	//Vacuum
+    G4LogicalVolume* logicVac = VacuumConstruction();
+    G4VPhysicalVolume* physVac =
+        new G4PVPlacement(0,
+                          G4ThreeVector(0,0,0),
+                          logicVac,
+                          "physVac", 
+                          worldLV,
+                          false,
+                          0,
+                          fCheckOverlaps);
+    //logicVac -> SetVisAttributes(detVisAtt);
+	//Glass
 	
+    G4LogicalVolume* logicGlass = GlassConstruction();
+    G4VPhysicalVolume* physGlass =
+        new G4PVPlacement(0,
+                          G4ThreeVector(0,0,0),
+                          logicGlass,
+                          "physGlass", 
+                          logicVac,
+                          false,
+                          0,
+                          fCheckOverlaps);
+    //logicGlass-> SetVisAttributes(detVisAtt);
+
+	//InnerWater	
     G4LogicalVolume* logicInnerWater = InnerWaterConstruction();
     G4VPhysicalVolume* physInnerWater =
         new G4PVPlacement(0,
                           G4ThreeVector(0,0,0),
                           logicInnerWater,
                           "physInnerWater",
-                          logicDet,
+                          logicGlass,
                           false,
                           0,
                           fCheckOverlaps);
-    //logicDet -> SetVisAttributes(detVisAtt);
-
-    //design of cuvette
-    //
-
+	
+	//LS 
     G4LogicalVolume* logicCell = CDConstruction();
     G4VPhysicalVolume* physCell = 
         new G4PVPlacement(0,                       
@@ -463,17 +547,10 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 
 
     // Optical surface :
-    //new G4LogicalSkinSurface("photocathode_logsurf", 
-    //                        logicDet,
-    //                        Photocathode_opsurf);
-    //
-
-	G4LogicalBorderSurface* pmtSurface = new G4LogicalBorderSurface("pmtSurface", physCell, physInnerWater, Photocathode_opsurf);
+	G4LogicalBorderSurface* pmtSurface = new G4LogicalBorderSurface("pmtSurface", physInnerWater,physGlass, Photocathode_opsurf);
+	//G4LogicalBorderSurface* pmtSurface = new G4LogicalBorderSurface("pmtSurface",physGlass, physVac , Photocathode_opsurf);
 	//G4LogicalBorderSurface* pmtSurface_2 = new G4LogicalBorderSurface("pmtSurface",
-     //                                            physDet, Photocathode_opsurf);
-
-
-
+    //                                            physDet, Photocathode_opsurf);
 #ifdef WITH_G4CXOPTICKS
 	SEventConfig::SetRGModeSimulate();
 
@@ -484,7 +561,7 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 		SEventConfig::SetMaxGenstep(m_maxGenstep);
 	}
 	
-	int Million = 1000000;
+	int Million = SEventConfig::M;
 	int max_photon = SEventConfig::MaxPhoton();
 	if( max_photon > 400*Million){
 		LOG(error) << " max_photon = "<< max_photon
@@ -501,25 +578,15 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 	}else{
 		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_1000000_0_0.bin", 0) ;
 	}
-	LOG(info)<<" QRng::DEFAULT_PATH " <<  QRng::DEFAULT_PATH ;
+	LOG(info)<<" QRng::DEFAULT_PATH " << QRng::DEFAULT_PATH ;
 	
 	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
 	if(m_opticksMode & 1){
 		assert(m_g4cxopticks);
-		//assert(m_g4cxopticks);
 	}
-	//assert(m_g4cxopticks);
 #endif
     return worldPV;
 }
-
-/*
- void LSDetectorConstruction::ConstructOpticalSurface(){
-
-	G4LogicalBorderSurface* pmtSurface = new G4LogicalBorderSurface("pmtSurface",
-                                                 physiLowerChimneyAcrylic, physiLowerChimneyTyvek, tyvek_surface);
-}
-*/
 
 
 void LSDetectorConstruction::ConstructSDandField()
@@ -530,7 +597,7 @@ void LSDetectorConstruction::ConstructSDandField()
     auto detectorSD
         =  new LSDetectorSD("detectorSD", "PmtHitsCollection"); //fNofLayers);
     G4SDManager::GetSDMpointer()->AddNewDetector(detectorSD);
-    SetSensitiveDetector("logicDet", detectorSD);
+    SetSensitiveDetector("logicInnerWater", detectorSD);
 
 }
 

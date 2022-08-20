@@ -74,7 +74,7 @@ int main(int argc,char** argv)
     ui = new G4UIExecutive(argc, argv);
   }
   
-  LOG(info) << " LOG(info) == > G4UIExecutive ";
+  //LOG(info) << " LOG(info) == > G4UIExecutive ";
 
   // Choose the Random engine
   G4Random::setTheEngine(new CLHEP::RanecuEngine);

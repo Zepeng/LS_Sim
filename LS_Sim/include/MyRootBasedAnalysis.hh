@@ -45,6 +45,7 @@ class MyRootBasedAnalysis
         double m_BirksConstant1;
         double m_BirksConstant2;
 
+		//Event level
         Int_t           pdf_id;
         Float_t         pre_x;
         Float_t         pre_y;
@@ -52,6 +53,8 @@ class MyRootBasedAnalysis
         Float_t         edep;
         Float_t         qedep;
         Float_t         track_length;
+		// hit level
+		std::vector<double>  m_hitTime;
 
 };
 

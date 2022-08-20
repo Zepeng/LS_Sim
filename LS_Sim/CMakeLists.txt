@@ -47,7 +47,7 @@ set(CMAKE_BUILD_RPATH
 #----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 #
-#include(${Geant4_USE_FILE})
+include(${Geant4_USE_FILE})
 
 #----------------------------------------------------------------------------
 # Setup ROOT include directories and compile definitions
@@ -68,11 +68,6 @@ endif()
 
 include(${ROOT_USE_FILE})
 
-#--------------- OptiX -----------------#
-#find_package(U4  REQUIRED CONFIG)
-#find_package(SysRap REQUIRED CONFIG)
-#find_package(G4CX REQUIRED QUIET)
-
 #----------------------------------------------------------------------------
 # Find QT (required package)   
 #
@@ -81,7 +76,7 @@ include(${ROOT_USE_FILE})
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
 #
-#include_directories(${Geant4_INCLUDE_DIR})
+include_directories(${Geant4_INCLUDE_DIR})
 include_directories(${ROOT_INCLUDE_DIR})
 #include_directories(${OPTICKS_INCLUDE_DIR})
 
@@ -101,8 +96,8 @@ message("Geant4 Libraries: ${Geant4_LIBRARIES}")
 
 add_executable(example example.cc ${sources} ${headers})
 target_link_libraries(example 
-						#PUBLIC
-						#${Geant4_LIBRARIES}
+						PUBLIC
+						${Geant4_LIBRARIES}
 						PUBLIC 
 						${ROOT_LIBRARIES}
 						PUBLIC

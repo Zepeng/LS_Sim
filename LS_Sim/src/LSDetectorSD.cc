@@ -56,6 +56,7 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
 {
     G4Track* track = aStep->GetTrack();
     G4int trackID = track->GetTrackID();
+	G4cout << " LSDetectorSD::ProcessHits " << trackID;
     if (track->GetDefinition() != G4OpticalPhoton::Definition()) {
         return false;
     }
@@ -64,7 +65,7 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
 
     G4double edep = aStep->GetTotalEnergyDeposit();
     G4double stepLength = aStep->GetStepLength();
-    if(0) {
+    if(1) {
         G4cout << "physDetTrack ID " << trackID 
                << ", PreStep radius "  << preStepPoint->GetPosition().mag()  << " " << preStepPoint->GetStepStatus()  << " "<< preStepPoint->GetProcessDefinedStep()->GetProcessName()
                << ", PostStep radius " << postStepPoint->GetPosition().mag() << " " << postStepPoint->GetStepStatus() << " "<< postStepPoint->GetProcessDefinedStep()->GetProcessName()

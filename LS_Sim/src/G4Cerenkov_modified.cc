@@ -115,7 +115,8 @@ G4Cerenkov_modified::G4Cerenkov_modified(const G4String& processName, G4ProcessT
 #ifdef INSTRUMENTED
  //            override_fNumPhotons(0),
 #endif
-             fNumPhotons(0)
+             fNumPhotons(0),
+			 m_opticksMode(0)
 {
   SetProcessSubType(fCerenkov);
 
@@ -380,20 +381,25 @@ G4VParticleChange* G4Cerenkov_modified::PostStepDoIt(const G4Track& aTrack, cons
 //	LOG(info) << "maxCos = "<< maxCos;
 //  }
 //  assert(maxCos <= 1.0);
-  U4::CollectGenstep_G4Cerenkov_modified( 
-      &aTrack, 
-      &aStep, 
-      fNumPhotons,
-      BetaInverse,
-      Pmin,
-      Pmax,
-      maxCos,
-      maxSin2,
-      MeanNumberOfPhotons1,
-      MeanNumberOfPhotons2
-  );
-     
+	if((m_opticksMode & 1 )&& (fNumPhotons > 0 )){
+		U4::CollectGenstep_G4Cerenkov_modified( 
+			&aTrack, 
+	      	&aStep, 
+	      	fNumPhotons,
+	      	BetaInverse,
+	      	Pmin,
+	      	Pmax,
+	      	maxCos,
+	      	maxSin2,
+	      	MeanNumberOfPhotons1,
+	      	MeanNumberOfPhotons2
+	  	);
+	} 
 #endif
+	if(m_opticksMode == 1){
+		aParticleChange.SetNumberOfSecondaries(0);
+ 		return pParticleChange;
+	}
 
 #ifdef STANDALONE
     //U4::GenPhotonAncestor(&aTrack);  

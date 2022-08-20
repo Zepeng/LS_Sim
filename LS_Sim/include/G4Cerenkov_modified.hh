@@ -275,12 +275,20 @@ private:*/
   G4int fNumPhotons2; // mean
 
 private:
+	G4int m_opticksMode;
+public:
+	void SetOpticksMode(int mode); 
 
 };
 
   ////////////////////
   // Inline methods
   ////////////////////
+inline
+void G4Cerenkov_modified::SetOpticksMode(int mode)
+{
+	m_opticksMode = mode;
+}
 
 inline
 G4bool G4Cerenkov_modified::GetTrackSecondariesFirst() const
