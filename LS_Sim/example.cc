@@ -31,6 +31,7 @@
 #include "LSDetectorConstruction.hh"
 #include "LSPhysicsList.hh"
 #include "LSActionInitialization.hh"
+#include "LSOpticksEventConfigMessenger.hh"
 
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"
@@ -52,16 +53,21 @@
 #include "G4CXOpticks.hh"
 #include "SEventConfig.hh"
 #endif
+
+#include <ctime>
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 int main(int argc,char** argv)
 {
+  clock_t start, end;
+  start = clock(); 
   // Detect interactive mode (if no arguments) and define UI session
 #ifdef WITH_G4CXOPTICKS
   OPTICKS_LOG(argc, argv);
   //SEventConfig::SetRGModeSimulate();
   //SEventConfig::SetStandardFullDebug(); // controls which and dimensions of SEvt arrays 
-  const char * mask = "genstep,photon,hit" ;
+  //const char * mask = "genstep,photon,hit" ;
+  const char * mask = "hit";
   SEventConfig::SetCompMask(mask);
   //SEventConfig::SetMaxGenstep(3000000);
   //SEventConfig::SetMaxPhoton(70000000);
@@ -90,7 +96,8 @@ int main(int argc,char** argv)
   // Set mandatory initialization classes
   //
   // Detector construction
-  runManager->SetUserInitialization(new LSDetectorConstruction());
+  LSDetectorConstruction* det = new LSDetectorConstruction();
+  runManager->SetUserInitialization(det);
 
   // Physics list
   //auto physicsList = new QBBC;
@@ -103,6 +110,8 @@ int main(int argc,char** argv)
   runManager->SetUserInitialization(new LSActionInitialization());
   
   G4cout << "Finish ActionInitialization" << G4endl;
+	
+
   // Initialize visualization
   //
   // G4VisManager* visManager = new G4VisExecutive;
@@ -112,7 +121,11 @@ int main(int argc,char** argv)
 
   // Get the pointer to the User Interface manager
   G4UImanager* UImanager = G4UImanager::GetUIpointer();
+/*
+  LSOpticksEventConfigMessenger* opticks_mes = new LSOpticksEventConfigMessenger(det);
+  runManager->Initialize();
 
+  G4cout<<"example.cc m_opticks_mode = "<<opticks_mes->GetOpticksMode();*/
   // Process macro or start UI session
   //
   if ( ! ui ) { 
@@ -137,6 +150,11 @@ int main(int argc,char** argv)
   
   // delete visManager;
   delete runManager;
+  end = clock();
+  double run_time = static_cast<double>(end-start)/CLOCKS_PER_SEC;
+  std::cout<<" run time = "<<run_time 
+			<<" s "
+			<<std::endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....

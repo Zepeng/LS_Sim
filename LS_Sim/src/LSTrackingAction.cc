@@ -21,10 +21,10 @@ void LSTrackingAction::PreUserTrackingAction( const G4Track* aTrack )
     if (aTrack->GetParentID() == 1) // primary e+-
     {
         if (aTrack->GetParticleDefinition()->GetParticleName() == "e+") {
-            G4cout << aTrack->GetKineticEnergy() << "a ";
+            //G4cout << aTrack->GetKineticEnergy() << "a ";
         }
         if (aTrack->GetParticleDefinition()->GetParticleName() == "e-") {
-            G4cout << aTrack->GetKineticEnergy() << "b ";
+            //G4cout << aTrack->GetKineticEnergy() << "b ";
         }
     }
 

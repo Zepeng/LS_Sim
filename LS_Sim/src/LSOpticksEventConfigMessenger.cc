@@ -5,14 +5,29 @@
 #include "G4UIcmdWithADouble.hh"
 #include "G4UIcmdWithAnInteger.hh"
 
+#include <cassert>
+
+LSOpticksEventConfigMessenger* LSOpticksEventConfigMessenger::INSTANCE = nullptr;
+LSOpticksEventConfigMessenger* LSOpticksEventConfigMessenger::Get(){
+	assert(INSTANCE);
+	return INSTANCE;
+}
+
 LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruction* lsDet)
     : 
-	m_LSDetector(lsDet)
+	m_LSDetector(lsDet),
+	m_opticksMode(0)
 
 {
 
     evtConfigDirectory = new G4UIdirectory("/Opticks/EventConfig");
     evtConfigDirectory -> SetGuidance("Opticks Event configer register.");
+	
+	opticksModeCmd = new G4UIcmdWithAnInteger("/Opticks/EventConfig/OpticksMode", this);
+    opticksModeCmd -> SetGuidance("Set Opticks mode of this simulation.");
+    opticksModeCmd -> SetParameterName("opticksMode", true);
+    opticksModeCmd -> SetDefaultValue(0);
+
 
     maxPhotonCmd = new G4UIcmdWithAnInteger("/Opticks/EventConfig/MaxPhoton", this);
     maxPhotonCmd -> SetGuidance("Set max optical photon of the simulation.");
@@ -32,6 +47,7 @@ LSOpticksEventConfigMessenger::~LSOpticksEventConfigMessenger()
 {
     delete maxPhotonCmd;
 	delete maxGenstepCmd;
+	delete opticksModeCmd;
     delete evtConfigDirectory;
 }
 
@@ -39,11 +55,14 @@ LSOpticksEventConfigMessenger::~LSOpticksEventConfigMessenger()
 void LSOpticksEventConfigMessenger::SetNewValue
 (G4UIcommand* cmd, G4String newValues) {
     
-    if (cmd == maxGenstepCmd) 
-        m_LSDetector->SetOpticksMaxGenstep(maxGenstepCmd->GetNewIntValue(newValues));
-	else if ( cmd == maxPhotonCmd)
-		m_LSDetector->SetOpticksMaxPhoton(maxPhotonCmd->GetNewIntValue(newValues));
-    else
-        G4cout << "Error: Unknow Command !!! " << G4endl;
+    if (cmd == maxGenstepCmd){
+        m_LSDetector->SetOpticksMaxGenstep(maxGenstepCmd->GetNewIntValue(newValues));}
+	else if ( cmd == maxPhotonCmd){
+		m_LSDetector->SetOpticksMaxPhoton(maxPhotonCmd->GetNewIntValue(newValues));}
+	else if ( cmd == opticksModeCmd ){
+		m_opticksMode = opticksModeCmd->GetNewIntValue(newValues);
+		G4cout<<" m_opticksMode [ LSOpticksEventConfigMessenger::SetNewValue "<< m_opticksMode;}
+    else{
+        G4cout << "Error: Unknow Command !!! " << G4endl;}
 }
 

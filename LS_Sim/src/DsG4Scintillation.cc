@@ -432,7 +432,7 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
 		
 		if(scnt == 1)
 		{
-			check_photon = check_photon + Num;
+			//check_photon = check_photon + Num;
 			G4int NumPhoton = Num;
         	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
         	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
@@ -443,19 +443,55 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
         	}
 			//break;		
 		}
-
+		/*
 		if(scnt == 2){
 			check_photon = check_photon + Num;
 			slow_photons = Num;
 			slower_photons = 0 ; //will increase in below code
 		}
+		*/
 #endif
 		
+	
+#ifdef WITH_G4CXOPTICKS
+		if(scnt == 2)
+		{
+			
+			G4int NumPhoton = Num;
+			G4int slower_photons = std::floor(NumPhoton * slowerRatio);
+		
+			
+        	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
+        	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
+        	if(is_opticks_genstep && (m_opticksMode & 1))
+        	{
+        	    //NumPhoton = std::min( NumPhoton, 3 );  // for debugging purposes it helps to have less photons
+        	    if(slower_photons > 0 ){
+        	    	U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, slower_photons, 2u , slowerTimeConstant);
+				}//scnt is 1-based
+				if(NumPhoton - slower_photons > 0){			
+					U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, NumPhoton-slower_photons, 1u , slowTimeConstant);
+				}
+				//LOG(info)<<" end of check_photon = "<< check_photon;
+			}
+			/*G4cout<<" slower_photons = "<< slower_photons 
+				  <<" slowerRatio = "<< slowerRatio
+				  <<" NumPhoton = "<< NumPhoton
+				  <<endl;*/
+			//break;
+			//LOG(info)<<" end of check_photon = "<< check_photon;
+		}
+		//LOG(info)<<" end of check_photon = "<< check_photon;		
+#endif	
+		if(m_opticksMode == 1) {
+			continue;			
+		}
 
 
         if (!ScintillationIntegral) continue;
         
         // Max Scintillation Integral
+		
 
         for (G4int i = 0; i < Num; i++) { //Num is # of 2ndary tracks now
             // Determine photon energy
@@ -465,12 +501,12 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
         	    if(flagDecayTimeSlow && G4UniformRand() < slowerRatio && (!flagReemission)) {
 					ScintillationTime = slowerTimeConstant;
 #ifdef WITH_G4CXOPTICKS
-					slower_photons ++;
+			//		slower_photons ++;
 #endif  	
 				}
         	}
 
-			if( m_opticksMode == 1 ) continue;
+			//if( m_opticksMode == 1 ) continue;
 
             G4double sampledEnergy;
             if ( !flagReemission ) {
@@ -596,30 +632,6 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
             aSecondaryTrack->SetWeight( weight );
         }
 
-#ifdef WITH_G4CXOPTICKS
-		if(scnt == 2)
-		{
-			
-			G4int NumPhoton = Num;
-        	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
-        	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
-        	if(is_opticks_genstep && (m_opticksMode & 1))
-        	{
-        	    //NumPhoton = std::min( NumPhoton, 3 );  // for debugging purposes it helps to have less photons
-        	    if(slower_photons > 0 ){
-        	    	U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, slower_photons, 2u , slowerTimeConstant);
-				}//scnt is 1-based
-				if(slow_photons-slower_photons > 0){			
-					U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, slow_photons-slower_photons, 1u , slowTimeConstant);
-				}
-				LOG(info)<<" end of check_photon = "<< check_photon;
-			}
-
-			//break;
-			//LOG(info)<<" end of check_photon = "<< check_photon;
-		}
-		//LOG(info)<<" end of check_photon = "<< check_photon;		
-#endif	
 
 	
 	} // end loop over fast/slow scints

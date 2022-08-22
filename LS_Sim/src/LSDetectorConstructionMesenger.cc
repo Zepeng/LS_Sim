@@ -31,10 +31,10 @@ LSDetectorConstructionMessenger::~LSDetectorConstructionMessenger()
 
 void LSDetectorConstructionMessenger::SetNewValue
 (G4UIcommand* cmd, G4String newValues) {
-    
+   /* 
     if (cmd == opticksModeCmd) 
         m_LSDetector -> SetOpticksMode(opticksModeCmd->GetNewIntValue(newValues));
     else
-        G4cout << "Error: Unknow Command !!! " << G4endl;
+        G4cout << "Error: Unknow Command !!! " << G4endl;*/
 }
 

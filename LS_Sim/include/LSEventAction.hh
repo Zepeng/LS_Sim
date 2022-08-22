@@ -3,6 +3,7 @@
 
 #include "G4UserEventAction.hh"
 #include "globals.hh"
+#include <ctime>
 
 class LSEventAction : public G4UserEventAction
 {
@@ -15,6 +16,8 @@ class LSEventAction : public G4UserEventAction
 		void SetOpticksMode(int mode);
 	private:
 		int m_opticksMode;
+		clock_t m_end_t;
+		clock_t m_start_t;
 
 };
 

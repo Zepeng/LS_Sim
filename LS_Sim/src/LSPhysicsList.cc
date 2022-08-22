@@ -4,6 +4,7 @@
 #include "G4EmLivermorePhysics.hh"
 #include "G4DecayPhysics.hh"
 #include "G4SystemOfUnits.hh"
+#include "LSOpticksEventConfigMessenger.hh"
 
 // particles
 
@@ -18,12 +19,19 @@ LSPhysicsList::LSPhysicsList() : G4VModularPhysicsList()
 
     m_enableoptical = true;
     m_yield = 1.0;
-	m_opticksMode = 0;
+	//m_opticksMode = 0;
+	
+	m_opticksMode = std::atoi(getenv("LS_OPTICKS_MODE"));
 
     emPhysicsList = new G4EmLivermorePhysics();
     decayPhysicsList = new G4DecayPhysics();
 
     theMessenger = new LSPhysicsListMessenger(this);
+	
+	/*LSOpticksEventConfigMessenger* mes = LSOpticksEventConfigMessenger::Get();
+	SetOpticksMode(mes->GetOpticksMode());*/
+	G4cout<<" LSPhysicsList::Initialize "
+		  <<" m_opticksMode " << m_opticksMode;	
 
 }
 
@@ -34,9 +42,9 @@ LSPhysicsList::~LSPhysicsList() {
     delete theMessenger;
 }
 
-void LSPhysicsList::SetOpticksMode(int mode){
+/*void LSPhysicsList::SetOpticksMode(int mode){
 	m_opticksMode = mode;
-}
+}*/
 void LSPhysicsList::SetCuts() {
     //SetCutsWithDefault();
     defaultCutValue = 1.0*mm;
@@ -68,6 +76,7 @@ void LSPhysicsList::ConstructParticle()
 
 void LSPhysicsList::ConstructProcess()
 {
+	
     AddTransportation();
     ConstructOpticalProcess();
     emPhysicsList->ConstructProcess();
@@ -92,6 +101,7 @@ void LSPhysicsList::ConstructOpticalProcess()
     //LSCherenkov* theCerProcess   = new LSCherenkov();
     
 	//G4Cerenkov_modified * theCerProcess = nullptr;
+	
 	G4Cerenkov_modified * theCerProcess = new G4Cerenkov_modified();
     theCerProcess->SetMaxNumPhotonsPerStep(300);
     theCerProcess->SetTrackSecondariesFirst(true);
@@ -120,7 +130,7 @@ void LSPhysicsList::ConstructOpticalProcess()
     G4OpAbsorption* theAbsProcess         = new G4OpAbsorption();
     G4OpRayleigh* theRayProcess           = new G4OpRayleigh();
     G4OpBoundaryProcess* theBdProcess     = new G4OpBoundaryProcess();
-    theBdProcess->SetInvokeSD(false);
+    //theBdProcess->SetInvokeSD(true);
     auto particleIterator = GetParticleIterator();
     particleIterator->reset();
     while( (*particleIterator)() ){

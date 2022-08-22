@@ -64,9 +64,11 @@ LSDetectorConstruction::LSDetectorConstruction()
 	m_maxGenstep(-1)
 
 {
-	m_lsDetMes  = new LSDetectorConstructionMessenger(this); 
+	m_opticksMode = std::atoi(getenv("LS_OPTICKS_MODE"));
+	G4cout<< " m_opticksMode = std::atoi "<< m_opticksMode;
+	//m_lsDetMes  = new LSDetectorConstructionMessenger(this); 
 #ifdef WITH_G4CXOPTICKS
-	m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger(this);
+	m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger(this);//fist create
 #endif
 }
 
@@ -74,7 +76,7 @@ LSDetectorConstruction::LSDetectorConstruction()
 
 LSDetectorConstruction::~LSDetectorConstruction()
 {
-	delete m_lsDetMes;
+	//delete m_lsDetMes;
 #ifdef WITH_G4CXOPTICKS
     delete m_lsOpticksEvtMes; 
 #endif
@@ -83,12 +85,16 @@ LSDetectorConstruction::~LSDetectorConstruction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
-void LSDetectorConstruction::SetOpticksMode(int mode){
+/*void LSDetectorConstruction::SetOpticksMode(int mode){
 		m_opticksMode = mode;
-}
+}*/
 
 G4VPhysicalVolume* LSDetectorConstruction::Construct()
 {   
+
+	
+	//m_opticksMode = m_lsOpticksEvtMes->GetOpticksMode();
+	//G4cout<<" LSDetectorConstruction::Construct m_opticksMode "<<m_opticksMode;
 
     DefineMaterials();
 

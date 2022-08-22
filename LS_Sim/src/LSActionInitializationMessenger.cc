@@ -10,27 +10,27 @@ LSActionInitializationMessenger::LSActionInitializationMessenger(LSActionInitial
 
 {
 
-    actDirectory = new G4UIdirectory("/LS/action");
+    /*actDirectory = new G4UIdirectory("/LS/action");
     actDirectory -> SetGuidance("ActionInitialization register.");
 
     opticksModeCmd = new G4UIcmdWithAnInteger("/LS/action/opticksMode", this);
     opticksModeCmd -> SetGuidance("Set opticks mode to control optical simulation.");
     opticksModeCmd -> SetParameterName("opticksMode", true);
-    opticksModeCmd -> SetDefaultValue(0);
+    opticksModeCmd -> SetDefaultValue(0);*/
 }
 
 
 
 LSActionInitializationMessenger::~LSActionInitializationMessenger()
 {
-    delete opticksModeCmd;
-    delete actDirectory;
+ //   delete opticksModeCmd;
+ //   delete actDirectory;
 }
 
 
 void LSActionInitializationMessenger::SetNewValue
 (G4UIcommand* cmd, G4String newValues) {
-    
+ /*   
     if (cmd == opticksModeCmd){ 
 		G4cout<<"opticksModeCmd->GetNewIntValue(newValues) = : " << opticksModeCmd->GetNewIntValue(newValues); 
 		m_LSAction -> SetOpticksMode(opticksModeCmd->GetNewIntValue(newValues));
@@ -38,5 +38,6 @@ void LSActionInitializationMessenger::SetNewValue
     else{
         G4cout << "Error: Unknow Command !!! " << G4endl;
 	}
+	*/
 }
 

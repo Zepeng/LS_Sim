@@ -15,7 +15,7 @@ class G4VPhysicalVolume;
 class G4LogicalVolume;
 class G4Material;
 class G4OpticalSurface;
-class LSDetectorConstructionMessenger;
+//class LSDetectorConstructionMessenger;
 
 
 #ifdef WITH_G4CXOPTICKS
@@ -38,9 +38,9 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4VPhysicalVolume* DefineVolumes();
 
         void ModifyOpticalProperty();
-		void SetOpticksMode(int mode);
+		//void SetOpticksMode(int mode);
 	private:
-		LSDetectorConstructionMessenger* m_lsDetMes;
+		//LSDetectorConstructionMessenger* m_lsDetMes;
 
 
     private:

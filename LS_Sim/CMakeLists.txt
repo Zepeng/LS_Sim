@@ -115,10 +115,10 @@ set(EXAMPLE_SCRIPTS
   example.in
   example.out
   init_vis.mac
-  run1.mac
-  run2.mac
+  #run1.mac
+  #run2.mac
   vis.mac
-  photon.mac
+  #photon.mac
   )
 
 foreach(_script ${EXAMPLE_SCRIPTS})

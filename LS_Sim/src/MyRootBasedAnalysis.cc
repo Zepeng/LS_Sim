@@ -114,6 +114,15 @@ void MyRootBasedAnalysis::BeginOfEventAction(const G4Event* )
     edep = 0.;
     qedep = 0.;
     track_length = 0.;
+	m_hitTime.clear();
+	m_globalpos_x.clear();
+	m_globalpos_y.clear();
+	m_globalpos_z.clear();
+	m_opticks_hitTime.clear();
+	m_opticks_globalpos_x.clear();
+	m_opticks_globalpos_y.clear();
+	m_opticks_globalpos_z.clear();
+	
 
     //------- add your codes down here
     //

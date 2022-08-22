@@ -11,11 +11,11 @@ class LSActionInitialization : public G4VUserActionInitialization
         virtual ~LSActionInitialization();
 
         virtual void Build() const;
-		void SetOpticksMode(int mode);
+		//void SetOpticksMode(int mode);
 	private:
-		LSActionInitializationMessenger* theMessenger;
-		int m_opticksMode;
-		LSEventAction* eventAction;
+		//LSActionInitializationMessenger* theMessenger;
+		//int m_opticksMode;
+		//LSEventAction* eventAction;
 };
 
 
