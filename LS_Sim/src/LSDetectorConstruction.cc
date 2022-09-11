@@ -35,13 +35,12 @@
 #include "G4CXOpticks.hh"
 #include "PLOG.hh"
 #include "LSDetectorConstruction_Opticks.hh"
-#include "LSOpticksEventConfigMessenger.hh"
 #include "SPath.hh"
 #include "SEventConfig.hh"
 #include "QRng.hh"
 #endif
 
-
+#include "LSOpticksEventConfigMessenger.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
@@ -67,9 +66,8 @@ LSDetectorConstruction::LSDetectorConstruction()
 	m_opticksMode = std::atoi(getenv("LS_OPTICKS_MODE"));
 	G4cout<< " m_opticksMode = std::atoi "<< m_opticksMode;
 	//m_lsDetMes  = new LSDetectorConstructionMessenger(this); 
-#ifdef WITH_G4CXOPTICKS
+	
 	m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger(this);//fist create
-#endif
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -77,9 +75,9 @@ LSDetectorConstruction::LSDetectorConstruction()
 LSDetectorConstruction::~LSDetectorConstruction()
 {
 	//delete m_lsDetMes;
-#ifdef WITH_G4CXOPTICKS
+
     delete m_lsOpticksEvtMes; 
-#endif
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

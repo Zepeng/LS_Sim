@@ -19,9 +19,10 @@ class G4OpticalSurface;
 
 
 #ifdef WITH_G4CXOPTICKS
-class LSOpticksEventConfigMessenger;
 class G4CXOpticks;
 #endif
+
+class LSOpticksEventConfigMessenger;
 
 /// Detector construction class to define materials and geometry.
 
@@ -65,8 +66,9 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4OpticalSurface* Photocathode_opsurf;
 #ifdef WITH_G4CXOPTICKS
 		G4CXOpticks* m_g4cxopticks;
-		LSOpticksEventConfigMessenger * m_lsOpticksEvtMes; 
 #endif
+		
+		LSOpticksEventConfigMessenger * m_lsOpticksEvtMes; 
 		int m_opticksMode;
 		int m_maxPhoton;
 		int m_maxGenstep;
