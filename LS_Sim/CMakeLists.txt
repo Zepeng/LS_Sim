@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
 project(LS_Sim)
 #include(OpticksBuildOptions NO_POLICY_SCOPE)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 #================ Find Optix ===========================#
 if(DEFINED ENV{OPTICKS_PREFIX})
@@ -40,8 +42,7 @@ set(CMAKE_MACOSX_RPATH 1)
 # the RPATH to be used when building  
 set(CMAKE_BUILD_RPATH 
    "./"
-   "/Users/chad/Work/src/programs/geant/geant4.10.03.p03-install/lib/"   
-   "/anaconda3/lib")
+   )
 #  "/Users/liuqian/Applications/Qt5.6.0/5.6/clang_64/lib")
    
 #----------------------------------------------------------------------------
