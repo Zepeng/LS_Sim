@@ -27,10 +27,10 @@ LSEventAction::LSEventAction()
 	//SetOpticksMode(mes->GetOpticksMode());
 
 	
-	m_opticksMode = std::atoi(getenv("LS_OPTICKS_MODE"));
+	//m_opticksMode = std::atoi(getenv("LS_OPTICKS_MODE"));
 
-    G4cout << " Opticks Mode "<<m_opticksMode 
-			<< G4endl;
+    //G4cout << " Opticks Mode "<<m_opticksMode 
+	//		<< G4endl;
 }
 
 LSEventAction::~LSEventAction()
@@ -42,7 +42,7 @@ LSEventAction::~LSEventAction()
 
 
 void LSEventAction::SetOpticksMode(int mode){
-	m_opticksMode = mode;
+	//m_opticksMode = mode;
 }
 
 void LSEventAction::BeginOfEventAction(const G4Event* evt)
@@ -55,7 +55,7 @@ void LSEventAction::BeginOfEventAction(const G4Event* evt)
 	
     G4cout<<"begin of event "<<evt->GetEventID()<<G4endl;
 
-	MyAnalysisManager::GetInstance()->SetOpticksMode(m_opticksMode);
+	//MyAnalysisManager::GetInstance()->SetOpticksMode(m_opticksMode);
     MyAnalysisManager::GetInstance()->BeginOfEventAction(evt);
 }
 
@@ -69,6 +69,7 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
 	G4cout<<" detsim time of other "<< run_time_other_physic <<" s" <<G4endl;
 	
 #ifdef WITH_G4CXOPTICKS
+	/*
 	LOG(info)<< "LSEventAction::EndOfEventAction mode = "<<m_opticksMode;
 	if( m_opticksMode & 1 ){
 
@@ -79,7 +80,7 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
    		 cudaDeviceSynchronize();
    		 //gx->saveEvent();
 		 //SEvt::Clear();
-	}
+	}*/
 #endif
     //
     m_end_t = clock();

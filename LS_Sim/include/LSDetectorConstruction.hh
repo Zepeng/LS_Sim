@@ -10,6 +10,7 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "globals.hh"
 #include "G4ThreeVector.hh"
+#include "G4GDMLParser.hh"
 
 class G4VPhysicalVolume;
 class G4LogicalVolume;
@@ -48,11 +49,16 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4LogicalVolume* CDConstruction();
         G4LogicalVolume* SensDetConstruction();
         G4LogicalVolume* PmtConstruction();
-		G4LogicalVolume* InnerWaterConstruction();
-		G4LogicalVolume* VacuumConstruction();
-		G4LogicalVolume* GlassConstruction();
+	G4LogicalVolume* InnerWaterConstruction();
+	G4LogicalVolume* VacuumConstruction();
+	G4LogicalVolume* GlassConstruction();
 
-    private:
+	G4GDMLParser parser;
+	// Reading and Writing Settings
+	G4String fReadFile;
+	G4String fWriteFile;
+	G4String fStepFile;
+	G4int writingChoice;
         G4bool fCheckOverlaps;
 
         G4Material* air;

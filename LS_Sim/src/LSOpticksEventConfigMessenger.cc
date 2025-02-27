@@ -7,10 +7,12 @@
 
 #include <cassert>
 
-LSOpticksEventConfigMessenger* LSOpticksEventConfigMessenger::INSTANCE = nullptr;
-LSOpticksEventConfigMessenger* LSOpticksEventConfigMessenger::Get(){
-	assert(INSTANCE);
-	return INSTANCE;
+LSOpticksEventConfigMessenger* LSOpticksEventConfigMessenger::instance = nullptr;
+
+LSOpticksEventConfigMessenger* LSOpticksEventConfigMessenger::GetInstance(){
+	if (!instance)
+		instance = new LSOpticksEventConfigMessenger();
+    	return instance;
 }
 
 LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruction* lsDet)
@@ -19,11 +21,11 @@ LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruct
 	m_opticksMode(0)
 
 {
-
+/*
     evtConfigDirectory = new G4UIdirectory("/Opticks/EventConfig");
     evtConfigDirectory -> SetGuidance("Opticks Event configer register.");
 	
-	opticksModeCmd = new G4UIcmdWithAnInteger("/Opticks/EventConfig/OpticksMode", this);
+    opticksModeCmd = new G4UIcmdWithAnInteger("/Opticks/EventConfig/OpticksMode", this);
     opticksModeCmd -> SetGuidance("Set Opticks mode of this simulation.");
     opticksModeCmd -> SetParameterName("opticksMode", true);
     opticksModeCmd -> SetDefaultValue(0);
@@ -34,21 +36,24 @@ LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruct
     maxPhotonCmd -> SetParameterName("MaxPhoton", true);
     maxPhotonCmd -> SetDefaultValue(-1);
 	
-	maxGenstepCmd = new G4UIcmdWithAnInteger("/Opticks/EventConfig/MaxGenstep", this);
-	maxGenstepCmd -> SetGuidance("Set max Gensteo of the simulation");
-	maxGenstepCmd -> SetParameterName("MaxGenstep", true);
-	maxGenstepCmd -> SetDefaultValue(-1);
-
+    maxGenstepCmd = new G4UIcmdWithAnInteger("/Opticks/EventConfig/MaxGenstep", this);
+    maxGenstepCmd -> SetGuidance("Set max Gensteo of the simulation");
+    maxGenstepCmd -> SetParameterName("MaxGenstep", true);
+    maxGenstepCmd -> SetDefaultValue(-1);
+*/
 }
 
 
+LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger()
 
+{
+}
 LSOpticksEventConfigMessenger::~LSOpticksEventConfigMessenger()
 {
-    delete maxPhotonCmd;
-	delete maxGenstepCmd;
-	delete opticksModeCmd;
-    delete evtConfigDirectory;
+    //delete maxPhotonCmd;
+    //delete maxGenstepCmd;
+    //delete opticksModeCmd;
+    //delete evtConfigDirectory;
 }
 
 

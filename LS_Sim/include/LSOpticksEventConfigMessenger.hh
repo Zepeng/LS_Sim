@@ -14,23 +14,24 @@ class LSOpticksEventConfigMessenger : public G4UImessenger {
 
 	
     public:
-		static LSOpticksEventConfigMessenger* INSTANCE;
-		static LSOpticksEventConfigMessenger* Get();
+	static LSOpticksEventConfigMessenger* GetInstance();
         LSOpticksEventConfigMessenger(LSDetectorConstruction* lsDet);
         ~LSOpticksEventConfigMessenger();
 
         void SetNewValue(G4UIcommand* cmd, G4String newValues);
-		G4int GetOpticksMode() const{ return m_opticksMode ; }
+	G4int GetOpticksMode() const{ return m_opticksMode ; }
 
 
     private:
-        LSDetectorConstruction*  m_LSDetector;
+        LSOpticksEventConfigMessenger();
+	LSDetectorConstruction*  m_LSDetector;
+	static LSOpticksEventConfigMessenger* instance;
 
-        G4UIdirectory     	  	*evtConfigDirectory;
+        G4UIdirectory     	*evtConfigDirectory;
        	G4UIcmdWithAnInteger	*maxPhotonCmd;
-		G4UIcmdWithAnInteger    *maxGenstepCmd;
-		G4UIcmdWithAnInteger    *opticksModeCmd;
-		G4int                    m_opticksMode;
+	G4UIcmdWithAnInteger    *maxGenstepCmd;
+	G4UIcmdWithAnInteger    *opticksModeCmd;
+	G4int                    m_opticksMode;
 };
 
 #endif
