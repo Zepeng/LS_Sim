@@ -1,9 +1,7 @@
 #include "LSRunAction.hh"
 #include "LSAnalysisManager.hh"
 #include "MyAnalysisManager.hh"
-#include "MyAnalysisMessenger.hh"
 #include "ContinuousSpectrumManager.hh"
-#include "ContinuousSpectrumMessenger.hh"
 #include "Randomize.hh"
 #include <ctime>
 
@@ -17,8 +15,6 @@
 LSRunAction::LSRunAction()
 : G4UserRunAction(), fSaveRndm(0), fAutoSeed(false)
 {
-    fRunMessenger = new MyAnalysisMessenger();
-    fConSpecMessenger = new ContinuousSpectrumMessenger();
 }
 
 

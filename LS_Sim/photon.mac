@@ -15,8 +15,8 @@
 /tracking/verbose 0
 
 /LS/ana/output toy
-/My/ana/activate false
-/My/ana/output rb1.root
+#/My/ana/activate false
+#/My/ana/output rb1.root
 
 /LS/gun/parNum 1
 /LS/gun/particle1 gamma
