@@ -21,7 +21,7 @@ LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruct
 	m_opticksMode(0)
 {
 
-    evtConfigDirectory = new G4UIdirectory("/Opticks/EventConfig");
+    evtConfigDirectory = new G4UIdirectory("/Opticks/EventConfig/");
     evtConfigDirectory -> SetGuidance("Opticks Event configer register.");
 	
     opticksModeCmd = new G4UIcmdWithAnInteger("/Opticks/EventConfig/OpticksMode", this);

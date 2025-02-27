@@ -59,7 +59,6 @@ LSDetectorConstruction::LSDetectorConstruction()
 	coeff_efficiency(0.5),
 	m_maxPhoton(-1),
 	m_maxGenstep(-1)
-
 {
 	
   fReadFile ="test.gdml";
@@ -81,10 +80,6 @@ LSDetectorConstruction::~LSDetectorConstruction()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-
-/*void LSDetectorConstruction::SetOpticksMode(int mode){
-		m_opticksMode = mode;
-}*/
 
 G4VPhysicalVolume* LSDetectorConstruction::Construct()
 {   
