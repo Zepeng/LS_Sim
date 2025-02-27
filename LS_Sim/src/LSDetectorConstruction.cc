@@ -1,6 +1,5 @@
 /// \file LSDetectorConstruction.cc
 /// \brief Implementation of the LSDetectorConstruction class
-#include "LSDetectorConstructionMessenger.hh"
 #include "LSDetectorConstruction.hh"
 #include "LSDetectorSD.hh"
 
@@ -58,22 +57,15 @@ LSDetectorConstruction::LSDetectorConstruction()
 	coeff_abslen(2.862), 
 	coeff_rayleigh(0.643), 
 	coeff_efficiency(0.5),
-//#ifdef WITH_G4CXOPTICKS
-//	m_g4cxopticks(nullptr),
-//#endif
-	//m_opticksMode(0),
 	m_maxPhoton(-1),
 	m_maxGenstep(-1)
 
 {
-	//m_opticksMode = std::atoi(getenv("LS_OPTICKS_MODE"));
-	//G4cout<< " m_opticksMode = std::atoi "<< m_opticksMode;
-	//m_lsDetMes  = new LSDetectorConstructionMessenger(this); 
 	
   fReadFile ="test.gdml";
   fWriteFile="wtest.gdml";
   fStepFile ="mbb";
-  writingChoice=1;
+  writingChoice=2;
   m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger(this);//fist create
 }
 
@@ -96,10 +88,8 @@ LSDetectorConstruction::~LSDetectorConstruction()
 
 G4VPhysicalVolume* LSDetectorConstruction::Construct()
 {   
-
-	
-	//m_opticksMode = m_lsOpticksEvtMes->GetOpticksMode();
-	//G4cout<<" LSDetectorConstruction::Construct m_opticksMode "<<m_opticksMode;
+    m_opticksMode = m_lsOpticksEvtMes->GetOpticksMode();
+    G4cout<<" LSDetectorConstruction::Construct m_opticksMode "<<m_opticksMode;
 
     DefineMaterials();
 
@@ -185,7 +175,7 @@ G4VPhysicalVolume* LSDetectorConstruction::Construct()
   #ifdef WITH_G4CXOPTICKS
   //G4cout << " ##############ConfigurationManager::getInstance()->isEnable_opticks()):  "
   //       << ConfigurationManager::getInstance()->isEnable_opticks() << G4endl;
-  if(!fWorldPhysVol)
+  if(m_opticksMode)
   {
     cudaDeviceReset();
     // G4CXOpticks* g4cx =
