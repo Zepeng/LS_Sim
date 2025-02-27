@@ -150,9 +150,9 @@ void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 
 #ifdef WITH_G4CXOPTICKS
 	
-	SEvt* sev = SEvt::Get();
+	//SEvt* sev = SEvt::Get();
 	if ( m_opticksMode & 1 ){
-		unsigned num_hit = sev->getNumHit();
+		/*unsigned num_hit = sev->getNumHit();
 		for(unsigned idx = 0 ; idx < num_hit ; idx++){
 			
 			U4Hit hit;
@@ -164,7 +164,7 @@ void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 			m_opticks_globalpos_z.push_back(hit.global_position.z());
 		}
 		
-		fOpticksTree->Fill();
+		fOpticksTree->Fill();*/
 	}
 
 #endif

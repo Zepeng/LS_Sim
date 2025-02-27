@@ -172,7 +172,10 @@ G4VPhysicalVolume* LSDetectorConstruction::Construct()
   //       << ConfigurationManager::getInstance()->isEnable_opticks() << G4endl;
   if(m_opticksMode)
   {
-    cudaDeviceReset();
+    cudaError_t err = cudaDeviceReset();
+    if (err != cudaSuccess) {
+	    printf("CUDA error: %s\n", cudaGetErrorString(err));
+    }
     // G4CXOpticks* g4cx =
     G4cout << "************************** DetectorConstruction: Calling "
               "G4CXOpticks::SetGeometry***************************"
