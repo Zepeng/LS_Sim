@@ -6,6 +6,7 @@ project(LS_Sim)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+option(WITH_G4CXOPTICKS "Build example with OPTICKS" OFF)
 
 #================ Find Optix ===========================#
 if(DEFINED ENV{OPTICKS_PREFIX})

@@ -19,9 +19,8 @@ LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruct
     : 
 	m_LSDetector(lsDet),
 	m_opticksMode(0)
-
 {
-/*
+
     evtConfigDirectory = new G4UIdirectory("/Opticks/EventConfig");
     evtConfigDirectory -> SetGuidance("Opticks Event configer register.");
 	
@@ -40,7 +39,7 @@ LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruct
     maxGenstepCmd -> SetGuidance("Set max Gensteo of the simulation");
     maxGenstepCmd -> SetParameterName("MaxGenstep", true);
     maxGenstepCmd -> SetDefaultValue(-1);
-*/
+
 }
 
 
@@ -50,10 +49,10 @@ LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger()
 }
 LSOpticksEventConfigMessenger::~LSOpticksEventConfigMessenger()
 {
-    //delete maxPhotonCmd;
-    //delete maxGenstepCmd;
-    //delete opticksModeCmd;
-    //delete evtConfigDirectory;
+    delete maxPhotonCmd;
+    delete maxGenstepCmd;
+    delete opticksModeCmd;
+    delete evtConfigDirectory;
 }
 
 

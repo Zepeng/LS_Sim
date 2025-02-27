@@ -1,4 +1,3 @@
-
 /// \file LSDetectorConstruction.cc
 /// \brief Implementation of the LSDetectorConstruction class
 #include "LSDetectorConstructionMessenger.hh"
@@ -33,6 +32,8 @@
 
 #ifdef WITH_G4CXOPTICKS
 #include "G4CXOpticks.hh"
+#include "SEvt.hh"
+#include <cuda_runtime.h>
 #include "PLOG.hh"
 #include "LSDetectorConstruction_Opticks.hh"
 #include "SPath.hh"
@@ -48,14 +49,13 @@
 
 
 LSDetectorConstruction::LSDetectorConstruction()
-    : 
-	G4VUserDetectorConstruction(),
-    fCheckOverlaps(true), 
+    : G4VUserDetectorConstruction(),
+	fCheckOverlaps(true), 
 	air(NULL), 
 	water(NULL), 
 	LS(NULL), 
 	Steel(NULL),
-    coeff_abslen(2.862), 
+	coeff_abslen(2.862), 
 	coeff_rayleigh(0.643), 
 	coeff_efficiency(0.5),
 //#ifdef WITH_G4CXOPTICKS
@@ -74,7 +74,7 @@ LSDetectorConstruction::LSDetectorConstruction()
   fWriteFile="wtest.gdml";
   fStepFile ="mbb";
   writingChoice=1;
-	m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger(this);//fist create
+  m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger(this);//fist create
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -182,6 +182,20 @@ G4VPhysicalVolume* LSDetectorConstruction::Construct()
   {
 	  fWorldPhysVol = DefineVolumes();
   }
+  #ifdef WITH_G4CXOPTICKS
+  //G4cout << " ##############ConfigurationManager::getInstance()->isEnable_opticks()):  "
+  //       << ConfigurationManager::getInstance()->isEnable_opticks() << G4endl;
+  if(!fWorldPhysVol)
+  {
+    cudaDeviceReset();
+    // G4CXOpticks* g4cx =
+    G4cout << "************************** DetectorConstruction: Calling "
+              "G4CXOpticks::SetGeometry***************************"
+           << G4endl;
+    G4CXOpticks::SetGeometry(fWorldPhysVol);
+    // SEvt::Clear();
+  }
+#endif
   return fWorldPhysVol;
 }
 
