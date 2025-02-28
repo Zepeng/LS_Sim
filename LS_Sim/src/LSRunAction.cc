@@ -4,6 +4,7 @@
 #include "ContinuousSpectrumManager.hh"
 #include "Randomize.hh"
 #include <ctime>
+#include "LSOpticksEventConfigMessenger.hh"
 
 #ifdef WITH_G4CXOPTICKS
 #include "OPTICKS_LOG.hh"

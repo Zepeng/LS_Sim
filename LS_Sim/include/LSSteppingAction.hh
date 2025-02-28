@@ -10,15 +10,18 @@ class LSTrackingAction;
 
 class LSSteppingAction : public G4UserSteppingAction
 {
-    public:
-        LSSteppingAction(LSEventAction* event);
-        virtual ~LSSteppingAction();
-
-
-        virtual void UserSteppingAction(const G4Step*);
-
-    private:
-        LSEventAction* fEventAction;
+  private:
+    unsigned int Photoncounter{ 0 };
+    unsigned int GenStepcounter{ 0 };
+  
+  public:
+    LSSteppingAction();
+    ~LSSteppingAction() override;
+    
+    // method from the base class
+    void UserSteppingAction(const G4Step*) override;
+    inline void ResetPhotoncounter() { Photoncounter = 0; }
+    inline void ResetGenStepcounter() { GenStepcounter = 0; }
 };
 
 #endif

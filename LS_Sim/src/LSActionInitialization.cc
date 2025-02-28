@@ -53,7 +53,7 @@ void LSActionInitialization::Build() const
   //eventAction->SetOpticksMode(m_opticksMode);
   SetUserAction(eventAction);
   SetUserAction(new LSTrackingAction);
-  SetUserAction(new LSSteppingAction(eventAction));
+  SetUserAction(new LSSteppingAction());
   
   //LSOpticksEventConfigMessenger* mes = LSOpticksEventConfigMessenger::Get();
   //assert(mes); 
