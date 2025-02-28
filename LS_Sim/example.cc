@@ -62,14 +62,18 @@ int main(int argc,char** argv)
   clock_t start, end;
   start = clock(); 
   // Detect interactive mode (if no arguments) and define UI session
-  #ifdef WITH_G4CXOPTICKS
-  	G4cout << "************************** Calling SEventConfig ***************************" << G4endl;
-  	//SEventConfig::SetMaxPhoton(1000000);
-  	// SEventConfig::SetStandardFullDebug();  // controls which and dimensions of SEvt arrays
-  	OPTICKS_LOG(argc, argv);
-  	// OpticksCfg<Opticks>* m_cfg = m_opticks->getCfg();
-  	// std::cout << OpticksCfg::getRTX() << std::endl;
-  	std::cout << SEventConfig::Desc() << std::endl;
+#ifdef WITH_G4CXOPTICKS
+  OPTICKS_LOG(argc, argv);
+  //SEventConfig::SetRGModeSimulate();
+  //SEventConfig::SetStandardFullDebug(); // controls which and dimensions of SEvt arrays 
+  //const char * mask = "genstep,photon,hit" ;
+  const char * mask = "hit";
+  //SEventConfig::SetCompMask(mask);
+  //SEventConfig::SetMaxGenstep(3000000);
+  //SEventConfig::SetMaxPhoton(70000000);
+	//QRng::DEFAULT_PATH
+  
+
 #endif
   G4UIExecutive* ui = 0;
   if ( argc == 1 ) {
@@ -145,7 +149,7 @@ int main(int argc,char** argv)
   // in the main() program !
   
   // delete visManager;
-  delete runManager;
+  //delete runManager;
   end = clock();
   double run_time = static_cast<double>(end-start)/CLOCKS_PER_SEC;
   std::cout<<" run time = "<<run_time 

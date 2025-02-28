@@ -3,9 +3,9 @@
 /LS/phys/enableoptical true
 /LS/phys/yield 1.0
 
-/LS/spec/activate true
-/LS/spec/input /junofs/users/miaoyu/energy_model/production/J19v1r0-Pre4/B12/B12_edep_3.root
-/LS/spec/tree sim
+#/LS/spec/activate true
+#/LS/spec/input /junofs/users/miaoyu/energy_model/production/J19v1r0-Pre4/B12/B12_edep_3.root
+#/LS/spec/tree sim
 
 /run/initialize
 
@@ -29,5 +29,5 @@
 /LS/gun/position2 0 0 0
 
 /LS/sd/efficiency 0.18
-
+/Opticks/EventConfig/OpticksMode 1
 /run/beamOn 10

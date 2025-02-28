@@ -62,38 +62,6 @@ void LSRunAction::BeginOfRunAction(const G4Run*)
      os<<"beginOfRun_"<<fSaveRndm<<".rndm";
      G4Random::saveEngineStatus(os.str().c_str());
   }
-  #ifdef WITH_G4CXOPTICKS
-  if(LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode())
-  {
-      G4cout << "\n\n###[ RunAction::BeginOfRunAction\n\n" << G4endl;
-      G4VPhysicalVolume* world = G4TransportationManager::GetTransportationManager()
-                                   ->GetNavigatorForTracking()
-                                   ->GetWorldVolume();
-      assert(world);
-      bool standardize_geant4_materials = false;  // required for alignment
-      G4CXOpticks* g4ok                 = G4CXOpticks::Get();
-      // g4ok->setGeometry(world, standardize_geant4_materials);
-      // hjw            const std::vector<G4PVPlacement*>& sensor_placements =
-      // hjw                    g4ok->getSensorPlacements();
-      // hjw            G4cout << "sensor_placements.size():  " << sensor_placements.size()
-      // hjw        << G4endl;
-      /*
-            for (unsigned i = 0; i < sensor_placements.size(); i++) {
-                float efficiency_1 = 0.5f;
-                float efficiency_2 = 1.0f;
-                int sensor_cat = -1; // -1:means no angular info
-                int sensor_identifier =
-                        0xc0ffee + i; // mockup a detector specific identifier
-                unsigned sensorIndex = 1 + i; // 1-based
-                g4ok->setSensorData(sensorIndex, efficiency_1, efficiency_2, sensor_cat,
-                        sensor_identifier);
-            }
-            G4cout << "\n\n###] RunAction::BeginOfRunAction G4CXOpticks.setGeometry\n\n"
-                    << G4endl;
-            geo_initialized = true;
-      */
-  }
-#endif
 
 }
 

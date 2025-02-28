@@ -1,3 +1,4 @@
+
 /// \file LSDetectorConstruction.cc
 /// \brief Implementation of the LSDetectorConstruction class
 #include "LSDetectorConstruction.hh"
@@ -31,41 +32,34 @@
 
 #ifdef WITH_G4CXOPTICKS
 #include "G4CXOpticks.hh"
-#include "SEvt.hh"
-#include <cuda_runtime.h>
 #include "PLOG.hh"
 #include "LSDetectorConstruction_Opticks.hh"
 #include "SPath.hh"
 #include "SEventConfig.hh"
 #include "QRng.hh"
 #endif
-
 #include "LSOpticksEventConfigMessenger.hh"
-// GDML parser include
-//
-#include "G4GDMLParser.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
 LSDetectorConstruction::LSDetectorConstruction()
-    : G4VUserDetectorConstruction(),
-	fCheckOverlaps(true), 
+    : 
+	G4VUserDetectorConstruction(),
+    fCheckOverlaps(true), 
 	air(NULL), 
 	water(NULL), 
 	LS(NULL), 
 	Steel(NULL),
-	coeff_abslen(2.862), 
+    coeff_abslen(2.862), 
 	coeff_rayleigh(0.643), 
 	coeff_efficiency(0.5),
+#ifdef WITH_G4CXOPTICKS
+	m_g4cxopticks(nullptr),
+#endif
 	m_maxPhoton(-1),
 	m_maxGenstep(-1)
+
 {
-	
-  fReadFile ="test.gdml";
-  fWriteFile="wtest.gdml";
-  fStepFile ="mbb";
-  writingChoice=2;
-  //m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger();//fist create
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -81,109 +75,20 @@ LSDetectorConstruction::~LSDetectorConstruction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
+/*void LSDetectorConstruction::SetOpticksMode(int mode){
+		m_opticksMode = mode;
+}*/
+
 G4VPhysicalVolume* LSDetectorConstruction::Construct()
 {   
-    G4cout<<" LSDetectorConstruction::Construct "<<LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode();
+
+	
+	//m_opticksMode = m_lsOpticksEvtMes->GetOpticksMode();
+	//G4cout<<" LSDetectorConstruction::Construct m_opticksMode "<<m_opticksMode;
 
     DefineMaterials();
 
-    G4VPhysicalVolume* fWorldPhysVol;
-    //DefineVolumes();
-    if(writingChoice==0)
-    {
-    // **** LOOK HERE*** FOR READING GDML FILES
-    //
-
-    // ACTIVATING OVERLAP CHECK when read volumes are placed.
-    // Can take long time in case of complex geometries
-    //
-    // parser.SetOverlapCheck(true);
-
-    parser.Read(fReadFile);
-
-    // READING GDML FILES OPTION: 2nd Boolean argument "Validate".
-    // Flag to "false" disables check with the Schema when reading GDML file.
-    // See the GDML Documentation for more information.
-    //
-    // parser.Read(fReadFile,false);
-
-    // Prints the material information
-    //
-    G4cout << *(G4Material::GetMaterialTable() ) << G4endl;
-
-    // Giving World Physical Volume from GDML Parser
-    //
-    fWorldPhysVol = parser.GetWorldVolume();
-  }
-  else if(writingChoice==1)
-  {
-    // **** LOOK HERE*** FOR WRITING GDML FILES
-    // Detector Construction and WRITING to GDML
-    //
-    fWorldPhysVol = DefineVolumes();
-
-    // OPTION: TO ADD MODULE AT DEPTH LEVEL ...
-    //
-    // Can be a integer or a pointer to the top Physical Volume:
-    //
-    // G4int depth=1;
-    // parser.AddModule(depth);
-
-    // OPTION: SETTING ADDITION OF POINTER TO NAME TO FALSE
-    //
-    // By default, written names in GDML consist of the given name with
-    // appended the pointer reference to it, in order to make it unique.
-    // Naming policy can be changed by using the following method, or
-    // calling Write with additional Boolean argument to "false".
-    // NOTE: you have to be sure not to have duplication of names in your
-    //       Geometry Setup.
-    //
-    // parser.SetAddPointerToName(false);
-    //
-    // or
-    //
-    // parser.Write(fWriteFile, fWorldPhysVol, false);
-
-    // Writing Geometry to GDML File
-    //
-    parser.Write(fWriteFile, fWorldPhysVol);
-
-    // OPTION: SPECIFYING THE SCHEMA LOCATION
-    //
-    // When writing GDML file the default the Schema Location from the
-    // GDML web site will be used:
-    // "http://cern.ch/service-spi/app/releases/GDML/GDML_2_10_0/src/GDMLSchema/gdml.xsd"
-    //
-    // NOTE: GDML Schema is distributed in Geant4 in the directory:
-    //    $G4INSTALL/source/persistency/gdml/schema
-    //
-    // You can change the Schema path by adding a parameter to the Write
-    // command, as follows:
-    //
-    // parser.Write(fWriteFile, fWorldPhysVol, "your-path-to-schema/gdml.xsd");
-  }
-  else   // Demonstration how to Read STEP files using GDML
-  {
-	  fWorldPhysVol = DefineVolumes();
-  }
-  #ifdef WITH_G4CXOPTICKS
-  //G4cout << " ##############ConfigurationManager::getInstance()->isEnable_opticks()):  "
-  //       << ConfigurationManager::getInstance()->isEnable_opticks() << G4endl;
-  if(LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode())
-  {
-    cudaError_t err = cudaDeviceReset();
-    if (err != cudaSuccess) {
-	    printf("CUDA error: %s\n", cudaGetErrorString(err));
-    }
-    // G4CXOpticks* g4cx =
-    G4cout << "************************** DetectorConstruction: Calling "
-              "G4CXOpticks::SetGeometry***************************"
-           << G4endl;
-    G4CXOpticks::SetGeometry(fWorldPhysVol);
-    // SEvt::Clear();
-  }
-#endif
-  return fWorldPhysVol;
+    return DefineVolumes();
 }
 
 void LSDetectorConstruction::ModifyOpticalProperty()
@@ -643,7 +548,6 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 	//G4LogicalBorderSurface* pmtSurface_2 = new G4LogicalBorderSurface("pmtSurface",
     //                                            physDet, Photocathode_opsurf);
 #ifdef WITH_G4CXOPTICKS
-	/*
 	SEventConfig::SetRGModeSimulate();
 
 	if( m_maxPhoton > 0 ){
@@ -655,11 +559,12 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 	
 	int Million = SEventConfig::M;
 	int max_photon = SEventConfig::MaxPhoton();
-	if( max_photon > 400*Million){
-		LOG(error) << " max_photon = "<< max_photon
-				   << " exceed !!! ";
-		assert(0);
-	}else if ( max_photon > 100*Million){
+	//if( max_photon > 400*Million){
+	//	LOG(error) << " max_photon = "<< max_photon
+	//			   << " exceed !!! ";
+	//	assert(0);
+	//}
+	/*else if ( max_photon > 100*Million){
 		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_400000000_0_0.bin", 0) ;
 	}else if( max_photon > 10*Million){
 		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_100000000_0_0.bin", 0) ;
@@ -671,11 +576,11 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 		QRng::DEFAULT_PATH = SPath::Resolve("$HOME/.opticks/rngcache/RNG/cuRANDWrapper_1000000_0_0.bin", 0) ;
 	}
 	LOG(info)<<" QRng::DEFAULT_PATH " << QRng::DEFAULT_PATH ;
-	
+	*/
 	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
 	if(m_opticksMode & 1){
 		assert(m_g4cxopticks);
-	}*/
+	}
 #endif
     return worldPV;
 }

@@ -7,8 +7,8 @@
 #include "G4MaterialCutsCouple.hh"
 #include "G4Gamma.hh"
 #include "G4Electron.hh"
-#include "LSOpticksEventConfigMessenger.hh"
 #include "globals.hh"
+#include "LSOpticksEventConfigMessenger.hh"
 
 #ifdef WITH_G4CXOPTICKS
 #include "U4.hh"
