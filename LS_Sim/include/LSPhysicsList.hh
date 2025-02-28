@@ -32,10 +32,7 @@ class LSPhysicsList : public G4VModularPhysicsList
     private:
         G4bool m_enableoptical;
         G4double m_yield;
-		int m_opticksMode;
         LSPhysicsListMessenger* theMessenger;
-	public:
-		void SetOpticksMode(int mode);
 };
 
 #endif

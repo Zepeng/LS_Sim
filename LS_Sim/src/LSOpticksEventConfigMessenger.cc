@@ -15,9 +15,8 @@ LSOpticksEventConfigMessenger* LSOpticksEventConfigMessenger::GetInstance(){
     	return instance;
 }
 
-LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruction* lsDet)
+LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger()
     : 
-	m_LSDetector(lsDet),
 	m_opticksMode(0)
 {
 
@@ -43,10 +42,7 @@ LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger(LSDetectorConstruct
 }
 
 
-LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger()
 
-{
-}
 LSOpticksEventConfigMessenger::~LSOpticksEventConfigMessenger()
 {
     delete maxPhotonCmd;
@@ -60,9 +56,11 @@ void LSOpticksEventConfigMessenger::SetNewValue
 (G4UIcommand* cmd, G4String newValues) {
     
     if (cmd == maxGenstepCmd){
-        m_LSDetector->SetOpticksMaxGenstep(maxGenstepCmd->GetNewIntValue(newValues));}
+        //m_LSDetector->SetOpticksMaxGenstep(maxGenstepCmd->GetNewIntValue(newValues));
+	}
 	else if ( cmd == maxPhotonCmd){
-		m_LSDetector->SetOpticksMaxPhoton(maxPhotonCmd->GetNewIntValue(newValues));}
+		//m_LSDetector->SetOpticksMaxPhoton(maxPhotonCmd->GetNewIntValue(newValues));
+		}
 	else if ( cmd == opticksModeCmd ){
 		m_opticksMode = opticksModeCmd->GetNewIntValue(newValues);
 		G4cout<<" m_opticksMode [ LSOpticksEventConfigMessenger::SetNewValue "<< m_opticksMode;}

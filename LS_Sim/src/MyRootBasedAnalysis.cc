@@ -10,7 +10,7 @@
 #include "G4SDManager.hh"
 #include "G4HCofThisEvent.hh"
 #include "LSDetectorHit.hh"
-
+#include "LSOpticksEventConfigMessenger.hh"
 
 
 #include "TFile.h"
@@ -28,7 +28,6 @@ MyRootBasedAnalysis::MyRootBasedAnalysis()
     SetFileName("detsim.root");
 //	SetOpticksFileName("opticks_detsim.root");
 
-	m_opticksMode = 0;
 
     m_BirksConstant1 = 6.5e-3*g/cm2/MeV;
     m_BirksConstant2 = 1.5e-6*(g/cm2/MeV)*(g/cm2/MeV);
@@ -150,21 +149,22 @@ void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 
 #ifdef WITH_G4CXOPTICKS
 	
-	//SEvt* sev = SEvt::Get();
-	if ( m_opticksMode & 1 ){
-		/*unsigned num_hit = sev->getNumHit();
-		for(unsigned idx = 0 ; idx < num_hit ; idx++){
-			
-			U4Hit hit;
-			U4HitGet::FromEvt(hit, idx );
+	SEvt* sev = SEvt::Get_EGPU();
+	if (LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode()){
+		unsigned int num_hit = sev->GetNumHit(0);
+		/*for(unsigned int idx = 0 ; idx < num_hit ; idx++){
+			sphoton hit;
+			sev->getHit(hit, idx);
+			//U4Hit hit;
+			//U4HitGet::FromEvt(hit, idx );
 
 			m_opticks_hitTime.push_back(hit.time);
-			m_opticks_globalpos_x.push_back(hit.global_position.x());
-			m_opticks_globalpos_y.push_back(hit.global_position.y());
-			m_opticks_globalpos_z.push_back(hit.global_position.z());
-		}
+			m_opticks_globalpos_x.push_back(hit.pos.x);
+			m_opticks_globalpos_y.push_back(hit.pos.y);
+			m_opticks_globalpos_z.push_back(hit.pos.z);
+		}*/
 		
-		fOpticksTree->Fill();*/
+		fOpticksTree->Fill();
 	}
 
 #endif

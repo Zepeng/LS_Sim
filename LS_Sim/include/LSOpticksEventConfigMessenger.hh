@@ -15,7 +15,7 @@ class LSOpticksEventConfigMessenger : public G4UImessenger {
 	
     public:
 	static LSOpticksEventConfigMessenger* GetInstance();
-        LSOpticksEventConfigMessenger(LSDetectorConstruction* lsDet);
+        LSOpticksEventConfigMessenger();
         ~LSOpticksEventConfigMessenger();
 
         void SetNewValue(G4UIcommand* cmd, G4String newValues);
@@ -23,8 +23,6 @@ class LSOpticksEventConfigMessenger : public G4UImessenger {
 
 
     private:
-        LSOpticksEventConfigMessenger();
-	LSDetectorConstruction*  m_LSDetector;
 	static LSOpticksEventConfigMessenger* instance;
 
         G4UIdirectory     	*evtConfigDirectory;

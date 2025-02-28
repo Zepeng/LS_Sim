@@ -65,7 +65,7 @@ LSDetectorConstruction::LSDetectorConstruction()
   fWriteFile="wtest.gdml";
   fStepFile ="mbb";
   writingChoice=2;
-  m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger(this);//fist create
+  //m_lsOpticksEvtMes = new LSOpticksEventConfigMessenger();//fist create
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -83,8 +83,7 @@ LSDetectorConstruction::~LSDetectorConstruction()
 
 G4VPhysicalVolume* LSDetectorConstruction::Construct()
 {   
-    m_opticksMode = m_lsOpticksEvtMes->GetOpticksMode();
-    G4cout<<" LSDetectorConstruction::Construct m_opticksMode "<<m_opticksMode;
+    G4cout<<" LSDetectorConstruction::Construct "<<LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode();
 
     DefineMaterials();
 
@@ -170,7 +169,7 @@ G4VPhysicalVolume* LSDetectorConstruction::Construct()
   #ifdef WITH_G4CXOPTICKS
   //G4cout << " ##############ConfigurationManager::getInstance()->isEnable_opticks()):  "
   //       << ConfigurationManager::getInstance()->isEnable_opticks() << G4endl;
-  if(m_opticksMode)
+  if(LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode())
   {
     cudaError_t err = cudaDeviceReset();
     if (err != cudaSuccess) {

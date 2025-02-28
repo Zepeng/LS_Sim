@@ -19,8 +19,6 @@ LSPhysicsList::LSPhysicsList() : G4VModularPhysicsList()
 
     m_enableoptical = true;
     m_yield = 1.0;
-    //m_opticksMode = 0;
-    //m_opticksMode = std::atoi(getenv("LS_OPTICKS_MODE"));
 
     emPhysicsList = new G4EmLivermorePhysics();
     decayPhysicsList = new G4DecayPhysics();
@@ -28,9 +26,8 @@ LSPhysicsList::LSPhysicsList() : G4VModularPhysicsList()
     theMessenger = new LSPhysicsListMessenger(this);
 	
     LSOpticksEventConfigMessenger* mes ; //= LSOpticksEventConfigMessenger::Get();
-    //SetOpticksMode(mes->GetOpticksMode());
     G4cout<<" LSPhysicsList::Initialize "
-	    <<" m_opticksMode " << m_opticksMode;	
+	    <<" OpticksMode " << LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode();	
 
 }
 
@@ -41,9 +38,6 @@ LSPhysicsList::~LSPhysicsList() {
     delete theMessenger;
 }
 
-void LSPhysicsList::SetOpticksMode(int mode){
-	m_opticksMode = mode;
-}
 void LSPhysicsList::SetCuts() {
     //SetCutsWithDefault();
     defaultCutValue = 1.0*mm;

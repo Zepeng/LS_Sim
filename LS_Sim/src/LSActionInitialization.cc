@@ -18,7 +18,7 @@ LSActionInitialization::LSActionInitialization()
    //eventAction = new LSEventAction();  
    //theMessenger  = new LSActionInitializationMessenger(this);
 	
- // LSOpticksEventConfigMessenger* mes = LSOpticksEventConfigMessenger::Get();
+  LSOpticksEventConfigMessenger* mes = new LSOpticksEventConfigMessenger();
  // assert(mes); 
   //SetOpticksMode(mes->GetOpticksMode());
  // G4cout<<" LSActionInitialization::Build() m_opticksMode "<<mes->GetOpticksMode();

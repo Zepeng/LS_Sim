@@ -72,7 +72,7 @@
 #include "G4ParticleDefinition.hh"
 
 #include "G4Cerenkov_modified.hh"
-
+#include "LSOpticksEventConfigMessenger.hh"
 #ifdef INSTRUMENTED
 /*
 #include "OpticksDebug.hh"
@@ -115,8 +115,7 @@ G4Cerenkov_modified::G4Cerenkov_modified(const G4String& processName, G4ProcessT
 #ifdef INSTRUMENTED
  //            override_fNumPhotons(0),
 #endif
-             fNumPhotons(0),
-			 m_opticksMode(0)
+             fNumPhotons(0)
 {
   SetProcessSubType(fCerenkov);
 
@@ -381,7 +380,7 @@ G4VParticleChange* G4Cerenkov_modified::PostStepDoIt(const G4Track& aTrack, cons
 //	LOG(info) << "maxCos = "<< maxCos;
 //  }
 //  assert(maxCos <= 1.0);
-	if((m_opticksMode & 1 )&& (fNumPhotons > 0 )){
+	if( LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode() && (fNumPhotons > 0 )){
 		U4::CollectGenstep_G4Cerenkov_modified( 
 			&aTrack, 
 	      	&aStep, 
@@ -396,7 +395,7 @@ G4VParticleChange* G4Cerenkov_modified::PostStepDoIt(const G4Track& aTrack, cons
 	  	);
 	} 
 #endif
-	if(m_opticksMode == 1){
+	if(LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode()){
 		aParticleChange.SetNumberOfSecondaries(0);
  		return pParticleChange;
 	}
