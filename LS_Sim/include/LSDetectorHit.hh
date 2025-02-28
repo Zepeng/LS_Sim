@@ -29,10 +29,10 @@ class LSDetectorHit : public G4VHit
         G4double time;
         G4double edep;
         G4double wavelength;
-
-		G4double global_pos_x;
-		G4double global_pos_y;
-		G4double global_pos_z;
+	
+	G4double global_pos_x;
+	G4double global_pos_y;
+	G4double global_pos_z;
 
         G4bool isFromCerenkov;
         G4bool isReemission;

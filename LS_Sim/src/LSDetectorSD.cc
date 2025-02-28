@@ -17,6 +17,10 @@
 #include "OPTICKS_LOG.hh"
 #include "G4CXOpticks.hh"
 #include "PLOG.hh"
+#include "scuda.h"
+#include "SEvt.hh"
+#include "G4CXOpticks.hh"
+#include "NP.hh"
 #endif
 LSDetectorSD::LSDetectorSD( const G4String& name, 
                   const G4String& hitsCollectionName)
@@ -108,9 +112,9 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
     hit->SetFromCerenkov(is_from_cerenkov);
     hit->SetReemission(is_reemission);
     hit->SetOriginalOP(is_original_op);
-	hit->SetGlobalPosX(global_pos.x());
-	hit->SetGlobalPosY(global_pos.y());
-	hit->SetGlobalPosZ(global_pos.z());
+    hit->SetGlobalPosX(global_pos.x());
+    hit->SetGlobalPosY(global_pos.y());
+    hit->SetGlobalPosZ(global_pos.z());
 
     fHitsCollection->insert(hit);
 
@@ -156,3 +160,56 @@ void LSDetectorSD::EndOfEvent(G4HCofThisEvent*)
 
 }
 
+#ifdef WITH_G4CXOPTICKS
+void LSDetectorSD::AddOpticksHits()
+{
+  SEvt* sev             = SEvt::Get_EGPU();
+  unsigned int num_hits = sev->GetNumHit(0);
+
+  for(int idx = 0; idx < int(num_hits); idx++)
+  {
+    sphoton hit;
+    sev->getHit(hit, idx);
+    G4ThreeVector position     = G4ThreeVector(hit.pos.x, hit.pos.y, hit.pos.z);
+    G4ThreeVector direction    = G4ThreeVector(hit.mom.x, hit.mom.y, hit.mom.z);
+    G4ThreeVector polarization = G4ThreeVector(hit.pol.x, hit.pol.y, hit.pol.z);
+    int theCreationProcessid;
+    if(OpticksPhoton::HasCerenkovFlag(hit.flagmask))
+    {
+      theCreationProcessid = 0;
+    }
+    else if(OpticksPhoton::HasScintillationFlag(hit.flagmask))
+    {
+      theCreationProcessid = 1;
+    }
+    else
+    {
+      theCreationProcessid = -1;
+    }
+    LSDetectorHit* newHit = new LSDetectorHit();
+    //hit->SetTrackID(trackID);
+    newHit->SetTime(hit.time);
+    newHit->SetWavelength(hit.wavelength);
+    newHit->SetFromCerenkov(theCreationProcessid);
+    newHit->SetReemission(theCreationProcessid);
+    newHit->SetOriginalOP(theCreationProcessid);
+    newHit->SetGlobalPosX(hit.pos.x);
+    newHit->SetGlobalPosY(hit.pos.y);
+    newHit->SetGlobalPosZ(hit.pos.z);
+
+    fHitsCollection->insert(newHit);
+    bool fDebug = true;
+    if(fDebug)
+    {
+      G4cout << " Process ID: " << theCreationProcessid << " PhotonSD  pos.:" << hit.pos.x << "  "
+             << hit.pos.y << "  "
+             << "  " << hit.pos.z << "  mom.:  " << hit.mom.x << "  " << hit.mom.y << "  "
+             << hit.mom.z << "  pol.:  " << hit.pol.x << "  "
+             << "  " << hit.pol.y << "  " << hit.pol.z << " iiindex: " << hit.iindex << "  "
+             << "  wavel.:  " << hit.wavelength << "  time:  " << hit.time
+             << "  boundary flag:  " << hit.boundary_flag << "  identy:  " << hit.identity
+             << "  orient_idx: " << hit.orient_idx << "  flagmask:  " << hit.flagmask << G4endl;
+    }
+  }
+}
+#endif

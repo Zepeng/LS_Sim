@@ -62,14 +62,14 @@ int main(int argc,char** argv)
   clock_t start, end;
   start = clock(); 
   // Detect interactive mode (if no arguments) and define UI session
-#ifdef WITH_G4CXOPTICKS
-  G4cout << "************************** Calling SEventConfig ***************************" << G4endl;
-  //SEventConfig::SetMaxPhoton(1000000);
-  // SEventConfig::SetStandardFullDebug();  // controls which and dimensions of SEvt arrays
-  OPTICKS_LOG(argc, argv);
-  // OpticksCfg<Opticks>* m_cfg = m_opticks->getCfg();
-  // std::cout << OpticksCfg::getRTX() << std::endl;
-  std::cout << SEventConfig::Desc() << std::endl;
+  #ifdef WITH_G4CXOPTICKS
+  	G4cout << "************************** Calling SEventConfig ***************************" << G4endl;
+  	//SEventConfig::SetMaxPhoton(1000000);
+  	// SEventConfig::SetStandardFullDebug();  // controls which and dimensions of SEvt arrays
+  	OPTICKS_LOG(argc, argv);
+  	// OpticksCfg<Opticks>* m_cfg = m_opticks->getCfg();
+  	// std::cout << OpticksCfg::getRTX() << std::endl;
+  	std::cout << SEventConfig::Desc() << std::endl;
 #endif
   G4UIExecutive* ui = 0;
   if ( argc == 1 ) {
