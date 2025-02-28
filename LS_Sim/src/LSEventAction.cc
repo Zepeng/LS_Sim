@@ -21,11 +21,8 @@ LSEventAction::LSEventAction()
 :
  G4UserEventAction(),
  m_start_t(0),
- m_end_t(0),
- m_opticksMode(0)
-{
- 
-}
+ m_end_t(0)
+{;}
 
 LSEventAction::~LSEventAction()
 {;}
@@ -34,10 +31,6 @@ LSEventAction::~LSEventAction()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-
-void LSEventAction::SetOpticksMode(int mode){
-	//m_opticksMode = mode;
-}
 
 void LSEventAction::BeginOfEventAction(const G4Event* evt)
 {

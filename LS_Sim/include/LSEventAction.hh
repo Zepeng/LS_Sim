@@ -13,11 +13,10 @@ class LSEventAction : public G4UserEventAction
 
         virtual void BeginOfEventAction(const G4Event* event);
         virtual void   EndOfEventAction(const G4Event* event);
-		void SetOpticksMode(int mode);
-	private:
-		int m_opticksMode;
-		clock_t m_end_t;
-		clock_t m_start_t;
+	
+    private:
+	clock_t m_end_t;
+	clock_t m_start_t;
 
 };
 
