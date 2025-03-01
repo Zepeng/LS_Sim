@@ -68,16 +68,16 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4OpticalSurface* m_mirror_opsurf;
         G4OpticalSurface* Photocathode_opsurf;
 #ifdef WITH_G4CXOPTICKS
-		G4CXOpticks* m_g4cxopticks;
+	G4CXOpticks* m_g4cxopticks;
 #endif
 		
-		LSOpticksEventConfigMessenger * m_lsOpticksEvtMes; 
-		int m_opticksMode;
-		int m_maxPhoton;
-		int m_maxGenstep;
-	public:
-		void SetOpticksMaxGenstep(int max_genstep){ m_maxGenstep =  max_genstep;}
-		void SetOpticksMaxPhoton(int max_photon){ m_maxPhoton = max_photon;}
+	LSOpticksEventConfigMessenger * m_lsOpticksEvtMes; 
+	int m_opticksMode;
+	int m_maxPhoton;
+	int m_maxGenstep;
+    public:
+	void SetOpticksMaxGenstep(int max_genstep){ m_maxGenstep =  max_genstep;}
+	void SetOpticksMaxPhoton(int max_photon){ m_maxPhoton = max_photon;}
 
 	private:
         G4double coeff_abslen;
