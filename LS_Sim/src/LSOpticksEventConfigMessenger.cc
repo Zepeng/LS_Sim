@@ -16,8 +16,6 @@ LSOpticksEventConfigMessenger* LSOpticksEventConfigMessenger::GetInstance(){
 }
 
 LSOpticksEventConfigMessenger::LSOpticksEventConfigMessenger()
-    : 
-	m_opticksMode(0)
 {
 
     evtConfigDirectory = new G4UIdirectory("/Opticks/EventConfig/");

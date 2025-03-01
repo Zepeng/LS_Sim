@@ -6,6 +6,6 @@ class G4VPhysicalVolume ;
 
 struct LSDetectorConstruction_Opticks
 {
-    static G4CXOpticks* Setup(const G4VPhysicalVolume* world, int opticksMode );
+    static G4CXOpticks* Setup(const G4VPhysicalVolume* world);
 };
 

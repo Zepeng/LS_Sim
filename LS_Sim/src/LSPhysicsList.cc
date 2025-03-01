@@ -99,11 +99,9 @@ void LSPhysicsList::ConstructOpticalProcess()
     theCerProcess->SetMaxNumPhotonsPerStep(300);
     theCerProcess->SetTrackSecondariesFirst(true);
     theCerProcess->SetScaleFactor(1.0);
-    //theCerProcess->SetOpticksMode(m_opticksMode);
 
     // Scintillation Process :
     DsG4Scintillation* scint = new DsG4Scintillation();
-    //scint->SetOpticksMode(m_opticksMode);
     scint->SetDoQuenching(true);
     scint->SetBirksConstant1(6.5e-3*g/cm2/MeV);
     scint->SetBirksConstant2(1.5e-6*(g/cm2/MeV)*(g/cm2/MeV));

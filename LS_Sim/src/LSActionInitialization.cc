@@ -14,14 +14,12 @@
 LSActionInitialization::LSActionInitialization()
  : G4VUserActionInitialization()
 {
-   //m_opticksMode = 0;
    //eventAction = new LSEventAction();  
    //theMessenger  = new LSActionInitializationMessenger(this);
 	
   LSOpticksEventConfigMessenger* mes = new LSOpticksEventConfigMessenger();
  // assert(mes); 
   //SetOpticksMode(mes->GetOpticksMode());
- // G4cout<<" LSActionInitialization::Build() m_opticksMode "<<mes->GetOpticksMode();
 
 }
 
@@ -49,8 +47,6 @@ void LSActionInitialization::Build() const
   SetUserAction(runAction);
   
   LSEventAction* eventAction = new LSEventAction();
-  //G4cout<<"LSActionInitialization::Build() : "<< m_opticksMode ;
-  //eventAction->SetOpticksMode(m_opticksMode);
   SetUserAction(eventAction);
   SetUserAction(new LSTrackingAction);
   SetUserAction(new LSSteppingAction());
@@ -58,7 +54,6 @@ void LSActionInitialization::Build() const
   //LSOpticksEventConfigMessenger* mes = LSOpticksEventConfigMessenger::Get();
   //assert(mes); 
   //SetOpticksMode(mes->GetOpticksMode());
-  //G4cout<<" LSActionInitialization::Build() m_opticksMode "<<mes->GetOpticksMode();
 }  
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

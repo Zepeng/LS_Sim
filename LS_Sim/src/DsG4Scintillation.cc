@@ -504,7 +504,6 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
 				}
         	}
 
-			//if( m_opticksMode == 1 ) continue;
 
             G4double sampledEnergy;
             if ( !flagReemission ) {

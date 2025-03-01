@@ -80,11 +80,8 @@ into the way buffer and saved with hits "hiy". Using::
 **/
 
 
-G4CXOpticks* LSDetectorConstruction_Opticks::Setup(const G4VPhysicalVolume* world, int opticksMode )  // static
+G4CXOpticks* LSDetectorConstruction_Opticks::Setup(const G4VPhysicalVolume* world)  // static
 {
-    if( opticksMode == 0 ) return nullptr ; 
-    LOG(info) << "[ WITH_G4OPTICKS opticksMode " << opticksMode  ; 
-
     assert(world); 
 
     // 1. pass geometry to Opticks, translate it to GPU and return sensor placements  
@@ -98,7 +95,7 @@ G4CXOpticks* LSDetectorConstruction_Opticks::Setup(const G4VPhysicalVolume* worl
     return g4cx ; 
 }
 #else
-G4CXOpticks* LSDetectorConstruction_Opticks::Setup(const G4VPhysicalVolume*, int )  // static
+G4CXOpticks* LSDetectorConstruction_Opticks::Setup(const G4VPhysicalVolume*)  // static
 {
     return nullptr ; 
 }

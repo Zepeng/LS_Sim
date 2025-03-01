@@ -75,17 +75,8 @@ LSDetectorConstruction::~LSDetectorConstruction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
-/*void LSDetectorConstruction::SetOpticksMode(int mode){
-		m_opticksMode = mode;
-}*/
-
 G4VPhysicalVolume* LSDetectorConstruction::Construct()
 {   
-
-	
-	//m_opticksMode = m_lsOpticksEvtMes->GetOpticksMode();
-	//G4cout<<" LSDetectorConstruction::Construct m_opticksMode "<<m_opticksMode;
-
     DefineMaterials();
 
     return DefineVolumes();
@@ -577,10 +568,8 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 	}
 	LOG(info)<<" QRng::DEFAULT_PATH " << QRng::DEFAULT_PATH ;
 	*/
-	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV, m_opticksMode );
-	if(m_opticksMode & 1){
-		assert(m_g4cxopticks);
-	}
+	m_g4cxopticks = LSDetectorConstruction_Opticks::Setup( worldPV);
+	assert(m_g4cxopticks);
 #endif
     return worldPV;
 }

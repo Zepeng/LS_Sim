@@ -39,7 +39,6 @@ class LSDetectorConstruction : public G4VUserDetectorConstruction
         G4VPhysicalVolume* DefineVolumes();
 
         void ModifyOpticalProperty();
-		//void SetOpticksMode(int mode);
 
 
     private:
