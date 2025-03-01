@@ -8,7 +8,6 @@
 #include "G4Gamma.hh"
 #include "G4Electron.hh"
 #include "globals.hh"
-#include "LSOpticksEventConfigMessenger.hh"
 
 #ifdef WITH_G4CXOPTICKS
 #include "U4.hh"
@@ -436,7 +435,7 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
 			G4int NumPhoton = Num;
         	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
         	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
-        	if(is_opticks_genstep && LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode())
+        	if(is_opticks_genstep )
         	{
         	    //NumPhoton = std::min( NumPhoton, 3 );  // for debugging purposes it helps to have less photons
         	    U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, NumPhoton, scnt-1 , ScintillationTime);//scnt is 1-based
@@ -463,7 +462,7 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
 			
         	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
         	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
-        	if(is_opticks_genstep && LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode())
+        	if(is_opticks_genstep )
         	{
         	    //NumPhoton = std::min( NumPhoton, 3 );  // for debugging purposes it helps to have less photons
         	    if(slower_photons > 0 ){
@@ -482,11 +481,10 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
 			//LOG(info)<<" end of check_photon = "<< check_photon;
 		}
 		//LOG(info)<<" end of check_photon = "<< check_photon;		
-#endif	
-		if(LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode()) {
+//#endif	
 			continue;			
-		}
 
+#endif	
 
         if (!ScintillationIntegral) continue;
         
