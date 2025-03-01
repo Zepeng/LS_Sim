@@ -9,7 +9,7 @@
 #include "G4VProcess.hh"
 #include "G4SystemOfUnits.hh"
 
-LSSteppingAction::LSSteppingAction(LSEventAction* event)
+LSSteppingAction::LSSteppingAction()
 : G4UserSteppingAction()
 {
 }

@@ -31,15 +31,11 @@ LSEventAction::~LSEventAction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
-void LSEventAction::SetOpticksMode(int mode){
-}
-
 void LSEventAction::BeginOfEventAction(const G4Event* evt)
 {
 	
 	//LSOpticksEventConfigMessenger* mes = LSOpticksEventConfigMessenger::Get();
 	//assert(mes);
-	//SetOpticksMode(mes->GetOpticksMode());
 	m_start_t = clock();
 	
     G4cout<<"begin of event "<<evt->GetEventID()<<G4endl;

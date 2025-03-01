@@ -2,15 +2,14 @@
 #include "LSAnalysisManager.hh"
 #include "MyAnalysisManager.hh"
 #include "ContinuousSpectrumManager.hh"
+//#include "ContinuousSpectrumMessenger.hh"
 #include "Randomize.hh"
 #include <ctime>
-#include "LSOpticksEventConfigMessenger.hh"
 
 #ifdef WITH_G4CXOPTICKS
 #include "OPTICKS_LOG.hh"
 #include "SEventConfig.hh"
 #include "G4CXOpticks.hh"
-#  include "G4TransportationManager.hh"
 #endif
 
 
@@ -69,21 +68,6 @@ void LSRunAction::BeginOfRunAction(const G4Run*)
 
 void LSRunAction::EndOfRunAction(const G4Run* )
 {
-    #ifdef WITH_G4CXOPTICKS
-  if(LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode())
-  {
-    bool fDebug = true;
-    if(fDebug)
-    {
-      G4cout << "\n\n###[ RunAction::EndOfRunAction G4CXOpticks.Finalize\n\n" << G4endl;
-    }
-    G4CXOpticks::Finalize();
-    if(fDebug)
-    {
-      G4cout << "\n\n###] RunAction::EndOfRunAction G4CXOpticks.Finalize\n\n" << G4endl;
-    }
-  }
-#endif
     LSAnalysisManager* analysis = LSAnalysisManager::getInstance();
     analysis->finish();
 
