@@ -1,6 +1,6 @@
 # LS_Sim
 
-ls_sim by Miao Yu
+Simplified liquid scintillator simulation (No photon sensor) with options of Geant4 and Opticks for photon simulation.
 
 ## Getting started
 
