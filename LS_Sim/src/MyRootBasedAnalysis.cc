@@ -10,7 +10,7 @@
 #include "G4SDManager.hh"
 #include "G4HCofThisEvent.hh"
 #include "LSDetectorHit.hh"
-#include "LSOpticksEventConfigMessenger.hh"
+
 
 
 #include "TFile.h"
@@ -28,7 +28,6 @@ MyRootBasedAnalysis::MyRootBasedAnalysis()
     SetFileName("detsim.root");
 //	SetOpticksFileName("opticks_detsim.root");
 
-
     m_BirksConstant1 = 6.5e-3*g/cm2/MeV;
     m_BirksConstant2 = 1.5e-6*(g/cm2/MeV)*(g/cm2/MeV);
 }
@@ -39,8 +38,6 @@ MyRootBasedAnalysis::~MyRootBasedAnalysis()
 
 void MyRootBasedAnalysis::BeginOfRunAction()
 {
-    if (not active)
-        return;
 
     fRootFp = new TFile(fFileName, "recreate");
     if (!fRootFp)
@@ -85,8 +82,6 @@ void MyRootBasedAnalysis::BeginOfRunAction()
 
 void MyRootBasedAnalysis::EndOfRunAction()
 {
-    if (not active)
-        return;
     if (!fRootFp)
     {
         G4cout << "\n====>MyRootBasedAnalysis::EndOfRunAction(): "
@@ -106,21 +101,19 @@ void MyRootBasedAnalysis::EndOfRunAction()
 
 void MyRootBasedAnalysis::BeginOfEventAction(const G4Event* )
 {
-    if (!active)
-        return;
 
     // Initialization :
     edep = 0.;
     qedep = 0.;
     track_length = 0.;
-    m_hitTime.clear();
-    m_globalpos_x.clear();
-    m_globalpos_y.clear();
-    m_globalpos_z.clear();
-    m_opticks_hitTime.clear();
-    m_opticks_globalpos_x.clear();
-    m_opticks_globalpos_y.clear();
-    m_opticks_globalpos_z.clear();
+	m_hitTime.clear();
+	m_globalpos_x.clear();
+	m_globalpos_y.clear();
+	m_globalpos_z.clear();
+	m_opticks_hitTime.clear();
+	m_opticks_globalpos_x.clear();
+	m_opticks_globalpos_y.clear();
+	m_opticks_globalpos_z.clear();
 	
 
     //------- add your codes down here
@@ -131,8 +124,6 @@ void MyRootBasedAnalysis::BeginOfEventAction(const G4Event* )
 
 void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 {
-    if (!active)
-        return;
 	//save hit 
 	G4SDManager * SDman = G4SDManager::GetSDMpointer();
 	G4int CollID = SDman->GetCollectionID("PmtHitsCollection");
@@ -150,22 +141,22 @@ void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 #ifdef WITH_G4CXOPTICKS
 	
 	SEvt* sev = SEvt::Get_EGPU();
-	if (LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode()){
-		unsigned int num_hit = sev->GetNumHit(0);
-		/*for(unsigned int idx = 0 ; idx < num_hit ; idx++){
-			sphoton hit;
-			sev->getHit(hit, idx);
+		unsigned num_hit = sev->getNumHit();
+		std::cout << "ANA" << num_hit << std::endl;
+		for(unsigned idx = 0 ; idx < num_hit ; idx++){
+			
 			//U4Hit hit;
 			//U4HitGet::FromEvt(hit, idx );
-
+			sphoton hit;
+			sev->getHit(hit, idx);
+			std::cout << hit.time << std::endl;
 			m_opticks_hitTime.push_back(hit.time);
 			m_opticks_globalpos_x.push_back(hit.pos.x);
 			m_opticks_globalpos_y.push_back(hit.pos.y);
 			m_opticks_globalpos_z.push_back(hit.pos.z);
-		}*/
+		}
 		
 		fOpticksTree->Fill();
-	}
 
 #endif
 
@@ -177,9 +168,6 @@ void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 
 void MyRootBasedAnalysis::PreTrackingAction(const G4Track* aTrack)
 {
-    if (!active)
-        return;
-
     //------- add your codes down here
     return;
 }
@@ -187,8 +175,6 @@ void MyRootBasedAnalysis::PreTrackingAction(const G4Track* aTrack)
 
 void MyRootBasedAnalysis::PostTrackingAction(const G4Track* aTrack)
 {
-    if (!active)
-        return;
 
     if (aTrack->GetTrackID() == 1) {
         track_length = aTrack->GetTrackLength() *mm;
@@ -201,8 +187,6 @@ void MyRootBasedAnalysis::PostTrackingAction(const G4Track* aTrack)
 
 void MyRootBasedAnalysis::SteppingAction(const G4Step* aStep)
 {
-    if (!active)
-        return;
 
     //------- add your codes down here
     G4Track* aTrack = aStep->GetTrack();
