@@ -33,13 +33,8 @@ LSEventAction::~LSEventAction()
 
 void LSEventAction::BeginOfEventAction(const G4Event* evt)
 {
-	
-	//LSOpticksEventConfigMessenger* mes = LSOpticksEventConfigMessenger::Get();
-	//assert(mes);
-	m_start_t = clock();
-	
+    m_start_t = clock();
     G4cout<<"begin of event "<<evt->GetEventID()<<G4endl;
-
     MyAnalysisManager::GetInstance()->BeginOfEventAction(evt);
 }
 
@@ -49,35 +44,34 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
 {
 
     m_end_t = clock();
-	double run_time_other_physic = static_cast<double>(m_end_t-m_start_t)/CLOCKS_PER_SEC;
-	G4cout<<" detsim time of other "<< run_time_other_physic <<" s" <<G4endl;
+    double run_time_other_physic = static_cast<double>(m_end_t-m_start_t)/CLOCKS_PER_SEC;
+    G4cout<<" detsim time of other "<< run_time_other_physic <<" s" <<G4endl;
 	
 #ifdef WITH_G4CXOPTICKS
-		G4int inum_photon = SEvt::GetNumPhotonFromGenstep(0);
-		G4int eventid = event->GetEventID();
-   		 //G4CXOpticks* gx = G4CXOpticks::Get();
-   		 LOG(info)<<"gx->simulate()";
-   		 //LOG(info)<< gx->desc();
-   		 //gx->simulate(event->GetEventID(), false);
-		 std::cout << "SimEventID" << eventid << std::endl;
-		 G4CXOpticks::Get()->simulate(eventid, false);
-		 cudaDeviceSynchronize();
-		 SEvt* sev             = SEvt::Get_EGPU();
-		 unsigned int num_hits = sev->GetNumHit(0);
-		 //unsigned int num_hits = SEvt::GetNumHit(0);
-        std::cout << "MCEventAction: GetNumPhotonFromGenstep: " << inum_photon << std::endl;
-        // std::cout << "MCEventAction: GetNumGenstepFromGenstep: " << inum_genstep << std::endl;
-        std::cout << "MCEventAction: NumHits:  " << num_hits << std::endl;
-      if(num_hits > 0)
-      {
-                for(unsigned idx = 0 ; idx < num_hits ; idx++){
+    G4int inum_photon = SEvt::GetNumPhotonFromGenstep(0);
+    G4int eventid = event->GetEventID();
+    //G4CXOpticks* gx = G4CXOpticks::Get();
+    LOG(info)<<"gx->simulate()";
+    //LOG(info)<< gx->desc();
+    //gx->simulate(event->GetEventID(), false);
+    std::cout << "SimEventID" << eventid << std::endl;
+    G4CXOpticks::Get()->simulate(eventid, false);
+    cudaDeviceSynchronize();
+    SEvt* sev             = SEvt::Get_EGPU();
+    unsigned int num_hits = sev->GetNumHit(0);
+    //unsigned int num_hits = SEvt::GetNumHit(0);
+    std::cout << "MCEventAction: GetNumPhotonFromGenstep: " << inum_photon << std::endl;
+    // std::cout << "MCEventAction: GetNumGenstepFromGenstep: " << inum_genstep << std::endl;
+    std::cout << "MCEventAction: NumHits:  " << num_hits << std::endl;
+    if(num_hits > 0)
+    {
+        for(unsigned idx = 0 ; idx < num_hits ; idx++){
 
                         //U4Hit hit;
                         //U4HitGet::FromEvt(hit, idx );
                         sphoton hit;
                         sev->getHit(hit, idx);
-                        std::cout << hit.time << std::endl;
-		}
+        }
         G4HCtable* hctable = G4SDManager::GetSDMpointer()->GetHCtable();
         for(G4int i = 0; i < hctable->entries(); ++i)
         {

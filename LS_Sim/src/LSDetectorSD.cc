@@ -60,7 +60,7 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
 {
     G4Track* track = aStep->GetTrack();
     G4int trackID = track->GetTrackID();
-	//G4cout << " LSDetectorSD::ProcessHits " << trackID;
+    G4cout << " LSDetectorSD::ProcessHits " << trackID;
     if (track->GetDefinition() != G4OpticalPhoton::Definition()) {
         return false;
     }
@@ -117,7 +117,11 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
     hit->SetGlobalPosZ(global_pos.z());
 
     fHitsCollection->insert(hit);
-
+#ifdef WITH_G4CXOPTICKS
+  SEvt* sev             = SEvt::Get_EGPU();
+  unsigned int num_hits = sev->GetNumHit(0);
+  std::cout << "SD sev num_hits" << num_hits << std::endl;
+#endif
 
     return true;
 }
@@ -165,7 +169,7 @@ void LSDetectorSD::AddOpticksHits()
 {
   SEvt* sev             = SEvt::Get_EGPU();
   unsigned int num_hits = sev->GetNumHit(0);
-
+  std::cout << "SD sev num_hits" << num_hits << std::endl;
   for(int idx = 0; idx < int(num_hits); idx++)
   {
     sphoton hit;
