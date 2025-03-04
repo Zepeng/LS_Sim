@@ -43,14 +43,13 @@
 
 
 LSDetectorConstruction::LSDetectorConstruction()
-    : 
-	G4VUserDetectorConstruction(),
-    fCheckOverlaps(true), 
+    : G4VUserDetectorConstruction(),
+	fCheckOverlaps(true), 
 	air(NULL), 
 	water(NULL), 
 	LS(NULL), 
 	Steel(NULL),
-    coeff_abslen(2.862), 
+	coeff_abslen(2.862), 
 	coeff_rayleigh(0.643), 
 	coeff_efficiency(0.5),
 #ifdef WITH_G4CXOPTICKS
@@ -66,10 +65,6 @@ LSDetectorConstruction::LSDetectorConstruction()
 
 LSDetectorConstruction::~LSDetectorConstruction()
 {
-	//delete m_lsDetMes;
-
-    delete m_lsOpticksEvtMes; 
-
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -121,8 +116,8 @@ void LSDetectorConstruction::DefineMaterials()
         O = new G4Element("Oxygen", "O", 8., 16.00*g/mole); 
     }
 
-    G4double density= 1.000*g/cm3;
-    water = new G4Material("water", density, 2);
+    G4double water_density= 1.000*g/cm3;
+    water = new G4Material("water", water_density, 2);
     water->AddElement(H,2);
     water->AddElement(O,1);
     G4MaterialPropertiesTable* water_mpt = new G4MaterialPropertiesTable();
@@ -226,8 +221,8 @@ void LSDetectorConstruction::DefineMaterials()
         Si = new G4Element("Silicon", "Si", 14., 28.09*g/mole);
     }
     
-    density = 8.1*g/cm3;
-    Steel = new G4Material("Steel", density, 8);
+    G4double steel_density = 8.1*g/cm3;
+    Steel = new G4Material("Steel", steel_density, 8);
     Steel->AddElement(Fe, 0.70845);
     Steel->AddElement(C, 0.0008);
     Steel->AddElement(Mn, 0.02);
@@ -245,12 +240,12 @@ void LSDetectorConstruction::DefineMaterials()
     Steel_mpt->AddProperty("ABSLENGTH", SteelEnergy, SteelAbsLength,  4);
     Steel->SetMaterialPropertiesTable(Steel_mpt);
       
-    density = 5. *g/cm3; // true??
+    G4double cathode_density = 5. *g/cm3; // true??
     G4Element* K =  G4Element::GetElement("Potassium", JustWarning);
     if (not K) {
         K = new G4Element("Potassium", "K", 19., 39.0983*g/mole);
     }
-    Photocathode_mat = new G4Material("photocathode",density,1);
+    Photocathode_mat = new G4Material("photocathode",cathode_density,1);
     Photocathode_mat->AddElement(K, 1);
     
     G4double fPhCEnergy[4] = {1.55*eV, 6.20*eV, 10.33*eV, 15.5*eV};
@@ -366,13 +361,11 @@ G4LogicalVolume* LSDetectorConstruction::CDConstruction()
 }
 
 G4LogicalVolume* LSDetectorConstruction::InnerWaterConstruction(){
-
-	G4Sphere* solidInnerWater = new G4Sphere("InnerWaterSolid", 0*mm, 18000*mm, 0*deg, 360*deg, 0, 180*deg);
-
+    G4Sphere* solidInnerWater = new G4Sphere("InnerWaterSolid", 0*mm, 18000*mm, 0*deg, 360*deg, 0, 180*deg);
     G4LogicalVolume* logicInnerWater =  new G4LogicalVolume(solidInnerWater, 
-                            								 water,
-                            								"logicInnerWater");
-	return logicInnerWater;
+                            				water,"logicInnerWater");
+    
+    return logicInnerWater;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

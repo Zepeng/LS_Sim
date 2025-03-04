@@ -51,29 +51,20 @@ void MyRootBasedAnalysis::BeginOfRunAction()
     fTree->Branch("edep", &edep, "edep/F");
     fTree->Branch("Qedep", &qedep, "qedep/F");
     fTree->Branch("trackLength", &track_length, "track_length/F");
-	fTree->Branch("hitTime",&m_hitTime);
-	fTree->Branch("GlobalPosX",&m_globalpos_x);
-	fTree->Branch("GlobalPosY",&m_globalpos_y);
-	fTree->Branch("GlobalPosZ",&m_globalpos_z);
-	
-	/*fOpticksRootFp= new TFile(fOpticksFileName,"recreate");
-	if(!fOpticksRootFp){
-        G4cout << "\n====>MyRootBasedAnalysis::BeginOfRunAction(): "
-               << "cannot open " << fOpticksFileName << G4endl;
-        return;
-	
-	}*/
-	fOpticksTree = new TTree("opticks_sim","Tree of opticks");
-	//fOpticksTree->Branch("edep", &edep, "edep/F");
-    //fOpticksTree->Branch("Qedep", &qedep, "qedep/F");
-    //fOpticksTree->Branch("trackLength", &track_length, "track_length/F");
-    fOpticksTree->Branch("hitTime",&m_opticks_hitTime);
-	fOpticksTree->Branch("GlobalPosX",&m_opticks_globalpos_x);
-	fOpticksTree->Branch("GlobalPosY",&m_opticks_globalpos_y);
-	fOpticksTree->Branch("GlobalPosZ",&m_opticks_globalpos_z);
+    fTree->Branch("hitTime",&m_hitTime);
+    fTree->Branch("GlobalPosX",&m_globalpos_x);
+    fTree->Branch("GlobalPosY",&m_globalpos_y);
+    fTree->Branch("GlobalPosZ",&m_globalpos_z);
 	
 #ifdef WITH_G4CXOPTICKS
-
+    fOpticksTree = new TTree("opticks_sim","Tree of opticks");
+    fOpticksTree->Branch("edep", &edep, "edep/F");
+    fOpticksTree->Branch("Qedep", &qedep, "qedep/F");
+    fOpticksTree->Branch("trackLength", &track_length, "track_length/F");
+    fOpticksTree->Branch("hitTime",&m_opticks_hitTime);
+    fOpticksTree->Branch("GlobalPosX",&m_opticks_globalpos_x);
+    fOpticksTree->Branch("GlobalPosY",&m_opticks_globalpos_y);
+    fOpticksTree->Branch("GlobalPosZ",&m_opticks_globalpos_z);
 #endif
 
     return;
@@ -106,14 +97,14 @@ void MyRootBasedAnalysis::BeginOfEventAction(const G4Event* )
     edep = 0.;
     qedep = 0.;
     track_length = 0.;
-	m_hitTime.clear();
-	m_globalpos_x.clear();
-	m_globalpos_y.clear();
-	m_globalpos_z.clear();
-	m_opticks_hitTime.clear();
-	m_opticks_globalpos_x.clear();
-	m_opticks_globalpos_y.clear();
-	m_opticks_globalpos_z.clear();
+    m_hitTime.clear();
+    m_globalpos_x.clear();
+    m_globalpos_y.clear();
+    m_globalpos_z.clear();
+    m_opticks_hitTime.clear();
+    m_opticks_globalpos_x.clear();
+    m_opticks_globalpos_y.clear();
+    m_opticks_globalpos_z.clear();
 	
 
     //------- add your codes down here
@@ -124,39 +115,37 @@ void MyRootBasedAnalysis::BeginOfEventAction(const G4Event* )
 
 void MyRootBasedAnalysis::EndOfEventAction(const G4Event* evt)
 {
-	//save hit 
-	G4SDManager * SDman = G4SDManager::GetSDMpointer();
-	G4int CollID = SDman->GetCollectionID("PmtHitsCollection");
-	G4HCofThisEvent * HCE = evt->GetHCofThisEvent();
-	LSDetectorHitsCollection* col = (LSDetectorHitsCollection*)(HCE->GetHC(CollID));
-	G4int nofHits = col->entries();
-	for ( G4int i=0; i<nofHits; i++ ) {
-			m_hitTime.push_back((*col)[i]->GetTime());
-			m_globalpos_x.push_back((*col)[i]->GetGlobalPosX());
-			m_globalpos_y.push_back((*col)[i]->GetGlobalPosY());
-			m_globalpos_z.push_back((*col)[i]->GetGlobalPosZ());
-	}
-	fTree->Fill();
+    //save hit 
+    G4SDManager * SDman = G4SDManager::GetSDMpointer();
+    G4int CollID = SDman->GetCollectionID("PmtHitsCollection");
+    G4HCofThisEvent * HCE = evt->GetHCofThisEvent();
+    LSDetectorHitsCollection* col = (LSDetectorHitsCollection*)(HCE->GetHC(CollID));
+    G4int nofHits = col->entries();
+    for ( G4int i=0; i<nofHits; i++ ) {
+	m_hitTime.push_back((*col)[i]->GetTime());
+	m_globalpos_x.push_back((*col)[i]->GetGlobalPosX());
+	m_globalpos_y.push_back((*col)[i]->GetGlobalPosY());
+	m_globalpos_z.push_back((*col)[i]->GetGlobalPosZ());
+    }
+    fTree->Fill();
 
 #ifdef WITH_G4CXOPTICKS
 	
-	SEvt* sev = SEvt::Get_EGPU();
-		unsigned num_hit = sev->getNumHit();
-		std::cout << "ANA" << num_hit << std::endl;
-		for(unsigned idx = 0 ; idx < num_hit ; idx++){
-			
-			//U4Hit hit;
-			//U4HitGet::FromEvt(hit, idx );
-			sphoton hit;
-			sev->getHit(hit, idx);
-			std::cout << hit.time << std::endl;
-			m_opticks_hitTime.push_back(hit.time);
-			m_opticks_globalpos_x.push_back(hit.pos.x);
-			m_opticks_globalpos_y.push_back(hit.pos.y);
-			m_opticks_globalpos_z.push_back(hit.pos.z);
-		}
-		
-		fOpticksTree->Fill();
+    SEvt* sev = SEvt::Get_EGPU();
+    unsigned num_hit = sev->getNumHit();
+    std::cout << "ANA" << num_hit << std::endl;
+    for(unsigned idx = 0 ; idx < num_hit ; idx++){
+	//U4Hit hit;
+	//U4HitGet::FromEvt(hit, idx );
+	sphoton hit;
+	sev->getHit(hit, idx);
+	std::cout << hit.time << std::endl;
+	m_opticks_hitTime.push_back(hit.time);
+	m_opticks_globalpos_x.push_back(hit.pos.x);
+	m_opticks_globalpos_y.push_back(hit.pos.y);
+	m_opticks_globalpos_z.push_back(hit.pos.z);
+    }
+    fOpticksTree->Fill();
 
 #endif
 
