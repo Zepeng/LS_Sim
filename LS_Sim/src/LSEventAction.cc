@@ -1,5 +1,6 @@
 #include "LSEventAction.hh"
 #include "LSAnalysisManager.hh"
+#include "LSDetectorSD.hh"
 #include "MyAnalysisManager.hh"
 
 #include "G4RunManager.hh"
@@ -59,8 +60,7 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
     cudaDeviceSynchronize();
     SEvt* sev             = SEvt::Get_EGPU();
     unsigned int num_hits = sev->GetNumHit(0);
-    //unsigned int num_hits = SEvt::GetNumHit(0);
-    std::cout << "MCEventAction: GetNumPhotonFromGenstep: " << inum_photon << std::endl;
+    // std::cout << "MCEventAction: GetNumPhotonFromGenstep: " << inum_photon << std::endl;
     // std::cout << "MCEventAction: GetNumGenstepFromGenstep: " << inum_genstep << std::endl;
     std::cout << "MCEventAction: NumHits:  " << num_hits << std::endl;
     if(num_hits > 0)
@@ -79,15 +79,14 @@ void LSEventAction::EndOfEventAction(const G4Event* event)
 	  std::size_t found = sdn.find("detectorSD");
           if(found != std::string::npos)
           {
-            //          std::cout << "Photondetector: " << sdn << std::endl;
-            //PhotonSD* aSD = (PhotonSD*) G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
-            //aSD->AddOpticksHits();
+            LSDetectorSD* aSD = (LSDetectorSD*) G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
+            aSD->AddOpticksHits();
           }
         }
       }
    		 //gx->saveEvent();
 		 //SEvt::Clear();
-		 G4CXOpticks::Get()->reset(eventid);
+      G4CXOpticks::Get()->reset(eventid);
 #endif
     //
     m_end_t = clock();

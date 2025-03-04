@@ -60,7 +60,6 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
 {
     G4Track* track = aStep->GetTrack();
     G4int trackID = track->GetTrackID();
-    G4cout << " LSDetectorSD::ProcessHits " << trackID;
     if (track->GetDefinition() != G4OpticalPhoton::Definition()) {
         return false;
     }
@@ -117,11 +116,6 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
     hit->SetGlobalPosZ(global_pos.z());
 
     fHitsCollection->insert(hit);
-#ifdef WITH_G4CXOPTICKS
-  SEvt* sev             = SEvt::Get_EGPU();
-  unsigned int num_hits = sev->GetNumHit(0);
-  std::cout << "SD sev num_hits" << num_hits << std::endl;
-#endif
 
     return true;
 }
@@ -140,23 +134,6 @@ void LSDetectorSD::EndOfEvent(G4HCofThisEvent*)
        if ((*fHitsCollection)[i]->IsOriginalOP())   nofOP += 1;
        //(*fHitsCollection)[i] -> Print();
     }
-         //for ( G4int i=0; i<nofHits; i++ ) (*fHitsCollection)[i]->Print();
-
-    //G4cout << "======= Total " << nofHits << " hits have been detected with " 
-    //       << nofCerHits << " Cerenkov hits and " 
-    //       << nofSctHits << " Scintillation hits, the original photons are "  
-    //       << nofOP << " ======= !"
-    //       << G4endl;
-
-
-#ifdef WITH_G4CXOPTICKS
-	//G4CXOpticks* gx = G4CXOpticks::Get();
-	//LOG(info)<<"gx->simulate()";
-	//LOG(info)<< gx->desc();
-	//gx->simulate();
-	//cudaDeviceSynchronize();
-	//gx->save();
-#endif
 
     analysis -> analyseTotNPE(nofHits);
     analysis -> analyseCerNPE(nofCerHits);
@@ -202,7 +179,7 @@ void LSDetectorSD::AddOpticksHits()
     newHit->SetGlobalPosZ(hit.pos.z);
 
     fHitsCollection->insert(newHit);
-    bool fDebug = true;
+    bool fDebug = false;
     if(fDebug)
     {
       G4cout << " Process ID: " << theCreationProcessid << " PhotonSD  pos.:" << hit.pos.x << "  "
@@ -215,5 +192,19 @@ void LSDetectorSD::AddOpticksHits()
              << "  orient_idx: " << hit.orient_idx << "  flagmask:  " << hit.flagmask << G4endl;
     }
   }
+    G4int nofHits = fHitsCollection->entries();
+    G4int nofCerHits = 0;
+    G4int nofSctHits = 0;
+    G4int nofOP = 0;
+    for ( G4int i=0; i<nofHits; i++ ) {
+       if ((*fHitsCollection)[i]->IsFromCerenkov()) nofCerHits += 1;
+       if ((*fHitsCollection)[i]->IsReemission())   nofSctHits += 1;
+       if ((*fHitsCollection)[i]->IsOriginalOP())   nofOP += 1;
+       //(*fHitsCollection)[i] -> Print();
+    }
+
+    analysis -> analyseTotNPE(nofHits);
+    analysis -> analyseCerNPE(nofCerHits);
+    analysis -> analyseSctNPE(nofSctHits);
 }
 #endif
