@@ -121,11 +121,11 @@ int main(int argc,char** argv)
 
   // Get the pointer to the User Interface manager
   G4UImanager* UImanager = G4UImanager::GetUIpointer();
-/*
-  LSOpticksEventConfigMessenger* opticks_mes = new LSOpticksEventConfigMessenger(det);
+
+  LSOpticksEventConfigMessenger* opticks_mes = new LSOpticksEventConfigMessenger();
   runManager->Initialize();
 
-  G4cout<<"example.cc m_opticks_mode = "<<opticks_mes->GetOpticksMode();*/
+  G4cout<<"example.cc m_opticks_mode = "<<opticks_mes->GetOpticksMode();
   // Process macro or start UI session
   //
   if ( ! ui ) { 
