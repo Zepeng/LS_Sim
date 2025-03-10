@@ -262,7 +262,7 @@ private:
 
   G4bool fStackingFlag;
   G4double fScale;
-
+  G4int m_opticksMode;
 #ifdef INSTRUMENTED
 /*
 public:

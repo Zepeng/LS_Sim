@@ -115,7 +115,8 @@ G4Cerenkov_modified::G4Cerenkov_modified(const G4String& processName, G4ProcessT
 #ifdef INSTRUMENTED
  //            override_fNumPhotons(0),
 #endif
-             fNumPhotons(0)
+             fNumPhotons(0),
+			 m_opticksMode(0)
 {
   SetProcessSubType(fCerenkov);
 
@@ -124,6 +125,11 @@ G4Cerenkov_modified::G4Cerenkov_modified(const G4String& processName, G4ProcessT
   if (verboseLevel>0) {
      G4cout << GetProcessName() << " is created " << G4endl;
   }
+#ifdef WITH_G4CXOPTICKS
+  m_opticksMode = 1;
+#else
+  m_opticksMode = 0;
+#endif
 }
 
 // G4Cerenkov::G4Cerenkov(const G4Cerenkov &right)
@@ -380,7 +386,7 @@ G4VParticleChange* G4Cerenkov_modified::PostStepDoIt(const G4Track& aTrack, cons
 //	LOG(info) << "maxCos = "<< maxCos;
 //  }
 //  assert(maxCos <= 1.0);
-	if(fNumPhotons > 0 ){
+	if((m_opticksMode & 1 )&& (fNumPhotons > 0 )){
 		U4::CollectGenstep_G4Cerenkov_modified( 
 			&aTrack, 
 	      	&aStep, 
@@ -394,9 +400,12 @@ G4VParticleChange* G4Cerenkov_modified::PostStepDoIt(const G4Track& aTrack, cons
 	      	MeanNumberOfPhotons2
 	  	);
 	} 
+#endif
+	if(m_opticksMode == 1){
 		aParticleChange.SetNumberOfSecondaries(0);
  		return pParticleChange;
-#endif 
+	}
+
 #ifdef STANDALONE
     //U4::GenPhotonAncestor(&aTrack);  
 #endif
