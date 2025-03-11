@@ -34,7 +34,7 @@ using namespace std;
 // Constructors
 /////////////////
 
-DsG4Scintillation::DsG4Scintillation(const G4String& processName,
+DsG4Scintillation::DsG4Scintillation(G4int opticksMode, const G4String& processName,
                                      G4ProcessType type)
     : G4VRestDiscreteProcess(processName, type)
     , doReemission(true)
@@ -46,7 +46,7 @@ DsG4Scintillation::DsG4Scintillation(const G4String& processName,
     , flagDecayTimeFast(true), flagDecayTimeSlow(true)
     , fPhotonWeight(1.0)
     , m_noop(false)
-	, m_opticksMode(1)
+    , m_opticksMode(opticksMode)
 {
     SetProcessSubType(fScintillation);
     fTrackSecondariesFirst = false;

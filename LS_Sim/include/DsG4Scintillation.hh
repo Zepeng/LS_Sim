@@ -22,7 +22,7 @@
 class DsG4Scintillation : public G4VRestDiscreteProcess
 {
     public:
-        DsG4Scintillation(const G4String& processName = "Scintillation", G4ProcessType type = fElectromagnetic );
+        DsG4Scintillation(G4int opticksMode=0, const G4String& processName = "Scintillation", G4ProcessType type = fElectromagnetic );
         ~DsG4Scintillation();
 
     
@@ -202,10 +202,6 @@ protected:
         G4double fPhotonWeight;
         bool m_noop;
 	int m_opticksMode;
-
-
-
-
 };
 
 //
