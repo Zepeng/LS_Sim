@@ -31,7 +31,6 @@
 #include "LSDetectorConstruction.hh"
 #include "LSPhysicsList.hh"
 #include "LSActionInitialization.hh"
-#include "LSOpticksEventConfigMessenger.hh"
 
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"
@@ -59,28 +58,23 @@
 
 int main(int argc,char** argv)
 {
+  G4bool interactive   = false;
+  G4String macrofile   = "";
+  G4int opticksMode = 0;
+  G4UIExecutive* ui    = nullptr;
+  for(G4int i = 1; i < argc; i = i + 2)
+  {
+    if(G4String(argv[i]) == "-m")
+    {
+      macrofile = G4String(argv[i + 1]);
+    }
+    else if(G4String(argv[i]) == "-o")
+    {
+      opticksMode = std::atoi(argv[i + 1]);
+    }
+  }
   clock_t start, end;
   start = clock(); 
-  // Detect interactive mode (if no arguments) and define UI session
-#ifdef WITH_G4CXOPTICKS
-  OPTICKS_LOG(argc, argv);
-  //SEventConfig::SetRGModeSimulate();
-  //SEventConfig::SetStandardFullDebug(); // controls which and dimensions of SEvt arrays 
-  //const char * mask = "genstep,photon,hit" ;
-  const char * mask = "hit";
-  //SEventConfig::SetCompMask(mask);
-  //SEventConfig::SetMaxGenstep(3000000);
-  //SEventConfig::SetMaxPhoton(70000000);
-	//QRng::DEFAULT_PATH
-  
-
-#endif
-  G4UIExecutive* ui = 0;
-  if ( argc == 1 ) {
-    ui = new G4UIExecutive(argc, argv);
-  }
-  
-  //LOG(info) << " LOG(info) == > G4UIExecutive ";
 
   // Choose the Random engine
   G4Random::setTheEngine(new CLHEP::RanecuEngine);
@@ -101,9 +95,10 @@ int main(int argc,char** argv)
 
   // Physics list
   //auto physicsList = new QBBC;
-  G4VModularPhysicsList* physicsList = new LSPhysicsList();
+  LSPhysicsList* physicsList = new LSPhysicsList();
   //auto physicsList = new FTFP_BERT;
   physicsList->SetVerboseLevel(0);
+  physicsList->SetOpticksMode(opticksMode);
   runManager->SetUserInitialization(physicsList);
     
   // User action initialization
@@ -122,17 +117,15 @@ int main(int argc,char** argv)
   // Get the pointer to the User Interface manager
   G4UImanager* UImanager = G4UImanager::GetUIpointer();
 
-  LSOpticksEventConfigMessenger* opticks_mes = new LSOpticksEventConfigMessenger();
   runManager->Initialize();
 
-  G4cout<<"example.cc m_opticks_mode = "<<opticks_mes->GetOpticksMode();
   // Process macro or start UI session
   //
   if ( ! ui ) { 
     // batch mode
     G4String command = "/control/execute ";
     G4String fileName = argv[1];
-    UImanager->ApplyCommand(command+fileName);
+    UImanager->ApplyCommand(command+macrofile);
   }
   else { 
     // interactive mode

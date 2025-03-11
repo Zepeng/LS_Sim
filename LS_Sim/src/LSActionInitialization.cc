@@ -5,7 +5,6 @@
 #include "LSTrackingAction.hh"
 #include "LSSteppingAction.hh"
 #include "LSActionInitializationMessenger.hh"
-#include "LSOpticksEventConfigMessenger.hh"
 #include <cassert>
 
 
@@ -17,7 +16,6 @@ LSActionInitialization::LSActionInitialization()
    //eventAction = new LSEventAction();  
    //theMessenger  = new LSActionInitializationMessenger(this);
 	
-  LSOpticksEventConfigMessenger* mes = new LSOpticksEventConfigMessenger();
  // assert(mes); 
   //SetOpticksMode(mes->GetOpticksMode());
 
@@ -51,7 +49,6 @@ void LSActionInitialization::Build() const
   SetUserAction(new LSTrackingAction);
   SetUserAction(new LSSteppingAction());
   
-  //LSOpticksEventConfigMessenger* mes = LSOpticksEventConfigMessenger::Get();
   //assert(mes); 
   //SetOpticksMode(mes->GetOpticksMode());
 }  

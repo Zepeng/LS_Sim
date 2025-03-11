@@ -4,7 +4,6 @@
 #include "G4EmLivermorePhysics.hh"
 #include "G4DecayPhysics.hh"
 #include "G4SystemOfUnits.hh"
-#include "LSOpticksEventConfigMessenger.hh"
 
 // particles
 
@@ -19,16 +18,12 @@ LSPhysicsList::LSPhysicsList() : G4VModularPhysicsList()
 
     m_enableoptical = true;
     m_yield = 1.0;
-
+    m_opticksMode = 0;
     emPhysicsList = new G4EmLivermorePhysics();
     decayPhysicsList = new G4DecayPhysics();
 
     theMessenger = new LSPhysicsListMessenger(this);
 	
-    LSOpticksEventConfigMessenger* mes ; //= LSOpticksEventConfigMessenger::Get();
-    G4cout<<" LSPhysicsList::Initialize "
-	    <<" OpticksMode " << LSOpticksEventConfigMessenger::GetInstance()->GetOpticksMode();	
-
 }
 
 LSPhysicsList::~LSPhysicsList() {
@@ -89,13 +84,8 @@ void LSPhysicsList::ConstructProcess()
 void LSPhysicsList::ConstructOpticalProcess()
 {
 
-    // Cerenkov Process :
-    //G4Cerenkov* theCerProcess             = new G4Cerenkov();
-    //LSCherenkov* theCerProcess   = new LSCherenkov();
-    
-	//G4Cerenkov_modified * theCerProcess = nullptr;
-	
-	G4Cerenkov_modified * theCerProcess = new G4Cerenkov_modified();
+    G4cout << "Physics List Opticks Mode" << m_opticksMode << std::endl;	
+    G4Cerenkov_modified * theCerProcess = new G4Cerenkov_modified();
     theCerProcess->SetMaxNumPhotonsPerStep(300);
     theCerProcess->SetTrackSecondariesFirst(true);
     theCerProcess->SetScaleFactor(1.0);

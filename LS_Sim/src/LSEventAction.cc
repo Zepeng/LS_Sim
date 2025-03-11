@@ -5,7 +5,6 @@
 
 #include "G4RunManager.hh"
 #include "G4SDManager.hh"
-#include "LSOpticksEventConfigMessenger.hh"
 //#include <assert>
 #ifdef WITH_G4CXOPTICKS
 #include "PLOG.hh"

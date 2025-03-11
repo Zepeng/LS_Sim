@@ -38,7 +38,6 @@
 #include "SEventConfig.hh"
 #include "QRng.hh"
 #endif
-#include "LSOpticksEventConfigMessenger.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 

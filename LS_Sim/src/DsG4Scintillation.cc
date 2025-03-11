@@ -46,7 +46,7 @@ DsG4Scintillation::DsG4Scintillation(const G4String& processName,
     , flagDecayTimeFast(true), flagDecayTimeSlow(true)
     , fPhotonWeight(1.0)
     , m_noop(false)
-	, m_opticksMode(0)
+	, m_opticksMode(1)
 {
     SetProcessSubType(fScintillation);
     fTrackSecondariesFirst = false;
@@ -63,11 +63,6 @@ DsG4Scintillation::DsG4Scintillation(const G4String& processName,
 
     // FORCE reemission only
     doReemissionOnly = true;
-#ifdef WITH_G4CXOPTICKS
-    m_opticksMode = 1;
-#else
-    m_opticksMode = 0;
-#endif
 }
 
 ////////////////
