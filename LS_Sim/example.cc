@@ -58,13 +58,29 @@
 
 int main(int argc,char** argv)
 {
+  clock_t start, end;
+  start = clock(); 
+  // Detect interactive mode (if no arguments) and define UI session
+#ifdef WITH_G4CXOPTICKS
+  OPTICKS_LOG(argc, argv);
+  //SEventConfig::SetRGModeSimulate();
+  //SEventConfig::SetStandardFullDebug(); // controls which and dimensions of SEvt arrays 
+  //const char * mask = "genstep,photon,hit" ;
+  const char * mask = "hit";
+  //SEventConfig::SetCompMask(mask);
+  //SEventConfig::SetMaxGenstep(3000000);
+  //SEventConfig::SetMaxPhoton(70000000);
+	//QRng::DEFAULT_PATH
+  
+
+#endif
   G4bool interactive   = false;
   G4String macrofile   = "";
   G4int opticksMode = 0;
   G4UIExecutive* ui    = nullptr;
   for(G4int i = 1; i < argc; i = i + 2)
   {
-    if(G4String(argv[i]) == "-m")
+   if(G4String(argv[i]) == "-m")
     {
       macrofile = G4String(argv[i + 1]);
     }
@@ -73,8 +89,11 @@ int main(int argc,char** argv)
       opticksMode = std::atoi(argv[i + 1]);
     }
   }
-  clock_t start, end;
-  start = clock(); 
+  if ( argc == 1 ) {
+    ui = new G4UIExecutive(argc, argv);
+  }
+  
+  //LOG(info) << " LOG(info) == > G4UIExecutive ";
 
   // Choose the Random engine
   G4Random::setTheEngine(new CLHEP::RanecuEngine);
@@ -124,7 +143,7 @@ int main(int argc,char** argv)
   if ( ! ui ) { 
     // batch mode
     G4String command = "/control/execute ";
-    G4String fileName = argv[1];
+    //G4String fileName = argv[1];
     UImanager->ApplyCommand(command+macrofile);
   }
   else { 
@@ -142,7 +161,7 @@ int main(int argc,char** argv)
   // in the main() program !
   
   // delete visManager;
-  //delete runManager;
+  delete runManager;
   end = clock();
   double run_time = static_cast<double>(end-start)/CLOCKS_PER_SEC;
   std::cout<<" run time = "<<run_time 
