@@ -105,7 +105,7 @@ public:
   // Constructors and Destructor
   ////////////////////////////////
 
-  explicit G4Cerenkov_modified(const G4String& processName = "Cerenkov", 
+  explicit G4Cerenkov_modified(G4int opticksMode=0, const G4String& processName = "Cerenkov", 
              G4ProcessType type = fElectromagnetic);
   ~G4Cerenkov_modified();
 

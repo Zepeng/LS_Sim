@@ -73,13 +73,6 @@
 
 #include "G4Cerenkov_modified.hh"
 
-#ifdef INSTRUMENTED
-/*
-#include "OpticksDebug.hh"
-#include "OpticksRandom.hh"
-*/
-#endif
-
 #ifdef WITH_G4CXOPTICKS
 #include "PLOG.hh"
 #include "U4.hh"
@@ -106,17 +99,14 @@
   // Constructors
   /////////////////
 
-G4Cerenkov_modified::G4Cerenkov_modified(const G4String& processName, G4ProcessType type)
+G4Cerenkov_modified::G4Cerenkov_modified(G4int opticksMode, const G4String& processName, G4ProcessType type)
            : G4VProcess(processName, type),
              fTrackSecondariesFirst(false),
              fMaxBetaChange(0.0),
              fMaxPhotons(0),
              fStackingFlag(true),
-#ifdef INSTRUMENTED
- //            override_fNumPhotons(0),
-#endif
              fNumPhotons(0),
-			 m_opticksMode(0)
+	     m_opticksMode(opticksMode)
 {
   SetProcessSubType(fCerenkov);
 
@@ -125,11 +115,6 @@ G4Cerenkov_modified::G4Cerenkov_modified(const G4String& processName, G4ProcessT
   if (verboseLevel>0) {
      G4cout << GetProcessName() << " is created " << G4endl;
   }
-#ifdef WITH_G4CXOPTICKS
-  m_opticksMode = 1;
-#else
-  m_opticksMode = 0;
-#endif
 }
 
 // G4Cerenkov::G4Cerenkov(const G4Cerenkov &right)
