@@ -426,111 +426,56 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
             ScintillationIntegral =
                 (G4PhysicsOrderedFreeVector*)((*theSlowIntegralTable)(materialIndex));
         }
-
+	G4int NumPhoton = Num;
 #ifdef WITH_G4CXOPTICKS
-		
-		if(scnt == 1)
-		{
-			//check_photon = check_photon + Num;
-			G4int NumPhoton = Num;
-        	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
-        	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
-        	if(is_opticks_genstep && (m_opticksMode & 1))
-        	{
-        	    //NumPhoton = std::min( NumPhoton, 3 );  // for debugging purposes it helps to have less photons
-        	    U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, NumPhoton, scnt-1 , ScintillationTime);//scnt is 1-based
-        	}
-			//break;		
-		}
-		/*
-		if(scnt == 2){
-			check_photon = check_photon + Num;
-			slow_photons = Num;
-			slower_photons = 0 ; //will increase in below code
-		}
-		*/
+        if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
+        bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ; 
+        if(is_opticks_genstep && (m_opticksMode == 1 || m_opticksMode == 3))
+        {    
+            U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, NumPhoton, scnt, ScintillationTime); 
+        }    
 #endif
-		
-	
+
+         if( m_opticksMode != 1 )
+         {
+
+         for(G4int i = 0 ; i < NumPhoton ; i++) {
 #ifdef WITH_G4CXOPTICKS
-		if(scnt == 2)
-		{
-			
-			G4int NumPhoton = Num;
-			G4int slower_photons = std::floor(NumPhoton * slowerRatio);
-		
-			
-        	if(flagReemission) assert( NumPhoton == 0 || NumPhoton == 1);   // expecting only 0 or 1 remission photons
-        	bool is_opticks_genstep = NumPhoton > 0 && !flagReemission ;
-        	if(is_opticks_genstep && (m_opticksMode & 1))
-        	{
-        	    //NumPhoton = std::min( NumPhoton, 3 );  // for debugging purposes it helps to have less photons
-        	    if(slower_photons > 0 ){
-        	    	U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, slower_photons, 2u , slowerTimeConstant);
-				}//scnt is 1-based
-				if(NumPhoton - slower_photons > 0){			
-					U4::CollectGenstep_DsG4Scintillation_r4695( &aTrack, &aStep, NumPhoton-slower_photons, 1u , slowTimeConstant);
-				}
-				//LOG(info)<<" end of check_photon = "<< check_photon;
-			}
-			/*G4cout<<" slower_photons = "<< slower_photons 
-				  <<" slowerRatio = "<< slowerRatio
-				  <<" NumPhoton = "<< NumPhoton
-				  <<endl;*/
-			//break;
-			//LOG(info)<<" end of check_photon = "<< check_photon;
-		}
-		//LOG(info)<<" end of check_photon = "<< check_photon;		
-#endif	
-		if(m_opticksMode == 1) {
-			continue;			
-		}
-
-
-        if (!ScintillationIntegral) continue;
-        
-        // Max Scintillation Integral
-		
-
-        for (G4int i = 0; i < Num; i++) { //Num is # of 2ndary tracks now
-            // Determine photon energy
-
-        	if(scnt == 2) {
-        	    ScintillationTime = slowTimeConstant;
-        	    if(flagDecayTimeSlow && G4UniformRand() < slowerRatio && (!flagReemission)) {
-					ScintillationTime = slowerTimeConstant;
-#ifdef WITH_G4CXOPTICKS
-			//		slower_photons ++;
-#endif  	
-				}
-        	}
-
-			//if( m_opticksMode == 1 ) continue;
-
-            G4double sampledEnergy;
-            if ( !flagReemission ) {
+           U4::GenPhotonBegin(i);
+#endif
+           G4double sampledEnergy;
+           if ( !flagReemission ) {
                 // normal scintillation
-                G4double CIIvalue = G4UniformRand()*
+               G4double CIIvalue = G4UniformRand()*
                     ScintillationIntegral->GetMaxValue();
-                sampledEnergy=
+               sampledEnergy=
                     ScintillationIntegral->GetEnergy(CIIvalue);
 
+               if (verboseLevel>1) 
+                    {
+                        G4cout << "sampledEnergy = " << sampledEnergy << G4endl;
+                        G4cout << "CIIvalue =        " << CIIvalue << G4endl;
+                    }
             }
-            else {
+         else {
                 // reemission, the sample method need modification
                 G4double CIIvalue = G4UniformRand()*
                     ScintillationIntegral->GetMaxValue();
                 if (CIIvalue == 0.0) {
-                    // return unchanged particle and no secondaries  
+                    // return unchanged particle and no secondaries 
                     aParticleChange.SetNumberOfSecondaries(0);
                     return G4VRestDiscreteProcess::PostStepDoIt(aTrack, aStep);
-                }
+                   }
                 sampledEnergy=
                     ScintillationIntegral->GetEnergy(CIIvalue);
-            }
-
-            // Generate random photon direction
-
+                if (verboseLevel>1) {
+                    G4cout << "oldEnergy = " <<aTrack.GetKineticEnergy() << G4endl;
+                    G4cout << "reemittedSampledEnergy = " << sampledEnergy
+                           << "\nreemittedCIIvalue =        " << CIIvalue << G4endl;
+                   }
+             }
+        
+           // Generate random photon direction
             G4double cost = 1. - 2.*G4UniformRand();
             G4double sint = sqrt((1.-cost)*(1.+cost));
 
@@ -542,12 +487,10 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
             G4double py = sint*sinp;
             G4double pz = cost;
 
-            // Create photon momentum direction vector 
-
+            // Create photon momentum direction vector  
             G4ParticleMomentum photonMomentum(px, py, pz);
 
             // Determine polarization of new photon 
-
             G4double sx = cost*cosp;
             G4double sy = cost*sinp; 
             G4double sz = -sint;
@@ -564,8 +507,8 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
 
             photonPolarization = photonPolarization.unit();
 
-            // Generate a new photon:
-
+            // Generate a new photon:    
+        
             G4DynamicParticle* aScintillationPhoton =
                 new G4DynamicParticle(G4OpticalPhoton::OpticalPhoton(), 
                                       photonMomentum);
@@ -577,7 +520,6 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
             aScintillationPhoton->SetKineticEnergy(sampledEnergy);
 
             // Generate new G4Track object:
-
             G4double rand=0;
             G4ThreeVector aSecondaryPosition;
             G4double deltaTime;
@@ -586,11 +528,11 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
                            -ScintillationTime * log( G4UniformRand() );
                 aSecondaryPosition= pPostStepPoint->GetPosition();
                 vertpos = aTrack.GetVertexPosition();
-                vertenergy = aTrack.GetKineticEnergy();
-                reem_d = 
-                    sqrt( pow( aSecondaryPosition.x()-vertpos.x(), 2)
-                          + pow( aSecondaryPosition.y()-vertpos.y(), 2)
-                          + pow( aSecondaryPosition.z()-vertpos.z(), 2) );
+                //vertenergy = aTrack.GetKineticEnergy();
+                //reem_d = 
+                //    sqrt( pow( aSecondaryPosition.x()-vertpos.x(), 2)
+                //          + pow( aSecondaryPosition.y()-vertpos.y(), 2)
+                //          + pow( aSecondaryPosition.z()-vertpos.z(), 2) );
             }
             else {
                 if (aParticle->GetDefinition()->GetPDGCharge() != 0) 
@@ -614,26 +556,43 @@ DsG4Scintillation::PostStepDoIt(const G4Track& aTrack, const G4Step& aStep)
                     x0 + rand * aStep.GetDeltaPosition();
             }
             G4double aSecondaryTime = t0 + deltaTime;
+            if ( verboseLevel>1 ){
+              G4cout << "Generate " << i << "th scintillation photon at relative time(ns) " << deltaTime 
+                     << " with ScintillationTime " << ScintillationTime << " flagReemission " << flagReemission << G4endl;
+            }
             G4Track* aSecondaryTrack = 
                 new G4Track(aScintillationPhoton,aSecondaryTime,aSecondaryPosition);
 
-                
             aSecondaryTrack->SetWeight( weight );
             aSecondaryTrack->SetTouchableHandle(aStep.GetPreStepPoint()->GetTouchableHandle());
-            // aSecondaryTrack->SetTouchableHandle((G4VTouchable*)0);//this is wrong
-                
             aSecondaryTrack->SetParentID(aTrack.GetTrackID());
-                
             // add the secondary to the ParticleChange object
             aParticleChange.SetSecondaryWeightByProcess( true ); // recommended
             aParticleChange.AddSecondary(aSecondaryTrack);
                 
             aSecondaryTrack->SetWeight( weight );
-        }
+            if ( verboseLevel > 0 ) {
+              G4cout << " aSecondaryTrack->SetWeight( " << weight<< " ) ; aSecondaryTrack->GetWeight() = " << aSecondaryTrack->GetWeight() << G4endl;}        
+
+#ifdef WITH_G4CXOPTICKS
+           U4::GenPhotonEnd(i, aSecondaryTrack);
+#endif
+
+         }    // i:genloop over NumPhoton
+  
+ 
+         }   //  (m_opticksMode != 1) 
 
 
-	
-	} // end loop over fast/slow scints
+   }         // scntloop
+
+
+
+    if (verboseLevel > 0) {
+        G4cout << "\n Exiting from G4Scintillation::DoIt -- NumberOfSecondaries = " 
+               << aParticleChange.GetNumberOfSecondaries() << G4endl;
+    }
+
 
     return G4VRestDiscreteProcess::PostStepDoIt(aTrack, aStep);
 }

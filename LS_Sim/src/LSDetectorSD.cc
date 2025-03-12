@@ -99,6 +99,7 @@ G4bool LSDetectorSD::ProcessHits( G4Step* aStep, G4TouchableHistory*)
 
     // consider PMT PDE :  no wavelength response and angular response yet
     G4double pde = G4UniformRand();
+    G4cout << "QE:" << efficiency << std::endl;
     if (pde > efficiency) {
         return false;
     }
@@ -166,6 +167,12 @@ void LSDetectorSD::AddOpticksHits()
     else
     {
       theCreationProcessid = -1;
+    }
+    // consider PMT PDE :  no wavelength response and angular response yet
+    G4double pde = G4UniformRand();
+    G4cout << "QE:" << efficiency << std::endl;
+    if (pde > efficiency) {
+	    continue;
     }
     LSDetectorHit* newHit = new LSDetectorHit();
     //hit->SetTrackID(trackID);
