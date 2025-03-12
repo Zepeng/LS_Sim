@@ -186,8 +186,8 @@ From: cuda_12.2.2-devel-ubuntu22.04.sif
     rm -rf build root_src 
     rm -f /root/*.pkg.tar*
     rm -f /root/*.tar.gz 
-%environment
-    bash -c "source /opt/root/install/bin/thisroot.sh"    
  
 %runscript
+    source /opt/root/install/bin/thisroot.sh
+    source /opt/geant4/install/bin/geant4.sh
     exec /bin/bash "$@"
