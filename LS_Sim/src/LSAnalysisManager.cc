@@ -1,5 +1,5 @@
 
-#include "g4root.hh"
+#include "G4AnalysisManager.hh"
 
 #include "LSAnalysisManager.hh"
 
