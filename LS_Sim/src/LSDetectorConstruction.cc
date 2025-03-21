@@ -29,6 +29,7 @@
 
 #include "G4VisAttributes.hh"
 #include "G4Colour.hh"
+#include "G4Version.hh"
 
 #ifdef WITH_G4CXOPTICKS
 #include "G4CXOpticks.hh"
@@ -167,32 +168,43 @@ void LSDetectorConstruction::DefineMaterials()
     LS->AddElement(S,  0.00005);
     
     G4MaterialPropertiesTable* LSMPT = new G4MaterialPropertiesTable();
-    LSMPT -> AddProperty("ABSLENGTH", GdLSABSEnergy, GdLSABSLength, 497);
-    LSMPT -> AddProperty("RAYLEIGH", GdLSRayEnergy, GdLSRayLength, 11);
-    LSMPT -> AddProperty("RINDEX", GdLSRefIndexEnergy, GdLSRefIndex, 18) ;
+    LSMPT->AddProperty("ABSLENGTH", GdLSABSEnergy, GdLSABSLength, 497);
+    LSMPT->AddProperty("RAYLEIGH", GdLSRayEnergy, GdLSRayLength, 11);
+    LSMPT->AddProperty("RINDEX", GdLSRefIndexEnergy, GdLSRefIndex, 18) ;
+#if G4VERSION_NUMBER >= 1100
+    LSMPT->AddProperty("FASTCOMPONENT", GdLSComEnergy, GdLSFastComponent, 275, true);
+    LSMPT->AddProperty("SLOWCOMPONENT", GdLSComEnergy, GdLSFastComponent, 275, true);
+    LSMPT->AddProperty("REEMISSIONPROB", GdLSReemEnergy, GdLSReem, 28, true);
+    LSMPT->AddProperty("SCINTILLATIONYIELD", component, GdLSLY,2, true);
+    LSMPT->AddProperty("RESOLUTIONSCALE", component, GdLSResolutionScale,2, true);
+    LSMPT->AddProperty("FASTTIMECONSTANT",component,GdLSFastTimeConstant,2, true);
+    LSMPT->AddProperty("SLOWTIMECONSTANT",component,GdLSSlowTimeConstant,2, true);
+    LSMPT->AddProperty("YIELDRATIO",component,GdLSYieldRatio,2, true);
+    LSMPT->AddProperty("GammaFASTTIMECONSTANT", component, GdLSFastTimeConstant,2, true);
+    LSMPT->AddProperty("GammaSLOWTIMECONSTANT", component, GdLSSlowTimeConstant,2, true);
+    LSMPT->AddProperty("GammaYIELDRATIO", component, GdLSYieldRatio,2, true);
+    // add fast/slow time constant for reemission
+    LSMPT->AddProperty("ReemissionFASTTIMECONSTANT", component, GdLSReemissionFastTimeConstant,2, true);
+    LSMPT->AddProperty("ReemissionSLOWTIMECONSTANT", component, GdLSReemissionSlowTimeConstant,2, true);
+    LSMPT->AddProperty("ReemissionYIELDRATIO", component, GdLSReemissionYieldRatio,2, true);
+#else
     LSMPT->AddProperty("FASTCOMPONENT", GdLSComEnergy, GdLSFastComponent, 275);
     LSMPT->AddProperty("SLOWCOMPONENT", GdLSComEnergy, GdLSFastComponent, 275);
     LSMPT->AddProperty("REEMISSIONPROB", GdLSReemEnergy, GdLSReem, 28);
-    LSMPT->AddProperty("RAYLEIGH", GdLSRayEnergy, GdLSRayLength, 11);
     LSMPT->AddProperty("SCINTILLATIONYIELD", component, GdLSLY,2);
     LSMPT->AddProperty("RESOLUTIONSCALE", component, GdLSResolutionScale,2);
-
-    //LSMPT->AddConstProperty("SCINTILLATIONYIELD", GdLSLY[0]);
-    //LSMPT->AddConstProperty("RESOLUTIONSCALE",GdLSResolutionScale[0]);
     LSMPT->AddProperty("FASTTIMECONSTANT",component,GdLSFastTimeConstant,2);
     LSMPT->AddProperty("SLOWTIMECONSTANT",component,GdLSSlowTimeConstant,2);
     LSMPT->AddProperty("YIELDRATIO",component,GdLSYieldRatio,2);
-
     LSMPT->AddProperty("GammaFASTTIMECONSTANT", component, GdLSFastTimeConstant,2);
     LSMPT->AddProperty("GammaSLOWTIMECONSTANT", component, GdLSSlowTimeConstant,2);
     LSMPT->AddProperty("GammaYIELDRATIO", component, GdLSYieldRatio,2);
-
     // add fast/slow time constant for reemission
     LSMPT->AddProperty("ReemissionFASTTIMECONSTANT", component, GdLSReemissionFastTimeConstant,2);
     LSMPT->AddProperty("ReemissionSLOWTIMECONSTANT", component, GdLSReemissionSlowTimeConstant,2);
     LSMPT->AddProperty("ReemissionYIELDRATIO", component, GdLSReemissionYieldRatio,2);
+#endif
     LS -> SetMaterialPropertiesTable(LSMPT);
-
     
     // PMT Materials :
     G4Element* Fe = G4Element::GetElement("Iron", JustWarning);
@@ -256,7 +268,7 @@ void LSDetectorConstruction::DefineMaterials()
  
     G4MaterialPropertiesTable* PhotocathodeMPT = new G4MaterialPropertiesTable();
     PhotocathodeMPT->AddProperty("RINDEX", fPhCEnergy, fPhCRINDEX, 4);
-    PhotocathodeMPT->AddProperty("KINDEX", fPhCEnergy, fPhCKINDEX, 4);
+    PhotocathodeMPT->AddProperty("KINDEX", fPhCEnergy, fPhCKINDEX, 4, true);
     PhotocathodeMPT->AddProperty("REFLECTIVITY", fPhCEnergy, fPhCREFLECTIVITY, 4);
     PhotocathodeMPT->AddProperty("EFFICIENCY", fPP_PhCQE_Dynode20inch, fPhCEFFICIENCY_Dynode20inch, 43);
 	//PhotocathodeMPT->AddProperty("EFFICIENCY", fPhCEnergy, fake_eff, 4);   
@@ -533,12 +545,12 @@ G4VPhysicalVolume* LSDetectorConstruction::DefineVolumes()
 #ifdef WITH_G4CXOPTICKS
 	SEventConfig::SetRGModeSimulate();
 
-	if( m_maxPhoton > 0 ){
-		SEventConfig::SetMaxPhoton(m_maxPhoton);		
-	}
-	if( m_maxGenstep > 0 ){
-		SEventConfig::SetMaxGenstep(m_maxGenstep);
-	}
+	//if( m_maxPhoton > 0 ){
+	//	SEventConfig::SetMaxPhoton(m_maxPhoton);		
+	//}
+	//if( m_maxGenstep > 0 ){
+	//	SEventConfig::SetMaxGenstep(m_maxGenstep);
+	//}
 	
 	int Million = SEventConfig::M;
 	int max_photon = SEventConfig::MaxPhoton();
