@@ -4,8 +4,8 @@ cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
 project(LS_Sim)
 #include(OpticksBuildOptions NO_POLICY_SCOPE)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+#set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_CXX_STANDARD_REQUIRED True)
 option(WITH_G4CXOPTICKS "Build example with OPTICKS" OFF)
 
 #================ Find Optix ===========================#
