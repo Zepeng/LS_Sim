@@ -68,9 +68,10 @@ int main(int argc,char** argv)
   //const char * mask = "genstep,photon,hit" ;
   const char * mask = "hit";
   //SEventConfig::SetCompMask(mask);
-  //SEventConfig::SetMaxGenstep(3000000);
-  //SEventConfig::SetMaxPhoton(70000000);
-	//QRng::DEFAULT_PATH
+  SEventConfig::SetMaxGenstep(3000000);
+  SEventConfig::SetMaxPhoton(70000000);
+  std::cout << SEventConfig::Desc() << std::endl;
+  //QRng::DEFAULT_PATH
   
 
 #endif

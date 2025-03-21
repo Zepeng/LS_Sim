@@ -8,7 +8,9 @@ EOU
 
 
 cd $(dirname $BASH_SOURCE)
-
+cvd=0
+export CUDA_VISIBLE_DEVICES=${CVD:-$cvd}
+export CVDLabel="CVD${CUDA_VISIBLE_DEVICES}"
 sdir=$(pwd)
 bdir=/tmp/$USER/opticks/$(basename $sdir)/build 
 
