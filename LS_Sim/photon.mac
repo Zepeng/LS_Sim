@@ -14,7 +14,7 @@
 /run/verbose 0
 /tracking/verbose 0
 
-/LS/ana/output toy
+/LS/ana/output toy.root
 #/My/ana/activate false
 #/My/ana/output rb1.root
 
@@ -23,11 +23,11 @@
 /LS/gun/energy1 0.5 MeV
 /LS/gun/momtype1 iso
 /LS/gun/position1 0 0 0
-/LS/gun/particle2 e-
-/LS/gun/energy2 1.0
-/LS/gun/momtype2 iso
-/LS/gun/position2 0 0 0
+#/LS/gun/particle2 e-
+#/LS/gun/energy2 1.0
+#/LS/gun/momtype2 iso
+#/LS/gun/position2 0 0 0
 
 /LS/sd/efficiency 0.18
-/Opticks/EventConfig/OpticksMode 1
+#/Opticks/EventConfig/OpticksMode 1
 /run/beamOn 10
